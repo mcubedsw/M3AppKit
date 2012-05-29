@@ -44,6 +44,7 @@
 		991C4E3F15755D9C00CC43F3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		991C4E4115755D9C00CC43F3 /* M3AppKitTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = M3AppKitTests.h; sourceTree = "<group>"; };
 		991C4E4215755D9C00CC43F3 /* M3AppKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = M3AppKitTests.m; sourceTree = "<group>"; };
+		991C4E5115755E9900CC43F3 /* M3AppKitTests-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "M3AppKitTests-Prefix.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,40 +111,73 @@
 		991C4E2515755D9C00CC43F3 /* M3AppKit */ = {
 			isa = PBXGroup;
 			children = (
-				991C4E2C15755D9C00CC43F3 /* M3AppKit.h */,
-				991C4E2D15755D9C00CC43F3 /* M3AppKit.m */,
-				991C4E2615755D9C00CC43F3 /* Supporting Files */,
+				991C4E5415755ED300CC43F3 /* Source */,
+				991C4E2615755D9C00CC43F3 /* Resources */,
+				991C4E5315755ECE00CC43F3 /* Other Files */,
 			);
 			path = M3AppKit;
 			sourceTree = "<group>";
 		};
-		991C4E2615755D9C00CC43F3 /* Supporting Files */ = {
+		991C4E2615755D9C00CC43F3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				991C4E2715755D9C00CC43F3 /* M3AppKit-Info.plist */,
 				991C4E2815755D9C00CC43F3 /* InfoPlist.strings */,
-				991C4E2B15755D9C00CC43F3 /* M3AppKit-Prefix.pch */,
 			);
-			name = "Supporting Files";
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		991C4E3B15755D9C00CC43F3 /* M3AppKitTests */ = {
 			isa = PBXGroup;
 			children = (
-				991C4E4115755D9C00CC43F3 /* M3AppKitTests.h */,
-				991C4E4215755D9C00CC43F3 /* M3AppKitTests.m */,
-				991C4E3C15755D9C00CC43F3 /* Supporting Files */,
+				991C4E5215755EBF00CC43F3 /* Source */,
+				991C4E3C15755D9C00CC43F3 /* Resources */,
+				991C4E5015755E6F00CC43F3 /* Other Files */,
 			);
 			path = M3AppKitTests;
 			sourceTree = "<group>";
 		};
-		991C4E3C15755D9C00CC43F3 /* Supporting Files */ = {
+		991C4E3C15755D9C00CC43F3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				991C4E3E15755D9C00CC43F3 /* InfoPlist.strings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		991C4E5015755E6F00CC43F3 /* Other Files */ = {
 			isa = PBXGroup;
 			children = (
 				991C4E3D15755D9C00CC43F3 /* M3AppKitTests-Info.plist */,
-				991C4E3E15755D9C00CC43F3 /* InfoPlist.strings */,
+				991C4E5115755E9900CC43F3 /* M3AppKitTests-Prefix.pch */,
 			);
-			name = "Supporting Files";
+			name = "Other Files";
+			sourceTree = "<group>";
+		};
+		991C4E5215755EBF00CC43F3 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				991C4E4115755D9C00CC43F3 /* M3AppKitTests.h */,
+				991C4E4215755D9C00CC43F3 /* M3AppKitTests.m */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		991C4E5315755ECE00CC43F3 /* Other Files */ = {
+			isa = PBXGroup;
+			children = (
+				991C4E2715755D9C00CC43F3 /* M3AppKit-Info.plist */,
+				991C4E2B15755D9C00CC43F3 /* M3AppKit-Prefix.pch */,
+			);
+			name = "Other Files";
+			sourceTree = "<group>";
+		};
+		991C4E5415755ED300CC43F3 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				991C4E2C15755D9C00CC43F3 /* M3AppKit.h */,
+				991C4E2D15755D9C00CC43F3 /* M3AppKit.m */,
+			);
+			path = Source;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -387,7 +421,7 @@
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "M3AppKit/M3AppKit-Prefix.pch";
+				GCC_PREFIX_HEADER = "$(TARGET_NAME)/M3AppKitTests-Prefix.pch";
 				INFOPLIST_FILE = "M3AppKitTests/M3AppKitTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = octest;
@@ -399,7 +433,7 @@
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "M3AppKit/M3AppKit-Prefix.pch";
+				GCC_PREFIX_HEADER = "$(TARGET_NAME)/M3AppKitTests-Prefix.pch";
 				INFOPLIST_FILE = "M3AppKitTests/M3AppKitTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = octest;
@@ -425,6 +459,7 @@
 				991C4E4815755D9C00CC43F3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		991C4E4915755D9C00CC43F3 /* Build configuration list for PBXNativeTarget "M3AppKitTests" */ = {
 			isa = XCConfigurationList;
@@ -433,6 +468,7 @@
 				991C4E4B15755D9C00CC43F3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
