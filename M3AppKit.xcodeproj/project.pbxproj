@@ -23,12 +23,52 @@
 /* Begin PBXBuildFile section */
 		991C4E2015755D9C00CC43F3 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 991C4E1F15755D9C00CC43F3 /* Cocoa.framework */; };
 		991C4E2A15755D9C00CC43F3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 991C4E2815755D9C00CC43F3 /* InfoPlist.strings */; };
-		991C4E2E15755D9C00CC43F3 /* M3AppKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 991C4E2D15755D9C00CC43F3 /* M3AppKit.m */; };
 		991C4E3615755D9C00CC43F3 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 991C4E3515755D9C00CC43F3 /* SenTestingKit.framework */; };
 		991C4E3715755D9C00CC43F3 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 991C4E1F15755D9C00CC43F3 /* Cocoa.framework */; };
 		991C4E3A15755D9C00CC43F3 /* M3AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 991C4E1C15755D9C00CC43F3 /* M3AppKit.framework */; };
 		991C4E4015755D9C00CC43F3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 991C4E3E15755D9C00CC43F3 /* InfoPlist.strings */; };
 		991C4E4315755D9C00CC43F3 /* M3AppKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 991C4E4215755D9C00CC43F3 /* M3AppKitTests.m */; };
+		991C4E601575626A00CC43F3 /* M3Alert.h in Headers */ = {isa = PBXBuildFile; fileRef = 991C4E5E1575626A00CC43F3 /* M3Alert.h */; };
+		991C4E611575626A00CC43F3 /* M3Alert.m in Sources */ = {isa = PBXBuildFile; fileRef = 991C4E5F1575626A00CC43F3 /* M3Alert.m */; };
+		991C4E641575629800CC43F3 /* M3BetaController.h in Headers */ = {isa = PBXBuildFile; fileRef = 991C4E621575629800CC43F3 /* M3BetaController.h */; };
+		991C4E651575629800CC43F3 /* M3BetaController.m in Sources */ = {isa = PBXBuildFile; fileRef = 991C4E631575629800CC43F3 /* M3BetaController.m */; };
+		991C4E68157562AC00CC43F3 /* M3ColumnVisibilityController.h in Headers */ = {isa = PBXBuildFile; fileRef = 991C4E66157562AC00CC43F3 /* M3ColumnVisibilityController.h */; };
+		991C4E69157562AC00CC43F3 /* M3ColumnVisibilityController.m in Sources */ = {isa = PBXBuildFile; fileRef = 991C4E67157562AC00CC43F3 /* M3ColumnVisibilityController.m */; };
+		991C4E6C157562B500CC43F3 /* M3DualViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 991C4E6A157562B500CC43F3 /* M3DualViewController.h */; };
+		991C4E6D157562B500CC43F3 /* M3DualViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 991C4E6B157562B500CC43F3 /* M3DualViewController.m */; };
+		991C4E701575633300CC43F3 /* M3InstallController.h in Headers */ = {isa = PBXBuildFile; fileRef = 991C4E6E1575633300CC43F3 /* M3InstallController.h */; };
+		991C4E711575633300CC43F3 /* M3InstallController.m in Sources */ = {isa = PBXBuildFile; fileRef = 991C4E6F1575633300CC43F3 /* M3InstallController.m */; };
+		991C4E751575634100CC43F3 /* M3NavigationView.h in Headers */ = {isa = PBXBuildFile; fileRef = 991C4E721575634100CC43F3 /* M3NavigationView.h */; };
+		991C4E761575634100CC43F3 /* M3NavigationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 991C4E731575634100CC43F3 /* M3NavigationView.m */; };
+		991C4E771575634100CC43F3 /* M3NavigationViewProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 991C4E741575634100CC43F3 /* M3NavigationViewProtocol.h */; };
+		991C4E7B1575635F00CC43F3 /* M3PreferencesSection.h in Headers */ = {isa = PBXBuildFile; fileRef = 991C4E781575635F00CC43F3 /* M3PreferencesSection.h */; };
+		991C4E7C1575635F00CC43F3 /* M3PreferencesWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 991C4E791575635F00CC43F3 /* M3PreferencesWindow.h */; };
+		991C4E7D1575635F00CC43F3 /* M3PreferencesWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 991C4E7A1575635F00CC43F3 /* M3PreferencesWindow.m */; };
+		991C4E801575636900CC43F3 /* M3SplitView.h in Headers */ = {isa = PBXBuildFile; fileRef = 991C4E7E1575636900CC43F3 /* M3SplitView.h */; };
+		991C4E811575636900CC43F3 /* M3SplitView.m in Sources */ = {isa = PBXBuildFile; fileRef = 991C4E7F1575636900CC43F3 /* M3SplitView.m */; };
+		991C4E841575642600CC43F3 /* NSBezierPath+M3Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 991C4E821575642600CC43F3 /* NSBezierPath+M3Extensions.h */; };
+		991C4E851575642600CC43F3 /* NSBezierPath+M3Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 991C4E831575642600CC43F3 /* NSBezierPath+M3Extensions.m */; };
+		991C4E881575643300CC43F3 /* NSColor+M3Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 991C4E861575643300CC43F3 /* NSColor+M3Extensions.h */; };
+		991C4E891575643300CC43F3 /* NSColor+M3Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 991C4E871575643300CC43F3 /* NSColor+M3Extensions.m */; };
+		991C4E8C1575643F00CC43F3 /* NSLayoutConstraint+M3Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 991C4E8A1575643E00CC43F3 /* NSLayoutConstraint+M3Extensions.h */; };
+		991C4E8D1575643F00CC43F3 /* NSLayoutConstraint+M3Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 991C4E8B1575643E00CC43F3 /* NSLayoutConstraint+M3Extensions.m */; };
+		991C4E901575649200CC43F3 /* NSMenuItem+M3Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 991C4E8E1575649200CC43F3 /* NSMenuItem+M3Extensions.h */; };
+		991C4E911575649200CC43F3 /* NSMenuItem+M3Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 991C4E8F1575649200CC43F3 /* NSMenuItem+M3Extensions.m */; };
+		991C4E9E1575653100CC43F3 /* NSPopUpButton+M3Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 991C4E921575653000CC43F3 /* NSPopUpButton+M3Extensions.h */; };
+		991C4E9F1575653100CC43F3 /* NSPopUpButton+M3Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 991C4E931575653000CC43F3 /* NSPopUpButton+M3Extensions.m */; };
+		991C4EA01575653100CC43F3 /* NSShadow+M3Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 991C4E941575653000CC43F3 /* NSShadow+M3Extensions.h */; };
+		991C4EA11575653100CC43F3 /* NSShadow+M3Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 991C4E951575653000CC43F3 /* NSShadow+M3Extensions.m */; };
+		991C4EA21575653100CC43F3 /* NSTabView+M3Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 991C4E961575653100CC43F3 /* NSTabView+M3Extensions.h */; };
+		991C4EA31575653100CC43F3 /* NSTabView+M3Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 991C4E971575653100CC43F3 /* NSTabView+M3Extensions.m */; };
+		991C4EA41575653100CC43F3 /* NSTextField+M3Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 991C4E981575653100CC43F3 /* NSTextField+M3Extensions.h */; };
+		991C4EA51575653100CC43F3 /* NSTextField+M3Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 991C4E991575653100CC43F3 /* NSTextField+M3Extensions.m */; };
+		991C4EA61575653100CC43F3 /* NSView+M3Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 991C4E9A1575653100CC43F3 /* NSView+M3Extensions.h */; };
+		991C4EA71575653100CC43F3 /* NSView+M3Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 991C4E9B1575653100CC43F3 /* NSView+M3Extensions.m */; };
+		991C4EA81575653100CC43F3 /* NSWorkspace_RBAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 991C4E9C1575653100CC43F3 /* NSWorkspace_RBAdditions.h */; };
+		991C4EA91575653100CC43F3 /* NSWorkspace_RBAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 991C4E9D1575653100CC43F3 /* NSWorkspace_RBAdditions.m */; };
+		991C4EB51575697600CC43F3 /* M3Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 991C4EB41575697600CC43F3 /* M3Foundation.framework */; };
+		991C4EB8157569DC00CC43F3 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 991C4EB7157569DC00CC43F3 /* IOKit.framework */; };
+		991C4EBA157569EF00CC43F3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 991C4EB9157569EF00CC43F3 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,7 +98,6 @@
 		991C4E2915755D9C00CC43F3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		991C4E2B15755D9C00CC43F3 /* M3AppKit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "M3AppKit-Prefix.pch"; sourceTree = "<group>"; };
 		991C4E2C15755D9C00CC43F3 /* M3AppKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = M3AppKit.h; sourceTree = "<group>"; };
-		991C4E2D15755D9C00CC43F3 /* M3AppKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = M3AppKit.m; sourceTree = "<group>"; };
 		991C4E3415755D9C00CC43F3 /* M3AppKitTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = M3AppKitTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		991C4E3515755D9C00CC43F3 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		991C4E3D15755D9C00CC43F3 /* M3AppKitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "M3AppKitTests-Info.plist"; sourceTree = "<group>"; };
@@ -67,6 +106,47 @@
 		991C4E4215755D9C00CC43F3 /* M3AppKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = M3AppKitTests.m; sourceTree = "<group>"; };
 		991C4E5115755E9900CC43F3 /* M3AppKitTests-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "M3AppKitTests-Prefix.pch"; sourceTree = "<group>"; };
 		991C4E551575605800CC43F3 /* Info.plist.prefix */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Info.plist.prefix; sourceTree = "<group>"; };
+		991C4E5E1575626A00CC43F3 /* M3Alert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3Alert.h; sourceTree = "<group>"; };
+		991C4E5F1575626A00CC43F3 /* M3Alert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M3Alert.m; sourceTree = "<group>"; };
+		991C4E621575629800CC43F3 /* M3BetaController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3BetaController.h; sourceTree = "<group>"; };
+		991C4E631575629800CC43F3 /* M3BetaController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M3BetaController.m; sourceTree = "<group>"; };
+		991C4E66157562AC00CC43F3 /* M3ColumnVisibilityController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3ColumnVisibilityController.h; sourceTree = "<group>"; };
+		991C4E67157562AC00CC43F3 /* M3ColumnVisibilityController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M3ColumnVisibilityController.m; sourceTree = "<group>"; };
+		991C4E6A157562B500CC43F3 /* M3DualViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3DualViewController.h; sourceTree = "<group>"; };
+		991C4E6B157562B500CC43F3 /* M3DualViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M3DualViewController.m; sourceTree = "<group>"; };
+		991C4E6E1575633300CC43F3 /* M3InstallController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3InstallController.h; sourceTree = "<group>"; };
+		991C4E6F1575633300CC43F3 /* M3InstallController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M3InstallController.m; sourceTree = "<group>"; };
+		991C4E721575634100CC43F3 /* M3NavigationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3NavigationView.h; sourceTree = "<group>"; };
+		991C4E731575634100CC43F3 /* M3NavigationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M3NavigationView.m; sourceTree = "<group>"; };
+		991C4E741575634100CC43F3 /* M3NavigationViewProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3NavigationViewProtocol.h; sourceTree = "<group>"; };
+		991C4E781575635F00CC43F3 /* M3PreferencesSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3PreferencesSection.h; sourceTree = "<group>"; };
+		991C4E791575635F00CC43F3 /* M3PreferencesWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3PreferencesWindow.h; sourceTree = "<group>"; };
+		991C4E7A1575635F00CC43F3 /* M3PreferencesWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M3PreferencesWindow.m; sourceTree = "<group>"; };
+		991C4E7E1575636900CC43F3 /* M3SplitView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3SplitView.h; sourceTree = "<group>"; };
+		991C4E7F1575636900CC43F3 /* M3SplitView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M3SplitView.m; sourceTree = "<group>"; };
+		991C4E821575642600CC43F3 /* NSBezierPath+M3Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBezierPath+M3Extensions.h"; sourceTree = "<group>"; };
+		991C4E831575642600CC43F3 /* NSBezierPath+M3Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBezierPath+M3Extensions.m"; sourceTree = "<group>"; };
+		991C4E861575643300CC43F3 /* NSColor+M3Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSColor+M3Extensions.h"; sourceTree = "<group>"; };
+		991C4E871575643300CC43F3 /* NSColor+M3Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSColor+M3Extensions.m"; sourceTree = "<group>"; };
+		991C4E8A1575643E00CC43F3 /* NSLayoutConstraint+M3Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSLayoutConstraint+M3Extensions.h"; sourceTree = "<group>"; };
+		991C4E8B1575643E00CC43F3 /* NSLayoutConstraint+M3Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSLayoutConstraint+M3Extensions.m"; sourceTree = "<group>"; };
+		991C4E8E1575649200CC43F3 /* NSMenuItem+M3Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMenuItem+M3Extensions.h"; sourceTree = "<group>"; };
+		991C4E8F1575649200CC43F3 /* NSMenuItem+M3Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMenuItem+M3Extensions.m"; sourceTree = "<group>"; };
+		991C4E921575653000CC43F3 /* NSPopUpButton+M3Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSPopUpButton+M3Extensions.h"; sourceTree = "<group>"; };
+		991C4E931575653000CC43F3 /* NSPopUpButton+M3Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSPopUpButton+M3Extensions.m"; sourceTree = "<group>"; };
+		991C4E941575653000CC43F3 /* NSShadow+M3Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSShadow+M3Extensions.h"; sourceTree = "<group>"; };
+		991C4E951575653000CC43F3 /* NSShadow+M3Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSShadow+M3Extensions.m"; sourceTree = "<group>"; };
+		991C4E961575653100CC43F3 /* NSTabView+M3Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTabView+M3Extensions.h"; sourceTree = "<group>"; };
+		991C4E971575653100CC43F3 /* NSTabView+M3Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTabView+M3Extensions.m"; sourceTree = "<group>"; };
+		991C4E981575653100CC43F3 /* NSTextField+M3Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTextField+M3Extensions.h"; sourceTree = "<group>"; };
+		991C4E991575653100CC43F3 /* NSTextField+M3Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTextField+M3Extensions.m"; sourceTree = "<group>"; };
+		991C4E9A1575653100CC43F3 /* NSView+M3Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSView+M3Extensions.h"; sourceTree = "<group>"; };
+		991C4E9B1575653100CC43F3 /* NSView+M3Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSView+M3Extensions.m"; sourceTree = "<group>"; };
+		991C4E9C1575653100CC43F3 /* NSWorkspace_RBAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSWorkspace_RBAdditions.h; sourceTree = "<group>"; };
+		991C4E9D1575653100CC43F3 /* NSWorkspace_RBAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSWorkspace_RBAdditions.m; sourceTree = "<group>"; };
+		991C4EB41575697600CC43F3 /* M3Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = M3Foundation.framework; path = Dependencies/M3Foundation.framework; sourceTree = "<group>"; };
+		991C4EB7157569DC00CC43F3 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		991C4EB9157569EF00CC43F3 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,7 +154,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				991C4EBA157569EF00CC43F3 /* QuartzCore.framework in Frameworks */,
+				991C4EB8157569DC00CC43F3 /* IOKit.framework in Frameworks */,
 				991C4E2015755D9C00CC43F3 /* Cocoa.framework in Frameworks */,
+				991C4EB51575697600CC43F3 /* M3Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,7 +196,10 @@
 		991C4E1E15755D9C00CC43F3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				991C4EB41575697600CC43F3 /* M3Foundation.framework */,
 				991C4E1F15755D9C00CC43F3 /* Cocoa.framework */,
+				991C4EB9157569EF00CC43F3 /* QuartzCore.framework */,
+				991C4EB7157569DC00CC43F3 /* IOKit.framework */,
 				991C4E3515755D9C00CC43F3 /* SenTestingKit.framework */,
 				991C4E2115755D9C00CC43F3 /* Other Frameworks */,
 			);
@@ -198,9 +284,78 @@
 			isa = PBXGroup;
 			children = (
 				991C4E2C15755D9C00CC43F3 /* M3AppKit.h */,
-				991C4E2D15755D9C00CC43F3 /* M3AppKit.m */,
+				991C4EAB1575660600CC43F3 /* Misc */,
+				991C4EAD1575670100CC43F3 /* Preferences */,
+				991C4EAC157566E300CC43F3 /* Managing Views */,
+				991C4EAA157565F900CC43F3 /* Categories */,
 			);
 			path = Source;
+			sourceTree = "<group>";
+		};
+		991C4EAA157565F900CC43F3 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				991C4E821575642600CC43F3 /* NSBezierPath+M3Extensions.h */,
+				991C4E831575642600CC43F3 /* NSBezierPath+M3Extensions.m */,
+				991C4E861575643300CC43F3 /* NSColor+M3Extensions.h */,
+				991C4E871575643300CC43F3 /* NSColor+M3Extensions.m */,
+				991C4E8A1575643E00CC43F3 /* NSLayoutConstraint+M3Extensions.h */,
+				991C4E8B1575643E00CC43F3 /* NSLayoutConstraint+M3Extensions.m */,
+				991C4E8E1575649200CC43F3 /* NSMenuItem+M3Extensions.h */,
+				991C4E8F1575649200CC43F3 /* NSMenuItem+M3Extensions.m */,
+				991C4E921575653000CC43F3 /* NSPopUpButton+M3Extensions.h */,
+				991C4E931575653000CC43F3 /* NSPopUpButton+M3Extensions.m */,
+				991C4E941575653000CC43F3 /* NSShadow+M3Extensions.h */,
+				991C4E951575653000CC43F3 /* NSShadow+M3Extensions.m */,
+				991C4E961575653100CC43F3 /* NSTabView+M3Extensions.h */,
+				991C4E971575653100CC43F3 /* NSTabView+M3Extensions.m */,
+				991C4E981575653100CC43F3 /* NSTextField+M3Extensions.h */,
+				991C4E991575653100CC43F3 /* NSTextField+M3Extensions.m */,
+				991C4E9A1575653100CC43F3 /* NSView+M3Extensions.h */,
+				991C4E9B1575653100CC43F3 /* NSView+M3Extensions.m */,
+				991C4E9C1575653100CC43F3 /* NSWorkspace_RBAdditions.h */,
+				991C4E9D1575653100CC43F3 /* NSWorkspace_RBAdditions.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		991C4EAB1575660600CC43F3 /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				991C4E5E1575626A00CC43F3 /* M3Alert.h */,
+				991C4E5F1575626A00CC43F3 /* M3Alert.m */,
+				991C4E621575629800CC43F3 /* M3BetaController.h */,
+				991C4E631575629800CC43F3 /* M3BetaController.m */,
+				991C4E6E1575633300CC43F3 /* M3InstallController.h */,
+				991C4E6F1575633300CC43F3 /* M3InstallController.m */,
+				991C4E66157562AC00CC43F3 /* M3ColumnVisibilityController.h */,
+				991C4E67157562AC00CC43F3 /* M3ColumnVisibilityController.m */,
+			);
+			name = Misc;
+			sourceTree = "<group>";
+		};
+		991C4EAC157566E300CC43F3 /* Managing Views */ = {
+			isa = PBXGroup;
+			children = (
+				991C4E721575634100CC43F3 /* M3NavigationView.h */,
+				991C4E731575634100CC43F3 /* M3NavigationView.m */,
+				991C4E741575634100CC43F3 /* M3NavigationViewProtocol.h */,
+				991C4E6A157562B500CC43F3 /* M3DualViewController.h */,
+				991C4E6B157562B500CC43F3 /* M3DualViewController.m */,
+				991C4E7E1575636900CC43F3 /* M3SplitView.h */,
+				991C4E7F1575636900CC43F3 /* M3SplitView.m */,
+			);
+			name = "Managing Views";
+			sourceTree = "<group>";
+		};
+		991C4EAD1575670100CC43F3 /* Preferences */ = {
+			isa = PBXGroup;
+			children = (
+				991C4E781575635F00CC43F3 /* M3PreferencesSection.h */,
+				991C4E791575635F00CC43F3 /* M3PreferencesWindow.h */,
+				991C4E7A1575635F00CC43F3 /* M3PreferencesWindow.m */,
+			);
+			name = Preferences;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,6 +365,26 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				991C4E601575626A00CC43F3 /* M3Alert.h in Headers */,
+				991C4E641575629800CC43F3 /* M3BetaController.h in Headers */,
+				991C4E68157562AC00CC43F3 /* M3ColumnVisibilityController.h in Headers */,
+				991C4E6C157562B500CC43F3 /* M3DualViewController.h in Headers */,
+				991C4E701575633300CC43F3 /* M3InstallController.h in Headers */,
+				991C4E751575634100CC43F3 /* M3NavigationView.h in Headers */,
+				991C4E771575634100CC43F3 /* M3NavigationViewProtocol.h in Headers */,
+				991C4E7B1575635F00CC43F3 /* M3PreferencesSection.h in Headers */,
+				991C4E7C1575635F00CC43F3 /* M3PreferencesWindow.h in Headers */,
+				991C4E801575636900CC43F3 /* M3SplitView.h in Headers */,
+				991C4E841575642600CC43F3 /* NSBezierPath+M3Extensions.h in Headers */,
+				991C4E881575643300CC43F3 /* NSColor+M3Extensions.h in Headers */,
+				991C4E8C1575643F00CC43F3 /* NSLayoutConstraint+M3Extensions.h in Headers */,
+				991C4E901575649200CC43F3 /* NSMenuItem+M3Extensions.h in Headers */,
+				991C4E9E1575653100CC43F3 /* NSPopUpButton+M3Extensions.h in Headers */,
+				991C4EA01575653100CC43F3 /* NSShadow+M3Extensions.h in Headers */,
+				991C4EA21575653100CC43F3 /* NSTabView+M3Extensions.h in Headers */,
+				991C4EA41575653100CC43F3 /* NSTextField+M3Extensions.h in Headers */,
+				991C4EA61575653100CC43F3 /* NSView+M3Extensions.h in Headers */,
+				991C4EA81575653100CC43F3 /* NSWorkspace_RBAdditions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,7 +512,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				991C4E2E15755D9C00CC43F3 /* M3AppKit.m in Sources */,
+				991C4E611575626A00CC43F3 /* M3Alert.m in Sources */,
+				991C4E651575629800CC43F3 /* M3BetaController.m in Sources */,
+				991C4E69157562AC00CC43F3 /* M3ColumnVisibilityController.m in Sources */,
+				991C4E6D157562B500CC43F3 /* M3DualViewController.m in Sources */,
+				991C4E711575633300CC43F3 /* M3InstallController.m in Sources */,
+				991C4E761575634100CC43F3 /* M3NavigationView.m in Sources */,
+				991C4E7D1575635F00CC43F3 /* M3PreferencesWindow.m in Sources */,
+				991C4E811575636900CC43F3 /* M3SplitView.m in Sources */,
+				991C4E851575642600CC43F3 /* NSBezierPath+M3Extensions.m in Sources */,
+				991C4E891575643300CC43F3 /* NSColor+M3Extensions.m in Sources */,
+				991C4E8D1575643F00CC43F3 /* NSLayoutConstraint+M3Extensions.m in Sources */,
+				991C4E911575649200CC43F3 /* NSMenuItem+M3Extensions.m in Sources */,
+				991C4E9F1575653100CC43F3 /* NSPopUpButton+M3Extensions.m in Sources */,
+				991C4EA11575653100CC43F3 /* NSShadow+M3Extensions.m in Sources */,
+				991C4EA31575653100CC43F3 /* NSTabView+M3Extensions.m in Sources */,
+				991C4EA51575653100CC43F3 /* NSTextField+M3Extensions.m in Sources */,
+				991C4EA71575653100CC43F3 /* NSView+M3Extensions.m in Sources */,
+				991C4EA91575653100CC43F3 /* NSWorkspace_RBAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,7 +582,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -418,7 +610,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -438,12 +630,17 @@
 			buildSettings = {
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Dependencies\"",
+				);
 				FRAMEWORK_VERSION = A;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "M3AppKit/M3AppKit-Prefix.pch";
 				INFOPLIST_FILE = "M3AppKit/M3AppKit-Info.plist";
 				INFOPLIST_PREFIX_HEADER = "$(TARGET_TEMP_DIR)/../Process Build Numbers.build/DerivedSources/Info.plist.prefix";
 				INFOPLIST_PREPROCESS = YES;
+				INSTALL_PATH = "@rpath";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = framework;
 			};
@@ -454,12 +651,17 @@
 			buildSettings = {
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Dependencies\"",
+				);
 				FRAMEWORK_VERSION = A;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "M3AppKit/M3AppKit-Prefix.pch";
 				INFOPLIST_FILE = "M3AppKit/M3AppKit-Info.plist";
 				INFOPLIST_PREFIX_HEADER = "$(TARGET_TEMP_DIR)/../Process Build Numbers.build/DerivedSources/Info.plist.prefix";
 				INFOPLIST_PREPROCESS = YES;
+				INSTALL_PATH = "@rpath";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = framework;
 			};
