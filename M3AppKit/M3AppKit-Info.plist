@@ -21,7 +21,9 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>BUNDLEVERSION</string>
+	<key>M3CommitHash</key>
+	<string>COMMITHASH</string>
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright © 2012 M Cubed Software. All rights reserved.</string>
 	<key>NSPrincipalClass</key>

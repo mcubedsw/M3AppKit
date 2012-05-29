@@ -6,6 +6,20 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		991C4E571575606E00CC43F3 /* Process Build Numbers */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 991C4E581575606E00CC43F3 /* Build configuration list for PBXAggregateTarget "Process Build Numbers" */;
+			buildPhases = (
+				991C4E5B1575607B00CC43F3 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = "Process Build Numbers";
+			productName = "Process Build Numbers";
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		991C4E2015755D9C00CC43F3 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 991C4E1F15755D9C00CC43F3 /* Cocoa.framework */; };
 		991C4E2A15755D9C00CC43F3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 991C4E2815755D9C00CC43F3 /* InfoPlist.strings */; };
@@ -24,6 +38,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 991C4E1B15755D9C00CC43F3;
 			remoteInfo = M3AppKit;
+		};
+		991C4E5C157560DC00CC43F3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 991C4E1215755D9C00CC43F3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 991C4E571575606E00CC43F3;
+			remoteInfo = "Process Build Numbers";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -45,6 +66,7 @@
 		991C4E4115755D9C00CC43F3 /* M3AppKitTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = M3AppKitTests.h; sourceTree = "<group>"; };
 		991C4E4215755D9C00CC43F3 /* M3AppKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = M3AppKitTests.m; sourceTree = "<group>"; };
 		991C4E5115755E9900CC43F3 /* M3AppKitTests-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "M3AppKitTests-Prefix.pch"; sourceTree = "<group>"; };
+		991C4E551575605800CC43F3 /* Info.plist.prefix */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Info.plist.prefix; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +187,7 @@
 		991C4E5315755ECE00CC43F3 /* Other Files */ = {
 			isa = PBXGroup;
 			children = (
+				991C4E551575605800CC43F3 /* Info.plist.prefix */,
 				991C4E2715755D9C00CC43F3 /* M3AppKit-Info.plist */,
 				991C4E2B15755D9C00CC43F3 /* M3AppKit-Prefix.pch */,
 			);
@@ -205,6 +228,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				991C4E5D157560DC00CC43F3 /* PBXTargetDependency */,
 			);
 			name = M3AppKit;
 			productName = M3AppKit;
@@ -253,6 +277,7 @@
 			targets = (
 				991C4E1B15755D9C00CC43F3 /* M3AppKit */,
 				991C4E3315755D9C00CC43F3 /* M3AppKitTests */,
+				991C4E571575606E00CC43F3 /* Process Build Numbers */,
 			);
 		};
 /* End PBXProject section */
@@ -290,6 +315,21 @@
 			shellPath = /bin/sh;
 			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
 		};
+		991C4E5B1575607B00CC43F3 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/M3AppKit/Info.plist.prefix",
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Info.plist.prefix",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "ruby \"${SRCROOT}/Scripts/processbuildnumbers.rb\"";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -316,6 +356,11 @@
 			isa = PBXTargetDependency;
 			target = 991C4E1B15755D9C00CC43F3 /* M3AppKit */;
 			targetProxy = 991C4E3815755D9C00CC43F3 /* PBXContainerItemProxy */;
+		};
+		991C4E5D157560DC00CC43F3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 991C4E571575606E00CC43F3 /* Process Build Numbers */;
+			targetProxy = 991C4E5C157560DC00CC43F3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -397,6 +442,8 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "M3AppKit/M3AppKit-Prefix.pch";
 				INFOPLIST_FILE = "M3AppKit/M3AppKit-Info.plist";
+				INFOPLIST_PREFIX_HEADER = "$(TARGET_TEMP_DIR)/../Process Build Numbers.build/DerivedSources/Info.plist.prefix";
+				INFOPLIST_PREPROCESS = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = framework;
 			};
@@ -411,6 +458,8 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "M3AppKit/M3AppKit-Prefix.pch";
 				INFOPLIST_FILE = "M3AppKit/M3AppKit-Info.plist";
+				INFOPLIST_PREFIX_HEADER = "$(TARGET_TEMP_DIR)/../Process Build Numbers.build/DerivedSources/Info.plist.prefix";
+				INFOPLIST_PREPROCESS = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = framework;
 			};
@@ -437,6 +486,20 @@
 				INFOPLIST_FILE = "M3AppKitTests/M3AppKitTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+		991C4E591575606E00CC43F3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		991C4E5A1575606E00CC43F3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
@@ -469,6 +532,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		991C4E581575606E00CC43F3 /* Build configuration list for PBXAggregateTarget "Process Build Numbers" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				991C4E591575606E00CC43F3 /* Debug */,
+				991C4E5A1575606E00CC43F3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
