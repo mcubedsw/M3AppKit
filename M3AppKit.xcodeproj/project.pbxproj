@@ -33,16 +33,16 @@
 		991C4E2215755D9C00CC43F3 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		991C4E2315755D9C00CC43F3 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		991C4E2415755D9C00CC43F3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		991C4E2715755D9C00CC43F3 /* M3AppKit-Info.plist */ = {isa = PBXFileReference; path = "M3AppKit-Info.plist"; sourceTree = "<group>"; };
+		991C4E2715755D9C00CC43F3 /* M3AppKit-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "M3AppKit-Info.plist"; sourceTree = "<group>"; };
 		991C4E2915755D9C00CC43F3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		991C4E2B15755D9C00CC43F3 /* M3AppKit-Prefix.pch */ = {isa = PBXFileReference; path = "M3AppKit-Prefix.pch"; sourceTree = "<group>"; };
-		991C4E2C15755D9C00CC43F3 /* M3AppKit.h */ = {isa = PBXFileReference; path = M3AppKit.h; sourceTree = "<group>"; };
+		991C4E2B15755D9C00CC43F3 /* M3AppKit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "M3AppKit-Prefix.pch"; sourceTree = "<group>"; };
+		991C4E2C15755D9C00CC43F3 /* M3AppKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = M3AppKit.h; sourceTree = "<group>"; };
 		991C4E2D15755D9C00CC43F3 /* M3AppKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = M3AppKit.m; sourceTree = "<group>"; };
 		991C4E3415755D9C00CC43F3 /* M3AppKitTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = M3AppKitTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		991C4E3515755D9C00CC43F3 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		991C4E3D15755D9C00CC43F3 /* M3AppKitTests-Info.plist */ = {isa = PBXFileReference; path = "M3AppKitTests-Info.plist"; sourceTree = "<group>"; };
+		991C4E3D15755D9C00CC43F3 /* M3AppKitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "M3AppKitTests-Info.plist"; sourceTree = "<group>"; };
 		991C4E3F15755D9C00CC43F3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		991C4E4115755D9C00CC43F3 /* M3AppKitTests.h */ = {isa = PBXFileReference; path = M3AppKitTests.h; sourceTree = "<group>"; };
+		991C4E4115755D9C00CC43F3 /* M3AppKitTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = M3AppKitTests.h; sourceTree = "<group>"; };
 		991C4E4215755D9C00CC43F3 /* M3AppKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = M3AppKitTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
