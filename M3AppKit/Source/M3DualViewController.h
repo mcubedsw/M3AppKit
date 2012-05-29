@@ -12,17 +12,44 @@
 #import <AvailabilityMacros.h>
 
 
-#if MAC_OS_X_VERSION_MAX_ALLOWED >= 1070
-
+/**
+ BRIEF_HERE
+ @since PROJECT_NAME VERSION_NAME or later
+*/
 @interface M3DualViewController : NSObject 
 
+/**
+ BRIEF_HERE
+ @since PROJECT_NAME VERSION_NAME or later
+*/
 @property (assign) IBOutlet NSLayoutConstraint *secondaryViewConstraint;
+
+/**
+ BRIEF_HERE
+ @since PROJECT_NAME VERSION_NAME or later
+*/
 @property (assign) IBOutlet NSView *secondaryView;
+
+/**
+ BRIEF_HERE
+ @since PROJECT_NAME VERSION_NAME or later
+*/
 @property (readonly, getter = isSecondaryViewVisible) BOOL secondaryViewVisible;
 
+/**
+ BRIEF_HERE
+ @param PARAM_NAME PARAM_DESCRIPTION
+ @return RETURN_DESCRIPTION
+ @since PROJECT_NAME VERSION_NAME or later
+*/
 - (void)showSecondaryViewAnimated:(BOOL)aAnimated;
+
+/**
+ BRIEF_HERE
+ @param PARAM_NAME PARAM_DESCRIPTION
+ @return RETURN_DESCRIPTION
+ @since PROJECT_NAME VERSION_NAME or later
+*/
 - (void)hideSecondaryViewAnimated:(BOOL)aAnimated;
 
 @end
-
-#endif

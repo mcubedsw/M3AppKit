@@ -10,9 +10,8 @@
 #import <Cocoa/Cocoa.h>
 
 /**
- @category NSTabView(M3Extensions)
  This category adds some convienience methods to NSTabView
- @since Available in M3AppKit 1.0 and later
+ @since M3AppKit 1.0 and later
  */
 @interface NSTabView (M3Extensions)
 
@@ -20,7 +19,7 @@
  Returns the index of the currently selected tab
  Equivalent to [self indexOfTabViewItem:[self selectedTabViewItem]]
  @result Returns the index of the currently selected tab
- @since Available in M3AppKit 1.0 and later
+ @since M3AppKit 1.0 and later
  */
 - (NSInteger)indexOfSelectedTab;
 

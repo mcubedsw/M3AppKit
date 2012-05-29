@@ -10,9 +10,8 @@
 #import <Cocoa/Cocoa.h>
 
 /**
- @category CLASS_HERE(CATEGORY_HERE)
  DISCUSSION_HERE
- @since Available in M3AppKit 1.0 and later
+ @since M3AppKit 1.0 and later
  */
 @interface NSBezierPath (M3Extensions) 
 
@@ -22,7 +21,7 @@
  @param PARAM_HERE
  @param PARAM_HERE
  @result RESULT_HERE
- @since Available in M3AppKit 1.0 and later
+ @since M3AppKit 1.0 and later
  */
 - (BOOL)m3_containsRect:(NSRect)rect;
 

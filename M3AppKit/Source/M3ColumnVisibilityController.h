@@ -10,10 +10,9 @@
 #import <Cocoa/Cocoa.h>
 
 /**
- @class M3ColumnVisibilityController
  When hooked up to a table view, this class will create a contextual menu on the header to allow users to 
  show and hide columns
- @since Available in M3AppKit 1.0 and later
+ @since M3AppKit 1.0 and later
  */
 @interface M3ColumnVisibilityController : NSObject <NSCoding> {
 	NSTableView *tableView;
@@ -21,13 +20,15 @@
 	NSArray *ignoredColumnIdentifiers;
 }
 
-
+/**
+ BRIEF_HERE
+ @since PROJECT_NAME VERSION_NAME or later
+*/
 @property (copy) NSArray *ignoredColumnIdentifiers;
 
 /**
- @property tableView
  The table view to handle column visibility for
- @since Available in M3AppKit 1.0 and later
+ @since M3AppKit 1.0 and later
  */
 @property (nonatomic, retain) IBOutlet NSTableView *tableView;
 
@@ -35,7 +36,7 @@
 /**
  The menu for showing and hiding columns for the table
  @result The menu instance for the table
- @since Available in M3AppKit 1.0 and later
+ @since M3AppKit 1.0 and later
  */
 - (NSMenu *)menu;
 

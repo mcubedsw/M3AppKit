@@ -10,33 +10,26 @@
 #import <Cocoa/Cocoa.h>
 
 /**
- @class CLASS_HERE
- DESCRIPTION_HERE
- @since Available in M3AppKit 1.0 and later
- */
+ BRIEF_HERE
+ @since PROJECT_NAME VERSION_NAME or later
+*/
 @interface M3InstallController : NSObject {
 	NSAlert *alert;
 }
 
 
 /**
- ABSTRACT_HERE
- DISCUSSION_HERE
- @param PARAM_HERE
- @param PARAM_HERE
- @result RESULT_HERE
- @since Available in M3AppKit 1.0 and later
- */
+ BRIEF_HERE
+ @param PARAM_NAME PARAM_DESCRIPTION
+ @return RETURN_DESCRIPTION
+ @since PROJECT_NAME VERSION_NAME or later
+*/
 - (void)displayInstaller;
 
 /**
- ABSTRACT_HERE
- DISCUSSION_HERE
- @param PARAM_HERE
- @param PARAM_HERE
- @result RESULT_HERE
- @since Available in M3AppKit 1.0 and later
- */
+ BRIEF_HERE
+ @since PROJECT_NAME VERSION_NAME or later
+*/
 - (void)installApp;
 
 @end

@@ -10,12 +10,19 @@
 #import <Cocoa/Cocoa.h>
 #import <M3Foundation/M3Foundation.h>
 
-
+/**
+ BRIEF_HERE
+ @since PROJECT_NAME VERSION_NAME or later
+*/
 @interface M3PreferencesWindow : NSWindow <NSToolbarDelegate> {
 @private
     
 }
 
+/**
+ BRIEF_HERE
+ @since PROJECT_NAME VERSION_NAME or later
+*/
 @property (copy) NSArray *sections;
 
 @end

@@ -9,9 +9,16 @@
 
 #import <Foundation/Foundation.h>
 
-
+/**
+ BRIEF_HERE
+ @since PROJECT_NAME VERSION_NAME or later
+*/
 @interface NSTextField (M3Extensions)
 
+/**
+ BRIEF_HERE
+ @since PROJECT_NAME VERSION_NAME or later
+*/
 @property (assign, getter=isLabel) BOOL label;
 
 @end

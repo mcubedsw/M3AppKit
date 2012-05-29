@@ -12,7 +12,7 @@
 /**
  @category NSView(M3Extensions)
  Some methods on NSView to make life easier
- @since Available in M3AppKit 1.0 and later
+ @since M3AppKit 1.0 and later
  */
 @interface NSView(M3Extensions)
 
@@ -20,7 +20,7 @@
  Recurses the view heirachy to see if the supplied view is contained within the receiver
  @param aView The view to search for
  @result YES if the receiver contains the view, otherwise NO
- @since Available in M3AppKit 1.0 and later
+ @since M3AppKit 1.0 and later
  */
 - (BOOL)m3_containsView:(NSView *)aView;
 
@@ -29,7 +29,7 @@
  <b>Discussion</b>
  For example, for a button with the label "Cancel" this will return "NSButton (Cancel)". The output of this method should not be relied upon to be the same between versions.
  @result The name for the view
- @since Available in M3AppKit 1.0 and later
+ @since M3AppKit 1.0 and later
  */
 - (NSString *)m3_viewName;
 
@@ -39,7 +39,7 @@
 
 /**
  Removes all the subviews from the receiver
- @since Available in M3AppKit 1.0 and later
+ @since M3AppKit 1.0 and later
  */
 - (void)removeAllSubviews;
 

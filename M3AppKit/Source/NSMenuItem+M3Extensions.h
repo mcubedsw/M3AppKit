@@ -10,8 +10,16 @@
 #import <Cocoa/Cocoa.h>
 #import <objc/runtime.h>
 
+/**
+ BRIEF_HERE
+ @since PROJECT_NAME VERSION_NAME or later
+*/
 @interface NSMenuItem (M3Extensions)
 
+/**
+ BRIEF_HERE
+ @since PROJECT_NAME VERSION_NAME or later
+*/
 @property (copy) NSString *itemIdentifier;
 
 @end

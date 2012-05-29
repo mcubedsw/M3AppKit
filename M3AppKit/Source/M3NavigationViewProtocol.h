@@ -12,14 +12,17 @@
 @class M3NavigationView;
 
 /**
- @protocol PROTOCOL_HERE
  DESCRIPTION_HERE
- @since Available in M3AppKit 1.0 and later
+ @since M3AppKit 1.0 and later
  */
 @protocol M3NavigationViewProtocol
 
 @optional
 
+/**
+ BRIEF_HERE
+ @since PROJECT_NAME VERSION_NAME or later
+*/
 @property (assign) __weak M3NavigationView *navigationView;
 
 /**
@@ -28,7 +31,7 @@
  @param PARAM_HERE
  @param PARAM_HERE
  @result RESULT_HERE
- @since Available in M3AppKit 1.0 and later
+ @since M3AppKit 1.0 and later
  */
 - (void)willStartAnimating;
 
@@ -38,7 +41,7 @@
  @param PARAM_HERE
  @param PARAM_HERE
  @result RESULT_HERE
- @since Available in M3AppKit 1.0 and later
+ @since M3AppKit 1.0 and later
  */
 - (void)activateView;
 
@@ -48,7 +51,7 @@
  @param PARAM_HERE
  @param PARAM_HERE
  @result RESULT_HERE
- @since Available in M3AppKit 1.0 and later
+ @since M3AppKit 1.0 and later
  */
 - (void)didFinishAnimating;
 
