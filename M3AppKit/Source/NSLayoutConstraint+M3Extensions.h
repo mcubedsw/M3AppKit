@@ -1,10 +1,11 @@
-//
-//  NSLayoutConstraint+M3Extensions.h
-//  M3ConstraintBasedSplitView
-//
-//  Created by Martin Pilkington on 22/08/2011.
-//  Copyright 2011 M Cubed Software. All rights reserved.
-//
+/*****************************************************************
+ NSLayoutConstraint+M3Extensions.h
+ M3AppKit
+ 
+ Created by Martin Pilkington on 22/08/2011.
+ 
+ Please read the LICENCE.txt for licensing information
+*****************************************************************/
 
 #import <Foundation/Foundation.h>
 

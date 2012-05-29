@@ -1,10 +1,11 @@
-//
-//  NSMenuItem+M3Extensions.h
-//  M3AppKit
-//
-//  Created by Martin Pilkington on 16/08/2011.
-//  Copyright 2011 M Cubed Software. All rights reserved.
-//
+/*****************************************************************
+ NSMenuItem+M3Extensions.h
+ M3AppKit
+ 
+ Created by Martin Pilkington on 16/08/2011.
+ 
+ Please read the LICENCE.txt for licensing information
+*****************************************************************/
 
 #import <Cocoa/Cocoa.h>
 #import <objc/runtime.h>

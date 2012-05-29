@@ -1,6 +1,6 @@
 /*****************************************************************
  M3FileSizeValueTransformer.h
- M3Foundation
+ M3AppKit
  
  Created by Martin Pilkington on 16/08/2009.
  

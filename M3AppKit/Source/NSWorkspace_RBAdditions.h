@@ -1,10 +1,11 @@
-//
-//  NSWorkspace_RBAdditions.h
-//  PathProps
-//
-//  Created by Rainer Brockerhoff on 10/04/2007.
-//  Copyright 2007 Rainer Brockerhoff. All rights reserved.
-//
+/*****************************************************************
+ NSWorkspace_RBAdditions.h
+ M3AppKit
+ 
+ Created by Rainer Brockerhoff on 10/04/2007.
+ 
+ Please read the LICENCE.txt for licensing information
+*****************************************************************/
 
 #import <Cocoa/Cocoa.h>
 

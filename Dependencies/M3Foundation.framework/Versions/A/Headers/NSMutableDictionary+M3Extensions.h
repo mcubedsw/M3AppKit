@@ -1,6 +1,6 @@
 /*****************************************************************
  NSMutableDictionary+M3Extensions.h
- M3Foundation
+ M3AppKit
  
  Created by Martin Pilkington on 15/04/2011.
  

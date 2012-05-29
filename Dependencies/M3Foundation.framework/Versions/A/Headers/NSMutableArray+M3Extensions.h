@@ -1,6 +1,6 @@
 /*****************************************************************
  NSMutableArray+M3Extensions.h
- M3Foundation
+ M3AppKit
  
  Created by Martin Pilkington on 21/05/2010.
  

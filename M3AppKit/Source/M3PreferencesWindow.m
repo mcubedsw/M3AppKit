@@ -1,10 +1,11 @@
-//
-//  M3PreferencesWindow.m
-//  Code Collector
-//
-//  Created by Martin Pilkington on 15/01/2011.
-//  Copyright 2011 M Cubed Software. All rights reserved.
-//
+/*****************************************************************
+ M3PreferencesWindow.m
+ M3AppKit
+ 
+ Created by Martin Pilkington on 15/01/2011.
+ 
+ Please read the LICENCE.txt for licensing information
+*****************************************************************/
 
 #import "M3PreferencesWindow.h"
 #import "M3PreferencesSection.h"

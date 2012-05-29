@@ -1,10 +1,11 @@
-//
-//  NSDictionary+M3Extensions.h
-//  M3Foundation
-//
-//  Created by Martin Pilkington on 17/01/2012.
-//  Copyright 2012 M Cubed Software. All rights reserved.
-//
+/*****************************************************************
+ NSDictionary+M3Extensions.h
+ M3AppKit
+ 
+ Created by Martin Pilkington on 17/01/2012.
+ 
+ Please read the LICENCE.txt for licensing information
+*****************************************************************/
 
 /**
  This category adds some useful class methods for adding objects to a dictionary.

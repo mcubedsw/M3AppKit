@@ -1,6 +1,6 @@
 /*****************************************************************
  M3Foundation.h
- M3Foundation
+ M3AppKit
  
  Created by Martin Pilkington on 09/01/2010.
  

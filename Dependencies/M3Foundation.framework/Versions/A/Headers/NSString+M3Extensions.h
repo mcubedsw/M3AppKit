@@ -1,6 +1,6 @@
 /*****************************************************************
  NSString+M3Extensions.h
- M3Foundation
+ M3AppKit
  
  Created by Martin Pilkington on 09/09/2006.
  

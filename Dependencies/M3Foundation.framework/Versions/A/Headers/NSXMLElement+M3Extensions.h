@@ -1,6 +1,6 @@
 /*****************************************************************
  NSXMLElement+M3Extensions.h
- M3Foundation
+ M3AppKit
  
  Created by Martin Pilkington on 10/05/2008.
  

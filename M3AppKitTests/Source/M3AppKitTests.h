@@ -1,10 +1,11 @@
-//
-//  M3AppKitTests.h
-//  M3AppKitTests
-//
-//  Created by Martin Pilkington on 29/05/2012.
-//  Copyright (c) 2012 M Cubed Software. All rights reserved.
-//
+/*****************************************************************
+ M3AppKitTests.h
+ M3AppKit
+ 
+ Created by Martin Pilkington on 29/05/2012.
+ 
+ Please read the LICENCE.txt for licensing information
+*****************************************************************/
 
 #import <SenTestingKit/SenTestingKit.h>
 

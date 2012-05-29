@@ -1,6 +1,6 @@
 /*****************************************************************
  NSPredicate+M3Extensions.h
- M3Foundation
+ M3AppKit
  
  Created by Martin Pilkington on 31/03/2011.
  
