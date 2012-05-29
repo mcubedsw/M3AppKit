@@ -1,0 +1,440 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		991C4E2015755D9C00CC43F3 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 991C4E1F15755D9C00CC43F3 /* Cocoa.framework */; };
+		991C4E2A15755D9C00CC43F3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 991C4E2815755D9C00CC43F3 /* InfoPlist.strings */; };
+		991C4E2E15755D9C00CC43F3 /* M3AppKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 991C4E2D15755D9C00CC43F3 /* M3AppKit.m */; };
+		991C4E3615755D9C00CC43F3 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 991C4E3515755D9C00CC43F3 /* SenTestingKit.framework */; };
+		991C4E3715755D9C00CC43F3 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 991C4E1F15755D9C00CC43F3 /* Cocoa.framework */; };
+		991C4E3A15755D9C00CC43F3 /* M3AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 991C4E1C15755D9C00CC43F3 /* M3AppKit.framework */; };
+		991C4E4015755D9C00CC43F3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 991C4E3E15755D9C00CC43F3 /* InfoPlist.strings */; };
+		991C4E4315755D9C00CC43F3 /* M3AppKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 991C4E4215755D9C00CC43F3 /* M3AppKitTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		991C4E3815755D9C00CC43F3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 991C4E1215755D9C00CC43F3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 991C4E1B15755D9C00CC43F3;
+			remoteInfo = M3AppKit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		991C4E1C15755D9C00CC43F3 /* M3AppKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = M3AppKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		991C4E1F15755D9C00CC43F3 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		991C4E2215755D9C00CC43F3 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		991C4E2315755D9C00CC43F3 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		991C4E2415755D9C00CC43F3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		991C4E2715755D9C00CC43F3 /* M3AppKit-Info.plist */ = {isa = PBXFileReference; path = "M3AppKit-Info.plist"; sourceTree = "<group>"; };
+		991C4E2915755D9C00CC43F3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		991C4E2B15755D9C00CC43F3 /* M3AppKit-Prefix.pch */ = {isa = PBXFileReference; path = "M3AppKit-Prefix.pch"; sourceTree = "<group>"; };
+		991C4E2C15755D9C00CC43F3 /* M3AppKit.h */ = {isa = PBXFileReference; path = M3AppKit.h; sourceTree = "<group>"; };
+		991C4E2D15755D9C00CC43F3 /* M3AppKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = M3AppKit.m; sourceTree = "<group>"; };
+		991C4E3415755D9C00CC43F3 /* M3AppKitTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = M3AppKitTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		991C4E3515755D9C00CC43F3 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		991C4E3D15755D9C00CC43F3 /* M3AppKitTests-Info.plist */ = {isa = PBXFileReference; path = "M3AppKitTests-Info.plist"; sourceTree = "<group>"; };
+		991C4E3F15755D9C00CC43F3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		991C4E4115755D9C00CC43F3 /* M3AppKitTests.h */ = {isa = PBXFileReference; path = M3AppKitTests.h; sourceTree = "<group>"; };
+		991C4E4215755D9C00CC43F3 /* M3AppKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = M3AppKitTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		991C4E1815755D9C00CC43F3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				991C4E2015755D9C00CC43F3 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		991C4E3015755D9C00CC43F3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				991C4E3615755D9C00CC43F3 /* SenTestingKit.framework in Frameworks */,
+				991C4E3715755D9C00CC43F3 /* Cocoa.framework in Frameworks */,
+				991C4E3A15755D9C00CC43F3 /* M3AppKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		991C4E1015755D9C00CC43F3 = {
+			isa = PBXGroup;
+			children = (
+				991C4E2515755D9C00CC43F3 /* M3AppKit */,
+				991C4E3B15755D9C00CC43F3 /* M3AppKitTests */,
+				991C4E1E15755D9C00CC43F3 /* Frameworks */,
+				991C4E1D15755D9C00CC43F3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		991C4E1D15755D9C00CC43F3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				991C4E1C15755D9C00CC43F3 /* M3AppKit.framework */,
+				991C4E3415755D9C00CC43F3 /* M3AppKitTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		991C4E1E15755D9C00CC43F3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				991C4E1F15755D9C00CC43F3 /* Cocoa.framework */,
+				991C4E3515755D9C00CC43F3 /* SenTestingKit.framework */,
+				991C4E2115755D9C00CC43F3 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		991C4E2115755D9C00CC43F3 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				991C4E2215755D9C00CC43F3 /* AppKit.framework */,
+				991C4E2315755D9C00CC43F3 /* CoreData.framework */,
+				991C4E2415755D9C00CC43F3 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		991C4E2515755D9C00CC43F3 /* M3AppKit */ = {
+			isa = PBXGroup;
+			children = (
+				991C4E2C15755D9C00CC43F3 /* M3AppKit.h */,
+				991C4E2D15755D9C00CC43F3 /* M3AppKit.m */,
+				991C4E2615755D9C00CC43F3 /* Supporting Files */,
+			);
+			path = M3AppKit;
+			sourceTree = "<group>";
+		};
+		991C4E2615755D9C00CC43F3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				991C4E2715755D9C00CC43F3 /* M3AppKit-Info.plist */,
+				991C4E2815755D9C00CC43F3 /* InfoPlist.strings */,
+				991C4E2B15755D9C00CC43F3 /* M3AppKit-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		991C4E3B15755D9C00CC43F3 /* M3AppKitTests */ = {
+			isa = PBXGroup;
+			children = (
+				991C4E4115755D9C00CC43F3 /* M3AppKitTests.h */,
+				991C4E4215755D9C00CC43F3 /* M3AppKitTests.m */,
+				991C4E3C15755D9C00CC43F3 /* Supporting Files */,
+			);
+			path = M3AppKitTests;
+			sourceTree = "<group>";
+		};
+		991C4E3C15755D9C00CC43F3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				991C4E3D15755D9C00CC43F3 /* M3AppKitTests-Info.plist */,
+				991C4E3E15755D9C00CC43F3 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		991C4E1915755D9C00CC43F3 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		991C4E1B15755D9C00CC43F3 /* M3AppKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 991C4E4615755D9C00CC43F3 /* Build configuration list for PBXNativeTarget "M3AppKit" */;
+			buildPhases = (
+				991C4E1715755D9C00CC43F3 /* Sources */,
+				991C4E1815755D9C00CC43F3 /* Frameworks */,
+				991C4E1915755D9C00CC43F3 /* Headers */,
+				991C4E1A15755D9C00CC43F3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = M3AppKit;
+			productName = M3AppKit;
+			productReference = 991C4E1C15755D9C00CC43F3 /* M3AppKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		991C4E3315755D9C00CC43F3 /* M3AppKitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 991C4E4915755D9C00CC43F3 /* Build configuration list for PBXNativeTarget "M3AppKitTests" */;
+			buildPhases = (
+				991C4E2F15755D9C00CC43F3 /* Sources */,
+				991C4E3015755D9C00CC43F3 /* Frameworks */,
+				991C4E3115755D9C00CC43F3 /* Resources */,
+				991C4E3215755D9C00CC43F3 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				991C4E3915755D9C00CC43F3 /* PBXTargetDependency */,
+			);
+			name = M3AppKitTests;
+			productName = M3AppKitTests;
+			productReference = 991C4E3415755D9C00CC43F3 /* M3AppKitTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		991C4E1215755D9C00CC43F3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0440;
+				ORGANIZATIONNAME = "M Cubed Software";
+			};
+			buildConfigurationList = 991C4E1515755D9C00CC43F3 /* Build configuration list for PBXProject "M3AppKit" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 991C4E1015755D9C00CC43F3;
+			productRefGroup = 991C4E1D15755D9C00CC43F3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				991C4E1B15755D9C00CC43F3 /* M3AppKit */,
+				991C4E3315755D9C00CC43F3 /* M3AppKitTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		991C4E1A15755D9C00CC43F3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				991C4E2A15755D9C00CC43F3 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		991C4E3115755D9C00CC43F3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				991C4E4015755D9C00CC43F3 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		991C4E3215755D9C00CC43F3 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		991C4E1715755D9C00CC43F3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				991C4E2E15755D9C00CC43F3 /* M3AppKit.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		991C4E2F15755D9C00CC43F3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				991C4E4315755D9C00CC43F3 /* M3AppKitTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		991C4E3915755D9C00CC43F3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 991C4E1B15755D9C00CC43F3 /* M3AppKit */;
+			targetProxy = 991C4E3815755D9C00CC43F3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		991C4E2815755D9C00CC43F3 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				991C4E2915755D9C00CC43F3 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		991C4E3E15755D9C00CC43F3 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				991C4E3F15755D9C00CC43F3 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		991C4E4415755D9C00CC43F3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		991C4E4515755D9C00CC43F3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		991C4E4715755D9C00CC43F3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "M3AppKit/M3AppKit-Prefix.pch";
+				INFOPLIST_FILE = "M3AppKit/M3AppKit-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Debug;
+		};
+		991C4E4815755D9C00CC43F3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "M3AppKit/M3AppKit-Prefix.pch";
+				INFOPLIST_FILE = "M3AppKit/M3AppKit-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Release;
+		};
+		991C4E4A15755D9C00CC43F3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "M3AppKit/M3AppKit-Prefix.pch";
+				INFOPLIST_FILE = "M3AppKitTests/M3AppKitTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		991C4E4B15755D9C00CC43F3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "M3AppKit/M3AppKit-Prefix.pch";
+				INFOPLIST_FILE = "M3AppKitTests/M3AppKitTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		991C4E1515755D9C00CC43F3 /* Build configuration list for PBXProject "M3AppKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				991C4E4415755D9C00CC43F3 /* Debug */,
+				991C4E4515755D9C00CC43F3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		991C4E4615755D9C00CC43F3 /* Build configuration list for PBXNativeTarget "M3AppKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				991C4E4715755D9C00CC43F3 /* Debug */,
+				991C4E4815755D9C00CC43F3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		991C4E4915755D9C00CC43F3 /* Build configuration list for PBXNativeTarget "M3AppKitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				991C4E4A15755D9C00CC43F3 /* Debug */,
+				991C4E4B15755D9C00CC43F3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 991C4E1215755D9C00CC43F3 /* Project object */;
+}
