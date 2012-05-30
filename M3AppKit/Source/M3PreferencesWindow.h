@@ -14,10 +14,7 @@
  BRIEF_HERE
  @since PROJECT_NAME VERSION_NAME or later
 */
-@interface M3PreferencesWindow : NSWindow <NSToolbarDelegate> {
-@private
-    
-}
+@interface M3PreferencesWindow : NSWindow <NSToolbarDelegate>
 
 /**
  BRIEF_HERE

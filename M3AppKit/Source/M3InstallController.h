@@ -13,10 +13,7 @@
  BRIEF_HERE
  @since PROJECT_NAME VERSION_NAME or later
 */
-@interface M3InstallController : NSObject {
-	NSAlert *alert;
-}
-
+@interface M3InstallController : NSObject 
 
 /**
  BRIEF_HERE

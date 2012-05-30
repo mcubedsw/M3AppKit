@@ -21,21 +21,21 @@
  @return RETURN_DESCRIPTION
  @since PROJECT_NAME VERSION_NAME or later
 */
-- (NSString *)title;
+@property (readonly) NSString *title;
 /**
  BRIEF_HERE
  @param PARAM_NAME PARAM_DESCRIPTION
  @return RETURN_DESCRIPTION
  @since PROJECT_NAME VERSION_NAME or later
 */
-- (NSImage *)image;
+@property (readonly) NSImage *image;
 /**
  BRIEF_HERE
  @param PARAM_NAME PARAM_DESCRIPTION
  @return RETURN_DESCRIPTION
  @since PROJECT_NAME VERSION_NAME or later
 */
-- (NSView *)view;
+@property (readonly) NSView *view;
 
 @optional
 /**

@@ -12,15 +12,9 @@
 
 @implementation M3ColumnVisibilityController
 
-@synthesize tableView, ignoredColumnIdentifiers;
+@synthesize menu = _menu;
 
-- (id)initWithCoder:(NSCoder *)aDecoder {
-	if ((self = [super init])) {
-		[self setTableView:[aDecoder decodeObjectForKey:@"tableView"]];
-	}
-	return self;
-}
-
+//*****//
 - (id)init {
 	if ((self = [super init])) {
 		[self addObserver:self forKeyPath:@"ignoredColumnIdentifiers" options:0 context:NULL];
@@ -28,45 +22,58 @@
 	return self;
 }
 
+//*****//
+- (id)initWithCoder:(NSCoder *)aDecoder {
+	if ((self = [super init])) {
+		[self setTableView:[aDecoder decodeObjectForKey:@"tableView"]];
+	}
+	return self;
+}
+
+//*****//
 - (void)encodeWithCoder:(NSCoder *)aCoder {
-	[aCoder encodeConditionalObject:tableView forKey:@"tableView"];
+	[aCoder encodeConditionalObject:self.tableView forKey:@"tableView"];
 }
 
+//*****//
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
-	menu = nil;
-	[[[self tableView] headerView] setMenu:[self menu]];
+	_menu = nil;
+	[self.tableView.headerView setMenu:self.menu];
 }
 
+//*****//
 - (void)setTableView:(NSTableView *)view {
-	if (tableView != view) {
-		tableView = view;
-		menu = nil;
-		[[tableView headerView] setMenu:[self menu]];
+	if (_tableView != view) {
+		_tableView = view;
+		_menu = nil;
+		[_tableView.headerView setMenu:self.menu];
 	}
 }
 
+//*****//
 - (NSMenu *)menu {
-	if (!menu) {
-		menu = [[NSMenu alloc] init];
-		for (NSTableColumn *column in [tableView tableColumns]) {
-			if ([[self ignoredColumnIdentifiers] containsObject:[column identifier]])
-				continue;
+	if (!_menu) {
+		_menu = [NSMenu new];
+		for (NSTableColumn *column in self.tableView.tableColumns) {
+			if ([self.ignoredColumnIdentifiers containsObject:column.identifier]) continue;
 			
-			NSMenuItem *item = [[NSMenuItem alloc] init];
-			[item setTitle:[[column headerCell] stringValue]];
+			NSMenuItem *item = [NSMenuItem new];
+			[item setTitle:[column.headerCell stringValue]];
 			[item setRepresentedObject:column];
 			[item setTarget:self];
 			[item setAction:@selector(toggleColumn:)];
-			[item setState:![column isHidden]];
-			[menu addItem:item];
+			[item setState:!column.isHidden];
+			[_menu addItem:item];
 		}
 	}
-	return menu;
+	return _menu;
 }
 
-- (void)toggleColumn:(id)sender {
-	[[sender representedObject] setHidden:![[sender representedObject] isHidden]];
-	[sender setState:![[sender representedObject] isHidden]];
+//*****//
+- (void)toggleColumn:(NSMenuItem *)sender {
+	NSTableColumn *column = sender.representedObject;
+	[sender.representedObject setHidden:!column.isHidden];
+	[sender setState:!column.isHidden];
 }
 
 @end

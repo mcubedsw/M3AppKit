@@ -14,11 +14,7 @@
  show and hide columns
  @since M3AppKit 1.0 and later
  */
-@interface M3ColumnVisibilityController : NSObject <NSCoding> {
-	NSTableView *tableView;
-	NSMenu *menu;
-	NSArray *ignoredColumnIdentifiers;
-}
+@interface M3ColumnVisibilityController : NSObject <NSCoding>
 
 /**
  BRIEF_HERE
@@ -38,6 +34,6 @@
  @result The menu instance for the table
  @since M3AppKit 1.0 and later
  */
-- (NSMenu *)menu;
+@property (readonly) NSMenu *menu;
 
 @end
