@@ -7,20 +7,18 @@
  Please read the LICENCE.txt for licensing information
 *****************************************************************/
 
-#import <Cocoa/Cocoa.h>
-
 /**
- BRIEF_HERE
+ Adds block support for alerts
  @since PROJECT_NAME VERSION_NAME or later
 */
 @interface M3Alert : NSAlert 
 
 /**
- BRIEF_HERE
- @param PARAM_NAME PARAM_DESCRIPTION
-  @param PARAM_NAME PARAM_DESCRIPTION
+ Runs the receiver modally as an alert sheet on the supplied window
+ @param aWindow The window to display the sheet on
+  @param aHandler The block to be called when the sheet is dismissed
  @since PROJECT_NAME VERSION_NAME or later
 */
-- (void)beginSheetModalForWindow:(NSWindow *)window completionHandler:(void (^)(NSInteger result))aHandler;
+- (void)beginSheetModalForWindow:(NSWindow *)aWindow completionHandler:(void (^)(NSInteger result))aHandler;
 
 @end

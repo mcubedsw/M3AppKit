@@ -18,11 +18,11 @@
 		NSString *appName = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleName"];
 		NSString *title = [NSString stringWithFormat:NSLocalizedString(@"%@ is currently running from a disk image", @"AppName is currently running from a disk image"), appName];
 		NSString *body = NSLocalizedString(@"Would you like to install %@ in your applications folder before quitting?", @"Would you like to install App Name in your applications folder before quitting?");
-		alert = [[NSAlert alertWithMessageText:title 
+		alert = [NSAlert alertWithMessageText:title 
 								 defaultButton:NSLocalizedString(@"Install", @"Install")
 							   alternateButton:NSLocalizedString(@"Don't Install", @"Don't Install")
 								   otherButton:nil
-					 informativeTextWithFormat:body, appName] retain];
+					 informativeTextWithFormat:body, appName];
 		[alert setShowsSuppressionButton:YES];
 	}
 	return self;

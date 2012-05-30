@@ -35,13 +35,13 @@
  BRIEF_HERE
  @since PROJECT_NAME VERSION_NAME or later
 */
-@property (retain) NSColor *backgroundColour;
+@property (strong) NSColor *backgroundColour;
 
 /**
  BRIEF_HERE
  @since PROJECT_NAME VERSION_NAME or later
 */
-@property (assign) IBOutlet __weak id delegate;
+@property (unsafe_unretained) IBOutlet id delegate;
 
 
 /**

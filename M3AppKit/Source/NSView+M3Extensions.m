@@ -39,7 +39,6 @@
 	for (NSView *subview in subviews) {
 		[subview removeFromSuperview];
 	}
-	[subviews release];
 }
 
 - (void)m3_bringViewToFront {
@@ -64,14 +63,13 @@
 
 NSComparisonResult m3_blockSubviewSort(id obj1, id obj2, void *aBlock);
 NSComparisonResult m3_blockSubviewSort(id obj1, id obj2, void *aBlock) {
-	NSComparator comparisonBlock = (NSComparator)aBlock;
+	NSComparator comparisonBlock = (__bridge NSComparator)aBlock;
 	return comparisonBlock(obj1, obj2);
 }
 
 - (void)m3_sortSubviewsUsingBlock:(NSComparator)aComparator {
 	NSComparator heapBlock = [aComparator copy];
-	[self sortSubviewsUsingFunction:&m3_blockSubviewSort context:heapBlock];
-	[heapBlock release];
+	[self sortSubviewsUsingFunction:&m3_blockSubviewSort context:(__bridge void *)(heapBlock)];
 }
 
 

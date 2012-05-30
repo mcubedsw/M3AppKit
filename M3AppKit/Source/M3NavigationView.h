@@ -23,13 +23,13 @@
  BRIEF_HERE
  @since PROJECT_NAME VERSION_NAME or later
 */
-@property (readonly) NSViewController *currentViewController;
+@property (weak, readonly) NSViewController *currentViewController;
 
 /**
  BRIEF_HERE
  @since PROJECT_NAME VERSION_NAME or later
 */
-@property (assign) __weak IBOutlet id <M3NavigationViewDelegate>delegate;
+@property (unsafe_unretained) IBOutlet id <M3NavigationViewDelegate>delegate;
 
 /**
  BRIEF_HERE

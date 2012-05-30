@@ -22,7 +22,7 @@
 	[shadow setShadowOffset:offset];
 	[shadow setShadowBlurRadius:blur];
 	
-	return [shadow autorelease];
+	return shadow;
 }
 
 @end

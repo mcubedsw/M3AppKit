@@ -30,7 +30,7 @@
  The table view to handle column visibility for
  @since M3AppKit 1.0 and later
  */
-@property (nonatomic, retain) IBOutlet NSTableView *tableView;
+@property (nonatomic, strong) IBOutlet NSTableView *tableView;
 
 
 /**

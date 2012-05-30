@@ -65,7 +65,7 @@
 		991C4EA61575653100CC43F3 /* NSView+M3Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 991C4E9A1575653100CC43F3 /* NSView+M3Extensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		991C4EA71575653100CC43F3 /* NSView+M3Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 991C4E9B1575653100CC43F3 /* NSView+M3Extensions.m */; };
 		991C4EA81575653100CC43F3 /* NSWorkspace_RBAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 991C4E9C1575653100CC43F3 /* NSWorkspace_RBAdditions.h */; };
-		991C4EA91575653100CC43F3 /* NSWorkspace_RBAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 991C4E9D1575653100CC43F3 /* NSWorkspace_RBAdditions.m */; };
+		991C4EA91575653100CC43F3 /* NSWorkspace_RBAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 991C4E9D1575653100CC43F3 /* NSWorkspace_RBAdditions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		991C4EB51575697600CC43F3 /* M3Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 991C4EB41575697600CC43F3 /* M3Foundation.framework */; };
 		991C4EB8157569DC00CC43F3 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 991C4EB7157569DC00CC43F3 /* IOKit.framework */; };
 		991C4EBA157569EF00CC43F3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 991C4EB9157569EF00CC43F3 /* QuartzCore.framework */; };
@@ -584,7 +584,6 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_ENABLE_OBJC_ARC = NO;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -612,7 +611,6 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_ENABLE_OBJC_ARC = NO;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -630,6 +628,7 @@
 		991C4E4715755D9C00CC43F3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -639,11 +638,13 @@
 				FRAMEWORK_VERSION = A;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "M3AppKit/M3AppKit-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "M3AppKit/M3AppKit-Info.plist";
 				INFOPLIST_PREFIX_HEADER = "$(TARGET_TEMP_DIR)/../Process Build Numbers.build/DerivedSources/Info.plist.prefix";
 				INFOPLIST_PREPROCESS = YES;
 				INSTALL_PATH = "@rpath";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Debug;
@@ -651,6 +652,7 @@
 		991C4E4815755D9C00CC43F3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -660,11 +662,13 @@
 				FRAMEWORK_VERSION = A;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "M3AppKit/M3AppKit-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "M3AppKit/M3AppKit-Info.plist";
 				INFOPLIST_PREFIX_HEADER = "$(TARGET_TEMP_DIR)/../Process Build Numbers.build/DerivedSources/Info.plist.prefix";
 				INFOPLIST_PREPROCESS = YES;
 				INSTALL_PATH = "@rpath";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Release;
@@ -672,11 +676,14 @@
 		991C4E4A15755D9C00CC43F3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(TARGET_NAME)/M3AppKitTests-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "M3AppKitTests/M3AppKitTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
@@ -684,11 +691,14 @@
 		991C4E4B15755D9C00CC43F3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(TARGET_NAME)/M3AppKitTests-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "M3AppKitTests/M3AppKitTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
@@ -744,6 +754,7 @@
 				991C4E5A1575606E00CC43F3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

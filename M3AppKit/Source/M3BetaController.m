@@ -9,7 +9,10 @@
 
 #import "M3BetaController.h"
 
-@implementation M3BetaController
+@implementation M3BetaController {
+	BOOL betaExpired;
+	NSUInteger betaLength;
+}
 
 @synthesize betaExpired;
 @synthesize betaLength;
@@ -46,7 +49,6 @@
 		
 		NSDate *nowDate = [formatter dateFromString:nowString];
 		NSDate *expireDate = [nowDate dateByAddingTimeInterval:(60*60*24* betaLength)];
-		[formatter release];
 						
 		if ([expireDate earlierDate:[NSDate date]] == expireDate) {
 			betaExpired = YES;

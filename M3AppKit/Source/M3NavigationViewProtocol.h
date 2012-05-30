@@ -23,7 +23,7 @@
  BRIEF_HERE
  @since PROJECT_NAME VERSION_NAME or later
 */
-@property (assign) __weak M3NavigationView *navigationView;
+@property (assign) M3NavigationView *navigationView;
 
 /**
  ABSTRACT_HERE

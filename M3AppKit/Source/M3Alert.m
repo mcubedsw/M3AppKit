@@ -13,11 +13,13 @@
 	void (^completionHandler)(NSInteger);
 }
 
-- (void)beginSheetModalForWindow:(NSWindow *)window completionHandler:(void (^)(NSInteger result))aHandler {
+//*****//
+- (void)beginSheetModalForWindow:(NSWindow *)aWindow completionHandler:(void (^)(NSInteger result))aHandler {
 	completionHandler = [aHandler copy];
-	[self beginSheetModalForWindow:window modalDelegate:self didEndSelector:@selector(_alertDidEnd:returnCode:contextInfo:) contextInfo:NULL];
+	[self beginSheetModalForWindow:aWindow modalDelegate:self didEndSelector:@selector(_alertDidEnd:returnCode:contextInfo:) contextInfo:NULL];
 }
 
+//*****//
 - (void)_alertDidEnd:(NSAlert *)aAlert returnCode:(NSInteger)aCode contextInfo:(void *)aInfo {
 	completionHandler(aCode);
 }

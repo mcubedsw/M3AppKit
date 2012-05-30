@@ -33,16 +33,13 @@
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
-	[menu release];
 	menu = nil;
 	[[[self tableView] headerView] setMenu:[self menu]];
 }
 
 - (void)setTableView:(NSTableView *)view {
 	if (tableView != view) {
-		[tableView release];
-		tableView = [view retain];
-		[menu release];
+		tableView = view;
 		menu = nil;
 		[[tableView headerView] setMenu:[self menu]];
 	}
@@ -55,7 +52,7 @@
 			if ([[self ignoredColumnIdentifiers] containsObject:[column identifier]])
 				continue;
 			
-			NSMenuItem *item = [[[NSMenuItem alloc] init] autorelease];
+			NSMenuItem *item = [[NSMenuItem alloc] init];
 			[item setTitle:[[column headerCell] stringValue]];
 			[item setRepresentedObject:column];
 			[item setTarget:self];

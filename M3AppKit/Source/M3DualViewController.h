@@ -22,13 +22,13 @@
  BRIEF_HERE
  @since PROJECT_NAME VERSION_NAME or later
 */
-@property (assign) IBOutlet NSLayoutConstraint *secondaryViewConstraint;
+@property (weak) IBOutlet NSLayoutConstraint *secondaryViewConstraint;
 
 /**
  BRIEF_HERE
  @since PROJECT_NAME VERSION_NAME or later
 */
-@property (assign) IBOutlet NSView *secondaryView;
+@property (weak) IBOutlet NSView *secondaryView;
 
 /**
  BRIEF_HERE
