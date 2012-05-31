@@ -7,7 +7,6 @@
  Please read the LICENCE.txt for licensing information
 *****************************************************************/
 
-#import <Cocoa/Cocoa.h>
 
 /**
  A class for handling beta versions and encouraging users to upgrade. The class integrates with Sparkle to show any updates if the beta expired

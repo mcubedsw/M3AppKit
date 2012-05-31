@@ -7,9 +7,6 @@
  Please read the LICENCE.txt for licensing information
 *****************************************************************/
 
-#import <Cocoa/Cocoa.h>
-#import <objc/runtime.h>
-
 /**
  BRIEF_HERE
  @since PROJECT_NAME VERSION_NAME or later
@@ -20,6 +17,6 @@
  BRIEF_HERE
  @since PROJECT_NAME VERSION_NAME or later
 */
-@property (copy) NSString *itemIdentifier;
+@property (copy, setter=m3_setItemIdentifier:) NSString *m3_itemIdentifier;
 
 @end

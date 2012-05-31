@@ -40,7 +40,7 @@
 		991C4E711575633300CC43F3 /* M3InstallController.m in Sources */ = {isa = PBXBuildFile; fileRef = 991C4E6F1575633300CC43F3 /* M3InstallController.m */; };
 		991C4E751575634100CC43F3 /* M3NavigationView.h in Headers */ = {isa = PBXBuildFile; fileRef = 991C4E721575634100CC43F3 /* M3NavigationView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		991C4E761575634100CC43F3 /* M3NavigationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 991C4E731575634100CC43F3 /* M3NavigationView.m */; };
-		991C4E771575634100CC43F3 /* M3NavigationViewProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 991C4E741575634100CC43F3 /* M3NavigationViewProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		991C4E771575634100CC43F3 /* M3NavigationSubviewProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 991C4E741575634100CC43F3 /* M3NavigationSubviewProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		991C4E7B1575635F00CC43F3 /* M3PreferencesSection.h in Headers */ = {isa = PBXBuildFile; fileRef = 991C4E781575635F00CC43F3 /* M3PreferencesSection.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		991C4E7C1575635F00CC43F3 /* M3PreferencesWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 991C4E791575635F00CC43F3 /* M3PreferencesWindow.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		991C4E7D1575635F00CC43F3 /* M3PreferencesWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 991C4E7A1575635F00CC43F3 /* M3PreferencesWindow.m */; };
@@ -119,7 +119,7 @@
 		991C4E6F1575633300CC43F3 /* M3InstallController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M3InstallController.m; sourceTree = "<group>"; };
 		991C4E721575634100CC43F3 /* M3NavigationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3NavigationView.h; sourceTree = "<group>"; };
 		991C4E731575634100CC43F3 /* M3NavigationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M3NavigationView.m; sourceTree = "<group>"; };
-		991C4E741575634100CC43F3 /* M3NavigationViewProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3NavigationViewProtocol.h; sourceTree = "<group>"; };
+		991C4E741575634100CC43F3 /* M3NavigationSubviewProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3NavigationSubviewProtocol.h; sourceTree = "<group>"; };
 		991C4E781575635F00CC43F3 /* M3PreferencesSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3PreferencesSection.h; sourceTree = "<group>"; };
 		991C4E791575635F00CC43F3 /* M3PreferencesWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3PreferencesWindow.h; sourceTree = "<group>"; };
 		991C4E7A1575635F00CC43F3 /* M3PreferencesWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M3PreferencesWindow.m; sourceTree = "<group>"; };
@@ -340,7 +340,7 @@
 			children = (
 				991C4E721575634100CC43F3 /* M3NavigationView.h */,
 				991C4E731575634100CC43F3 /* M3NavigationView.m */,
-				991C4E741575634100CC43F3 /* M3NavigationViewProtocol.h */,
+				991C4E741575634100CC43F3 /* M3NavigationSubviewProtocol.h */,
 				991C4E6A157562B500CC43F3 /* M3DualViewController.h */,
 				991C4E6B157562B500CC43F3 /* M3DualViewController.m */,
 				991C4E7E1575636900CC43F3 /* M3SplitView.h */,
@@ -373,7 +373,7 @@
 				991C4E6C157562B500CC43F3 /* M3DualViewController.h in Headers */,
 				991C4E701575633300CC43F3 /* M3InstallController.h in Headers */,
 				991C4E751575634100CC43F3 /* M3NavigationView.h in Headers */,
-				991C4E771575634100CC43F3 /* M3NavigationViewProtocol.h in Headers */,
+				991C4E771575634100CC43F3 /* M3NavigationSubviewProtocol.h in Headers */,
 				991C4E7B1575635F00CC43F3 /* M3PreferencesSection.h in Headers */,
 				991C4E7C1575635F00CC43F3 /* M3PreferencesWindow.h in Headers */,
 				991C4E801575636900CC43F3 /* M3SplitView.h in Headers */,

@@ -7,7 +7,6 @@
  Please read the LICENCE.txt for licensing information
 *****************************************************************/
 
-#import <Cocoa/Cocoa.h>
 
 /**
  DISCUSSION_HERE

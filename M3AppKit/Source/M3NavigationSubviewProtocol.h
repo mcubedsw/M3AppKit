@@ -7,7 +7,6 @@
  Please read the LICENCE.txt for licensing information
 *****************************************************************/
 
-#import <Cocoa/Cocoa.h>
 
 @class M3NavigationView;
 
@@ -15,7 +14,7 @@
  DESCRIPTION_HERE
  @since M3AppKit 1.0 and later
  */
-@protocol M3NavigationViewProtocol
+@protocol M3NavigationSubview
 
 @optional
 

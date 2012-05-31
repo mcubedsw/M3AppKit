@@ -19,6 +19,6 @@
  BRIEF_HERE
  @since PROJECT_NAME VERSION_NAME or later
 */
-@property (assign, getter=isLabel) BOOL label;
+@property (assign, getter=m3_isLabel, setter=m3_setLabel:) BOOL m3_label;
 
 @end

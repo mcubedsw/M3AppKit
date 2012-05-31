@@ -10,7 +10,6 @@
 #import <Cocoa/Cocoa.h>
 
 /**
- @category NSView(M3Extensions)
  Some methods on NSView to make life easier
  @since M3AppKit 1.0 and later
  */
@@ -33,21 +32,46 @@
  */
 - (NSString *)m3_viewName;
 
+/**
+ BRIEF_HERE
+ @since PROJECT_NAME VERSION_NAME or later
+*/
 - (void)m3_bringViewToFront;
+
+/**
+ BRIEF_HERE
+ @since PROJECT_NAME VERSION_NAME or later
+*/
 - (void)m3_sendViewToBack;
+
+/**
+ BRIEF_HERE
+ @param PARAM_NAME PARAM_DESCRIPTION
+ @return RETURN_DESCRIPTION
+ @since PROJECT_NAME VERSION_NAME or later
+*/
 - (void)m3_sortSubviewsUsingBlock:(NSComparator)aComparator;
 
 /**
  Removes all the subviews from the receiver
  @since M3AppKit 1.0 and later
  */
-- (void)removeAllSubviews;
+- (void)m3_removeAllSubviews;
 
-#if MAC_OS_X_VERSION_MAX_ALLOWED >= 1070
-
+/**
+ BRIEF_HERE
+ @param PARAM_NAME PARAM_DESCRIPTION
+ @return RETURN_DESCRIPTION
+ @since PROJECT_NAME VERSION_NAME or later
+*/
 - (void)m3_addSubview:(NSView *)aSubview andFillConstraintsWithInset:(NSEdgeInsets)aInsets;
-- (void)m3_addSubview:(NSView *)aSubview andFillConstraintsWithInset:(NSEdgeInsets)aInsets animated:(BOOL)aAnimated;
 
-#endif
+/**
+ BRIEF_HERE
+ @param PARAM_NAME PARAM_DESCRIPTION
+ @return RETURN_DESCRIPTION
+ @since PROJECT_NAME VERSION_NAME or later
+*/
+- (void)m3_addSubview:(NSView *)aSubview andFillConstraintsWithInset:(NSEdgeInsets)aInsets animated:(BOOL)aAnimated;
 
 @end

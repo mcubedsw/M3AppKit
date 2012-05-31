@@ -7,7 +7,6 @@
  Please read the LICENCE.txt for licensing information
 *****************************************************************/
 
-#import <Cocoa/Cocoa.h>
 
 /**
  When hooked up to a table view, this class will create a contextual menu on the header to allow users to 

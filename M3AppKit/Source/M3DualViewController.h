@@ -7,10 +7,6 @@
  Please read the LICENCE.txt for licensing information
 *****************************************************************/
 
-#import <Cocoa/Cocoa.h>
-#import <QuartzCore/CoreAnimation.h>
-#import <AvailabilityMacros.h>
-
 
 /**
  BRIEF_HERE

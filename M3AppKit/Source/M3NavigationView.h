@@ -7,11 +7,7 @@
  Please read the LICENCE.txt for licensing information
 *****************************************************************/
 
-#import <Cocoa/Cocoa.h>
-#import <QuartzCore/CoreAnimation.h>
-#import "M3NavigationViewProtocol.h"
-
-@protocol M3NavigationViewDelegate;
+@protocol M3NavigationViewDelegate, M3NavigationSubview;
 
 /**
  BRIEF_HERE
@@ -43,7 +39,7 @@
  @return RETURN_DESCRIPTION
  @since PROJECT_NAME VERSION_NAME or later
 */
-- (void)pushViewController:(NSViewController<M3NavigationViewProtocol> *)controller animated:(BOOL)animated;
+- (void)pushViewController:(NSViewController *)controller animated:(BOOL)animated;
 
 /**
  BRIEF_HERE

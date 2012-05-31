@@ -9,15 +9,11 @@
 
 #import "NSShadow+M3Extensions.h"
 
-
 @implementation NSShadow (M3Extensions)
 
-+ (NSShadow *)shadowWithColor:(NSColor *)color offset:(NSSize)offset blurRadius:(CGFloat)blur {
-	return [self m3_shadowWithColor:color offset:offset blurRadius:blur];
-}
-
+//*****//
 + (NSShadow *)m3_shadowWithColor:(NSColor *)color offset:(NSSize)offset blurRadius:(CGFloat)blur {
-	NSShadow *shadow = [[NSShadow alloc] init];
+	NSShadow *shadow = [NSShadow new];
 	[shadow setShadowColor:color];
 	[shadow setShadowOffset:offset];
 	[shadow setShadowBlurRadius:blur];

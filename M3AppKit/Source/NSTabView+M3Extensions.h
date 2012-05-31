@@ -21,6 +21,6 @@
  @result Returns the index of the currently selected tab
  @since M3AppKit 1.0 and later
  */
-- (NSInteger)indexOfSelectedTab;
+- (NSInteger)m3_indexOfSelectedTab;
 
 @end

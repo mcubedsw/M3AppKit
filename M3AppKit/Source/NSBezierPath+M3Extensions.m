@@ -14,14 +14,21 @@
 
 - (BOOL)m3_containsRect:(NSRect)rect {
 	//bottom left
-	if (![self containsPoint:NSMakePoint(NSMinX(rect), NSMinY(rect))])
+	if (![self containsPoint:NSMakePoint(NSMinX(rect), NSMinY(rect))]) {
 		return NO;
-	if (![self containsPoint:NSMakePoint(NSMaxX(rect), NSMinY(rect))])
+	}
+
+	if (![self containsPoint:NSMakePoint(NSMaxX(rect), NSMinY(rect))]) {
 		return NO;
-	if (![self containsPoint:NSMakePoint(NSMinX(rect), NSMaxY(rect))])
+	}
+
+	if (![self containsPoint:NSMakePoint(NSMinX(rect), NSMaxY(rect))]) {
 		return NO;
-	if (![self containsPoint:NSMakePoint(NSMaxX(rect), NSMaxY(rect))])
+	}
+
+	if (![self containsPoint:NSMakePoint(NSMaxX(rect), NSMaxY(rect))]) {
 		return NO;
+	}
 	return YES;
 }
 

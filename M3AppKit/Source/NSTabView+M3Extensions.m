@@ -12,8 +12,9 @@
 
 @implementation NSTabView (M3TabView)
 
-- (NSInteger)indexOfSelectedTab {
-	return [self indexOfTabViewItem:[self selectedTabViewItem]];
+//*****//
+- (NSInteger)m3_indexOfSelectedTab {
+	return [self indexOfTabViewItem:self.selectedTabViewItem];
 }
 
 @end
