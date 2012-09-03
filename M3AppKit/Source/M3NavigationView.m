@@ -246,8 +246,10 @@ typedef enum {
 }
 
 //*****//
-- (void)popViewControllerAnimated:(BOOL)aAnimated {
-	if (controllerStack.count == 1) return;
+- (NSViewController *)popViewControllerAnimated:(BOOL)aAnimated {
+	if (controllerStack.count == 1) {
+		return nil;
+	}
 	
 	//Get dictionaries
 	NSDictionary *previousControllerDict = controllerStack.lastObject;
@@ -290,6 +292,7 @@ typedef enum {
 			 didReplaceViewController:previousControllerDict[M3NavigationController]
 				   withViewController:currentController[M3NavigationController]];
 	}
+	return previousControllerDict[M3NavigationController];
 }
 
 

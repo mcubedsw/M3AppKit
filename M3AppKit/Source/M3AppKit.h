@@ -22,6 +22,7 @@
 
 #import "NSBezierPath+M3Extensions.h"
 #import "NSColor+M3Extensions.h"
+#import "NSImage+M3Extensions.h"
 #import "NSLayoutConstraint+M3Extensions.h"
 #import "NSMenuItem+M3Extensions.h"
 #import "NSPopUpButton+M3Extensions.h"

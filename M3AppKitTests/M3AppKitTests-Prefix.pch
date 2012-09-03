@@ -1,7 +1,9 @@
 //
-// Prefix header for all source files of the 'M3AppKit' target in the 'M3AppKit' project
+// Prefix header for all source files of the 'M3AppKitTests' target in the 'M3AppKitTests' project
 //
 
 #ifdef __OBJC__
 	#import <Cocoa/Cocoa.h>
+#define HC_SHORTHAND
+#import <OCHamcrest/OCHamcrest.h>
 #endif

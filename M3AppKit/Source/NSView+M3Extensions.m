@@ -105,4 +105,8 @@ NSComparisonResult m3_blockSubviewSort(id obj1, id obj2, void *aBlock) {
 	} completionHandler:nil];	
 }
 
+- (void)m3_addConstraints:(NSArray *)aConstraints forViews:(id)aViews substitutionViews:(id)aSubstitutionViews {
+	
+}
+
 @end

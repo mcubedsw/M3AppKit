@@ -74,4 +74,6 @@
 */
 - (void)m3_addSubview:(NSView *)aSubview andFillConstraintsWithInset:(NSEdgeInsets)aInsets animated:(BOOL)aAnimated;
 
+- (void)m3_addConstraints:(NSArray *)aConstraints forViews:(id)aViews substitutionViews:(id)aSubstitutionViews;
+
 @end

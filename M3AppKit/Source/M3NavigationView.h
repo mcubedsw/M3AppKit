@@ -47,7 +47,7 @@
  @return RETURN_DESCRIPTION
  @since PROJECT_NAME VERSION_NAME or later
 */
-- (void)popViewControllerAnimated:(BOOL)animated;
+- (NSViewController *)popViewControllerAnimated:(BOOL)animated;
 
 
 //Convenience method
