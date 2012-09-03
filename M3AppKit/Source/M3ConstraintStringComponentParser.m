@@ -12,6 +12,8 @@
 @implementation M3ConstraintStringComponentParser
 
 - (M3ConstraintStringComponent *)componentFromString:(NSString *)aComponentString {
+	aComponentString = [aComponentString stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+	
 	M3ConstraintStringComponent *component = [M3ConstraintStringComponent new];
 	
 	NSString *keyPathString = nil;
@@ -74,12 +76,15 @@
 	aString = [aString stringByReplacingOccurrencesOfString:@"(" withString:@""];
 	aString = [aString stringByReplacingOccurrencesOfString:@")" withString:@""];
 	aString = [aString stringByReplacingOccurrencesOfString:@" " withString:@""];
-	aString = [aString stringByReplacingOccurrencesOfString:@"super" withString:@"top,left,bottom,right"];
+	aString = [aString stringByReplacingOccurrencesOfString:@"super" withString:@"top,leading,bottom,trailing"];
 	aString = [aString stringByReplacingOccurrencesOfString:@"size" withString:@"width,height"];
 	return aString;
 }
 
 - (CGFloat)multiplierFromString:(NSString *)aString {
+	if (!aString.length) {
+		return 1;
+	}
 	aString = [aString stringByReplacingOccurrencesOfString:@"*" withString:@""];
 	aString = [aString stringByReplacingOccurrencesOfString:@" " withString:@""];
 	return [aString floatValue];

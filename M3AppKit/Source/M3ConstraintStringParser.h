@@ -14,6 +14,6 @@
 
 @property (readonly) NSDictionary *substitutionViews;
 
-- (NSLayoutConstraint *)constraintFromString:(NSString *)aString;
+- (NSArray *)constraintsFromString:(NSString *)aString;
 
 @end

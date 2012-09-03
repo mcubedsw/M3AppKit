@@ -65,7 +65,7 @@
 - (void)testFindsSuperAttributeInString {
 	M3ConstraintStringComponent *component = [parser componentFromString:@"$self.super"];
 	
-	assertThat(component.attributeList, is(equalTo(@[ @"top", @"left", @"bottom", @"right"])));
+	assertThat(component.attributeList, is(equalTo(@[ @"top", @"leading", @"bottom", @"trailing"])));
 }
 
 //*****//
