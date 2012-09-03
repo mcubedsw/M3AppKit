@@ -12,7 +12,7 @@
 
 @property (copy) NSString *keyPath;
 @property (copy) NSArray *attributeList;
-@property (assign) NSUInteger multiplier;
+@property (assign) CGFloat multiplier;
 @property (copy) NSArray *constantList;
 
 @end
