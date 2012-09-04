@@ -19,6 +19,21 @@ NSException *M3ExceptionWithReason(NSString *aReason) {
 	M3ConstraintStringComponentParser *componentParser;
 }
 
++ (NSDictionary *)substitutionViewsWithCollection:(id)aCollection selfView:(NSView *)aSelfView {
+	NSMutableDictionary *views = [NSMutableDictionary dictionaryWithObject:aSelfView forKey:@"self"];
+	
+	if ([aCollection isKindOfClass:[NSDictionary class]]) {
+		[views addEntriesFromDictionary:aCollection];
+	}
+	if ([aCollection isKindOfClass:[NSArray class]]) {
+		[aCollection enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+			[views setObject:obj forKey:[NSString stringWithFormat:@"%ld", idx]];
+		}];
+	}
+	
+	return [views copy];
+}
+
 - (id)initWithSubstitutionViews:(NSDictionary *)aViews {
 	if ((self = [super init])) {
 		_substitutionViews = aViews;
@@ -68,63 +83,81 @@ NSException *M3ExceptionWithReason(NSString *aReason) {
 - (NSArray *)constraintsWithFirstComponent:(M3ConstraintStringComponent *)aFirstComponent relation:(NSLayoutRelation)aRelation secondComponent:(M3ConstraintStringComponent *)aSecondComponent {
 	NSMutableArray *constraints = [NSMutableArray array];
 	
-	NSView *firstItem = [self viewForKeyPath:aFirstComponent.keyPath];
-	NSView *secondItem = [self viewForKeyPath:aSecondComponent.keyPath] ?: firstItem.superview;
+	NSArray *firstItems = [self viewForKeyPath:aFirstComponent.keyPath];
+	NSArray *secondItems = [self viewForKeyPath:aSecondComponent.keyPath];
+	NSView *secondView = nil;
+	if (secondItems.count == 1) {
+		secondView = secondItems[0];
+	}
 	
-	for (NSUInteger currentAttribute = 0; currentAttribute < aFirstComponent.attributeList.count; currentAttribute++) {
-		NSString *firstAttributeString = aFirstComponent.attributeList[currentAttribute];
-		NSString *secondAttributeString = @"";
-		CGFloat constant = 0.0;
-		
-		//Do we require a second attribute or are we fine with just a constant?
-		if ([attributeMap[firstAttributeString][@"requiresSecondItem"] boolValue]) {
-			//If we have no second attributes use the first item
-			if (aSecondComponent.attributeList.count == 0) {
-				secondAttributeString = firstAttributeString;
+	for (NSView *firstView in firstItems) {
+		if (!secondView) {
+			secondView = firstView.superview;
+		}
+		for (NSUInteger currentAttribute = 0; currentAttribute < aFirstComponent.attributeList.count; currentAttribute++) {
+			NSString *firstAttributeString = aFirstComponent.attributeList[currentAttribute];
+			NSString *secondAttributeString = @"";
+			CGFloat constant = 0.0;
+			
+			//Do we require a second attribute or are we fine with just a constant?
+			if ([attributeMap[firstAttributeString][@"requiresSecondItem"] boolValue]) {
+				//If we have no second attributes use the first item
+				if (aSecondComponent.attributeList.count == 0) {
+					secondAttributeString = firstAttributeString;
+				}
+				//If we don't have enough second item attributes throw an exception
+				else if (aSecondComponent.attributeList.count <= currentAttribute) {
+					@throw M3ExceptionWithReason([NSString stringWithFormat:@"No matching attribute for attribute %@", firstAttributeString]);
+				}
+				//Otherwise get the attribute
+				else {
+					secondAttributeString = aSecondComponent.attributeList[currentAttribute];
+				}
 			}
-			//If we don't have enough second item attributes throw an exception
-			else if (aSecondComponent.attributeList.count <= currentAttribute) {
-				@throw M3ExceptionWithReason([NSString stringWithFormat:@"No matching attribute for attribute %@", firstAttributeString]);
+			
+			//If we have no constants use 0
+			if (aSecondComponent.constantList.count == 0) {
+				constant = 0;
 			}
-			//Otherwise get the attribute
+			//If we have only 1 constant we assign it to everything
+			else if (aSecondComponent.constantList.count == 1) {
+				constant = [aSecondComponent.constantList[0] floatValue];
+			}
+			//If we have multiple constants, but not enough for the attributes throw an exception
+			else if (aSecondComponent.constantList.count <= currentAttribute) {
+				@throw M3ExceptionWithReason([NSString stringWithFormat:@"No constant for attribute %@", firstAttributeString]);
+			}
+			//If we have multiple constants and have enough, use the current constant
 			else {
-				secondAttributeString = aSecondComponent.attributeList[currentAttribute];
+				if ([aSecondComponent.constantList[currentAttribute] isEqual:@"-"]) continue;
+				constant = [aSecondComponent.constantList[currentAttribute] floatValue];
 			}
+			
+			
+			NSLayoutAttribute firstAttribute = [attributeMap[firstAttributeString][@"attribute"] integerValue];
+			NSLayoutAttribute secondAttribute = [attributeMap[secondAttributeString][@"attribute"] integerValue];
+			
+			//If we require a second item then use it, otherwise use nil
+			id attributeSecondItem = (secondAttributeString.length ? secondView : nil);
+			
+			[constraints addObject:[NSLayoutConstraint constraintWithItem:firstView attribute:firstAttribute relatedBy:aRelation toItem:attributeSecondItem attribute:secondAttribute multiplier:aSecondComponent.multiplier constant:constant]];
 		}
-		
-		//If we have no constants use 0
-		if (aSecondComponent.constantList.count == 0) {
-			constant = 0;
-		}
-		//If we have only 1 constant we assign it to everything
-		else if (aSecondComponent.constantList.count == 1) {
-			constant = [aSecondComponent.constantList[0] floatValue];
-		}
-		//If we have multiple constants, but not enough for the attributes throw an exception
-		else if (aSecondComponent.constantList.count <= currentAttribute) {
-			@throw M3ExceptionWithReason([NSString stringWithFormat:@"No constant for attribute %@", firstAttributeString]);
-		}
-		//If we have multiple constants and have enough, use the current constant
-		else {
-			if ([aSecondComponent.constantList[currentAttribute] isEqual:@"-"]) continue;
-			constant = [aSecondComponent.constantList[currentAttribute] floatValue];
-		}
-		
-		
-		NSLayoutAttribute firstAttribute = [attributeMap[firstAttributeString][@"attribute"] integerValue];
-		NSLayoutAttribute secondAttribute = [attributeMap[secondAttributeString][@"attribute"] integerValue];
-		
-		//If we require a second item then use it, otherwise use nil
-		id attributeSecondItem = (secondAttributeString.length ? secondItem : nil);
-		
-		[constraints addObject:[NSLayoutConstraint constraintWithItem:firstItem attribute:firstAttribute relatedBy:aRelation toItem:attributeSecondItem attribute:secondAttribute multiplier:aSecondComponent.multiplier constant:constant]];
 	}
 	
 	return [constraints copy];
 }
 
-- (NSView *)viewForKeyPath:(NSString *)aKeyPath {
-	return [self.substitutionViews valueForKeyPath:aKeyPath];
+- (NSArray *)viewForKeyPath:(NSString *)aKeyPath {
+	if ([aKeyPath isEqualToString:@"all"]) {
+		NSMutableDictionary *views = [self.substitutionViews mutableCopy];
+		[views removeObjectForKey:@"self"];
+		return views.allValues;
+	}
+	NSView *view = [self.substitutionViews valueForKeyPath:aKeyPath];
+	if (!view) {
+		return nil;
+	}
+	return @[ view ];
 }
 
 

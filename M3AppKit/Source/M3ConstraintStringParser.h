@@ -10,6 +10,8 @@
 
 @interface M3ConstraintStringParser : NSObject
 
++ (NSDictionary *)substitutionViewsWithCollection:(id)aCollection selfView:(NSView *)aSelfView;
+
 - (id)initWithSubstitutionViews:(NSDictionary *)aViews;
 
 @property (readonly) NSDictionary *substitutionViews;

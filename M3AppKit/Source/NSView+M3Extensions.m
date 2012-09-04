@@ -8,7 +8,7 @@
 *****************************************************************/
 
 #import "NSView+M3Extensions.h"
-
+#import "M3ConstraintStringParser.h"
 
 @implementation NSView(M3Extensions)
 
@@ -105,8 +105,11 @@ NSComparisonResult m3_blockSubviewSort(id obj1, id obj2, void *aBlock) {
 	} completionHandler:nil];	
 }
 
-- (void)m3_addConstraints:(NSArray *)aConstraints forViews:(id)aViews substitutionViews:(id)aSubstitutionViews {
-	
+- (void)m3_addConstraints:(NSArray *)aConstraints forViews:(id)aSubstitutionViews {
+	M3ConstraintStringParser *parser = [[M3ConstraintStringParser alloc] initWithSubstitutionViews:[M3ConstraintStringParser substitutionViewsWithCollection:aSubstitutionViews selfView:self]];
+	for (NSString *constraint in aConstraints) {
+		[self addConstraints:[parser constraintsFromString:constraint]];
+	}
 }
 
 @end

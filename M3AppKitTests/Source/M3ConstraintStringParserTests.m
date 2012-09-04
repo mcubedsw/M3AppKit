@@ -9,6 +9,7 @@
 #import "M3ConstraintStringParserTests.h"
 #import "M3ConstraintStringParser.h"
 #import "NSLayoutConstraint+M3Extensions.h"
+#import "M3TestContentView.h"
 
 @implementation M3ConstraintStringParserTests {
 	M3ConstraintStringParser *parser;
@@ -18,7 +19,9 @@
 - (void)setUp {
 	substitutionViews = @{
 		@"self" : [NSView new],
-		@"x" : [NSView new]
+		@"x" : [NSView new],
+		@"y" : [NSView new],
+		@"z" : [NSView new]
 	};
 	parser = [[M3ConstraintStringParser alloc] initWithSubstitutionViews:substitutionViews];
 }
@@ -38,6 +41,18 @@
 	NSArray *expectedConstraints = @[
 		[NSLayoutConstraint m3_fixedWidthConstraintWithView:substitutionViews[@"self"] constant:4],
 		[NSLayoutConstraint m3_fixedHeightConstraintWithView:substitutionViews[@"self"] constant:3]
+	];
+	
+	[self assertThatConstraints:constraints areEqualToConstraints:expectedConstraints];
+}
+
+- (void)testSizeConstantConstraintWithRelation {
+	NSArray *constraints = [parser constraintsFromString:@"$self.size >= (4, 3)"];
+	
+	NSView *selfView = substitutionViews[@"self"];
+	NSArray *expectedConstraints = @[
+		[NSLayoutConstraint constraintWithItem:selfView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationGreaterThanOrEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:4],
+		[NSLayoutConstraint constraintWithItem:selfView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationGreaterThanOrEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:3],
 	];
 	
 	[self assertThatConstraints:constraints areEqualToConstraints:expectedConstraints];
@@ -120,6 +135,43 @@
 	[self assertThatConstraints:constraints areEqualToConstraints:expectedConstraints];
 }
 
+- (void)testAllKeyPath {
+	NSArray *constraints = [parser constraintsFromString:@"$all.(left, right) = (0, 10)"];
+	NSMutableDictionary *viewsMinusSelf = [substitutionViews mutableCopy];
+	[viewsMinusSelf removeObjectForKey:@"self"];
+	
+	NSArray *views = viewsMinusSelf.allValues;
+	NSArray *expectedConstraints = @[
+		[NSLayoutConstraint m3_superviewConstraintWithView:views[0] attribute:NSLayoutAttributeLeft constant:0],
+		[NSLayoutConstraint m3_superviewConstraintWithView:views[0] attribute:NSLayoutAttributeRight constant:10],
+		[NSLayoutConstraint m3_superviewConstraintWithView:views[1] attribute:NSLayoutAttributeLeft constant:0],
+		[NSLayoutConstraint m3_superviewConstraintWithView:views[1] attribute:NSLayoutAttributeRight constant:10],
+		[NSLayoutConstraint m3_superviewConstraintWithView:views[2] attribute:NSLayoutAttributeLeft constant:0],
+		[NSLayoutConstraint m3_superviewConstraintWithView:views[2] attribute:NSLayoutAttributeRight constant:10],
+	];
+	
+	[self assertThatConstraints:constraints areEqualToConstraints:expectedConstraints];
+}
+
+- (void)testKeyValueCoding {
+	M3TestContentView *testView = [M3TestContentView new];
+	NSView *contentView = [NSView new];
+	[testView setContentView:contentView];
+	
+	M3ConstraintStringParser *kvcParser = [[M3ConstraintStringParser alloc] initWithSubstitutionViews:@{ @"self" : testView }];
+	
+	NSArray *constraints = [kvcParser constraintsFromString:@"$self.contentView.width = 10"];
+	
+	NSArray *expectedConstraints = @[
+		[NSLayoutConstraint m3_fixedWidthConstraintWithView:contentView constant:10],
+	];
+	
+	[self assertThatConstraints:constraints areEqualToConstraints:expectedConstraints];
+}
+
+
+
+
 - (void)assertThatConstraint:(NSLayoutConstraint *)aFirstConstraint isEqualToConstraint:(NSLayoutConstraint *)aSecondConstraint {
 	assertThat(aFirstConstraint.firstItem, is(equalTo(aSecondConstraint.firstItem)));
 	assertThatInteger(aFirstConstraint.firstAttribute, is(equalToInteger(aSecondConstraint.firstAttribute)));
@@ -136,6 +188,64 @@
 		NSLayoutConstraint *expected = aSecondArray[idx];
 		[self assertThatConstraint:generated isEqualToConstraint:expected];
 	}];
+}
+
+
+
+
+
+#pragma mark -
+#pragma mark Testing Substitution View Utility 
+
+- (void)testSubstitutionViewsWithDictionary {
+	NSView *fooView = [NSView new];
+	NSView *barView = [NSView new];
+	NSView *bazView = [NSView new];
+	NSView *selfView = [NSView new];
+	NSDictionary *views = [M3ConstraintStringParser substitutionViewsWithCollection:@{
+		@"foo" : fooView,
+		@"bar" : barView,
+		@"baz" : bazView,
+	} selfView:selfView];
+	
+	NSDictionary *expected = @{
+		@"foo" : fooView,
+		@"bar" : barView,
+		@"baz" : bazView,
+		@"self": selfView
+	};
+	
+	assertThat(views, is(equalTo(expected)));
+}
+
+- (void)testSubstitutionViewsWithNilCollection {
+	NSView *selfView = [NSView new];
+	
+	NSDictionary *views = [M3ConstraintStringParser substitutionViewsWithCollection:nil selfView:selfView];
+	NSDictionary *expected = @{	@"self": selfView };
+	
+	assertThat(views, is(equalTo(expected)));
+}
+
+- (void)testSubstitutionViewsWithArray {
+	NSView *fooView = [NSView new];
+	NSView *barView = [NSView new];
+	NSView *bazView = [NSView new];
+	NSView *selfView = [NSView new];
+	NSDictionary *views = [M3ConstraintStringParser substitutionViewsWithCollection:@[
+		fooView,
+		barView,
+		bazView,
+	] selfView:selfView];
+	
+	NSDictionary *expected = @{
+		@"0" : fooView,
+		@"1" : barView,
+		@"2" : bazView,
+		@"self": selfView
+	};
+	
+	assertThat(views, is(equalTo(expected)));
 }
 
 @end

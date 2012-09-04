@@ -83,6 +83,7 @@
 		99D878A615F4B52A00BE70F6 /* M3ConstraintStringComponent.h in Headers */ = {isa = PBXBuildFile; fileRef = 99D878A415F4B52900BE70F6 /* M3ConstraintStringComponent.h */; };
 		99D878A715F4B52A00BE70F6 /* M3ConstraintStringComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 99D878A515F4B52900BE70F6 /* M3ConstraintStringComponent.m */; };
 		99D878AA15F4B88400BE70F6 /* M3ConstraintStringComponentParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 99D878A915F4B88400BE70F6 /* M3ConstraintStringComponentParserTests.m */; };
+		99D878AD15F4F9ED00BE70F6 /* M3TestContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 99D878AC15F4F9ED00BE70F6 /* M3TestContentView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -195,6 +196,8 @@
 		99D878A515F4B52900BE70F6 /* M3ConstraintStringComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M3ConstraintStringComponent.m; sourceTree = "<group>"; };
 		99D878A815F4B88400BE70F6 /* M3ConstraintStringComponentParserTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = M3ConstraintStringComponentParserTests.h; path = Source/M3ConstraintStringComponentParserTests.h; sourceTree = "<group>"; };
 		99D878A915F4B88400BE70F6 /* M3ConstraintStringComponentParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = M3ConstraintStringComponentParserTests.m; path = Source/M3ConstraintStringComponentParserTests.m; sourceTree = "<group>"; };
+		99D878AB15F4F9ED00BE70F6 /* M3TestContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = M3TestContentView.h; path = Source/M3TestContentView.h; sourceTree = "<group>"; };
+		99D878AC15F4F9ED00BE70F6 /* M3TestContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = M3TestContentView.m; path = Source/M3TestContentView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -386,6 +389,8 @@
 			children = (
 				99D7240215BF2FD90072317F /* M3ConstraintStringParserTests.h */,
 				99D7240315BF2FD90072317F /* M3ConstraintStringParserTests.m */,
+				99D878AB15F4F9ED00BE70F6 /* M3TestContentView.h */,
+				99D878AC15F4F9ED00BE70F6 /* M3TestContentView.m */,
 				99D878A815F4B88400BE70F6 /* M3ConstraintStringComponentParserTests.h */,
 				99D878A915F4B88400BE70F6 /* M3ConstraintStringComponentParserTests.m */,
 				99AFE61515A4D46A00841191 /* Supporting Files */,
@@ -595,6 +600,7 @@
 			files = (
 				99D7240415BF2FD90072317F /* M3ConstraintStringParserTests.m in Sources */,
 				99D878AA15F4B88400BE70F6 /* M3ConstraintStringComponentParserTests.m in Sources */,
+				99D878AD15F4F9ED00BE70F6 /* M3TestContentView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
