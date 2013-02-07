@@ -16,10 +16,10 @@
 @interface M3ColumnVisibilityController : NSObject <NSCoding>
 
 /**
- BRIEF_HERE
+ An array of column identifiers that should not be included in the menu
  @since PROJECT_NAME VERSION_NAME or later
 */
-@property (copy) NSArray *ignoredColumnIdentifiers;
+@property (copy, nonatomic) NSArray *ignoredColumnIdentifiers;
 
 /**
  The table view to handle column visibility for

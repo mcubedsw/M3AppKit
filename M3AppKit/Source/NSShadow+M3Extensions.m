@@ -11,7 +11,7 @@
 
 @implementation NSShadow (M3Extensions)
 
-//*****//
+
 + (NSShadow *)m3_shadowWithColor:(NSColor *)color offset:(NSSize)offset blurRadius:(CGFloat)blur {
 	NSShadow *shadow = [NSShadow new];
 	[shadow setShadowColor:color];

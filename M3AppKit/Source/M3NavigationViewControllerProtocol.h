@@ -11,45 +11,33 @@
 @class M3NavigationView;
 
 /**
- DESCRIPTION_HERE
+ A set of methods for NSViewControllers that are used with M3NavigationView
  @since M3AppKit 1.0 and later
  */
-@protocol M3NavigationSubview
+@protocol M3NavigationViewController <NSObject>
 
 @optional
 
 /**
- BRIEF_HERE
+ A reference to the navigation view containing this object
  @since PROJECT_NAME VERSION_NAME or later
 */
 @property (assign) M3NavigationView *navigationView;
 
 /**
- ABSTRACT_HERE
- DISCUSSION_HERE
- @param PARAM_HERE
- @param PARAM_HERE
- @result RESULT_HERE
+ Informs the receiver that the navigation view will start animating its view
  @since M3AppKit 1.0 and later
  */
 - (void)willStartAnimating;
 
 /**
- ABSTRACT_HERE
- DISCUSSION_HERE
- @param PARAM_HERE
- @param PARAM_HERE
- @result RESULT_HERE
+ Informs the receiver it is about to become the current view controller
  @since M3AppKit 1.0 and later
  */
 - (void)activateView;
 
 /**
- ABSTRACT_HERE
- DISCUSSION_HERE
- @param PARAM_HERE
- @param PARAM_HERE
- @result RESULT_HERE
+ Informs the receiver that the navigation view finished animating its view
  @since M3AppKit 1.0 and later
  */
 - (void)didFinishAnimating;

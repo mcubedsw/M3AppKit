@@ -7,20 +7,21 @@
  Please read the LICENCE.txt for licensing information
 *****************************************************************/
 
+
 #import "M3Alert.h"
 
 @implementation M3Alert {
 	void (^completionHandler)(NSInteger);
 }
 
-//*****//
+
 - (void)beginSheetModalForWindow:(NSWindow *)aWindow completionHandler:(void (^)(NSInteger result))aHandler {
 	completionHandler = [aHandler copy];
-	[self beginSheetModalForWindow:aWindow modalDelegate:self didEndSelector:@selector(_alertDidEnd:returnCode:contextInfo:) contextInfo:NULL];
+	[self beginSheetModalForWindow:aWindow modalDelegate:self didEndSelector:@selector(alertDidEnd:returnCode:contextInfo:) contextInfo:NULL];
 }
 
-//*****//
-- (void)_alertDidEnd:(NSAlert *)aAlert returnCode:(NSInteger)aCode contextInfo:(void *)aInfo {
+
+- (void)alertDidEnd:(NSAlert *)aAlert returnCode:(NSInteger)aCode contextInfo:(void *)aInfo {
 	completionHandler(aCode);
 }
 

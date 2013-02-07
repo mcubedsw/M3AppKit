@@ -11,7 +11,7 @@
 
 @implementation NSLayoutConstraint (M3Extensions)
 
-//*****//
+
 + (NSLayoutConstraint *)m3_fixedWidthConstraintWithView:(NSView *)aView constant:(CGFloat)aConstant {
 	return [NSLayoutConstraint constraintWithItem:aView 
 										attribute:NSLayoutAttributeWidth 
@@ -22,7 +22,7 @@
 										 constant:aConstant];
 }
 
-//*****//
+
 + (NSLayoutConstraint *)m3_fixedHeightConstraintWithView:(NSView *)aView constant:(CGFloat)aConstant {
 	return [NSLayoutConstraint constraintWithItem:aView 
 										attribute:NSLayoutAttributeHeight 
@@ -33,7 +33,7 @@
 										 constant:aConstant];
 }
 
-//*****//
+
 + (NSLayoutConstraint *)m3_equalWidthsConstraintWithView:(NSView *)aView andView:(NSView *)aSecondView {
 	return [NSLayoutConstraint constraintWithItem:aView 
 										attribute:NSLayoutAttributeWidth 
@@ -44,7 +44,7 @@
 										 constant:0];
 }
 
-//*****//
+
 + (NSLayoutConstraint *)m3_equalHeightsConstraintWithView:(NSView *)aView andView:(NSView *)aSecondView {
 	return [NSLayoutConstraint constraintWithItem:aView 
 										attribute:NSLayoutAttributeHeight 
@@ -55,7 +55,7 @@
 										 constant:0];
 }
 
-//*****//
+
 + (NSLayoutConstraint *)m3_superviewConstraintWithView:(NSView *)aView attribute:(NSLayoutAttribute)aAttribute constant:(CGFloat)aConstant {
 	return [NSLayoutConstraint constraintWithItem:aView 
 										attribute:aAttribute 

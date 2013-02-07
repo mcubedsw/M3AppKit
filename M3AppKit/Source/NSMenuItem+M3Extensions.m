@@ -13,12 +13,12 @@ char M3MenuItemExtensionsItemIdentifierKey;
 
 @implementation NSMenuItem (M3Extensions)
 
-//*****//
+
 - (NSString *)m3_itemIdentifier {
 	return objc_getAssociatedObject(self, &M3MenuItemExtensionsItemIdentifierKey);
 }
 
-//*****//
+
 - (void)m3_setItemIdentifier:(NSString *)itemIdentifier {
 	objc_setAssociatedObject(self, &M3MenuItemExtensionsItemIdentifierKey, itemIdentifier, OBJC_ASSOCIATION_COPY_NONATOMIC);
 }

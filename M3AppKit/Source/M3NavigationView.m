@@ -8,7 +8,8 @@
 *****************************************************************/
 
 #import "M3NavigationView.h"
-#import "M3NavigationSubviewProtocol.h"
+
+#import "M3NavigationViewControllerProtocol.h"
 
 const NSUInteger M3HeaderHeight = 34;
 
@@ -23,68 +24,44 @@ typedef enum {
 } M3NavigationAnimationDirection;
 
 
-
-
-
-@interface M3NavigationView () 
-
-- (void)p_setup;
-
-- (NSRect)p_headerRect;
-- (NSRect)p_contentRect;
-- (NSRect)p_backButtonRect;
-- (NSRect)p_titleRectWithX:(CGFloat)aX;
-
-- (NSButton *)p_createBackButton;
-- (NSTextField *)p_createTextFieldWithTitle:(NSString *)aTitle;
-
-- (void)p_swapView:(NSView *)aOldView withView:(NSView *)aNewView desiredRect:(NSRect)aDesiredRect direction:(M3NavigationAnimationDirection)aDirection fade:(BOOL)aFade;
-- (CAAnimationGroup *)p_animationFromPoint:(NSPoint)aFromPoint toPoint:(NSPoint)aToPoint fromOpacity:(CGFloat)aFromOpacity toOpacity:(CGFloat)aToOpacity;
-
-@end
-
-
-
-
-
 @implementation M3NavigationView {
 	NSMutableArray *controllerStack;
 }
 
-//*****//
+
 - (id)initWithFrame:(NSRect)aFrame {
 	if ((self = [super initWithFrame:aFrame])) {
-		[self p_setup];
+		[self setup];
 	}
     return self;
 }
 
-//*****//
+
 - (id)initWithCoder:(NSCoder *)aDecoder {
 	if ((self = [super initWithCoder:aDecoder])) {
-		[self p_setup];
+		[self setup];
 	}
 	return self;
 }
 
-//*****//
-- (void)p_setup {
+
+- (void)setup {
 	_showsNavigationBar = YES;
 	controllerStack = [NSMutableArray new];
 }
 
-//*****//
+
 - (void)setShowsNavigationBar:(BOOL)aShowsNavigationBar {
 	_showsNavigationBar = aShowsNavigationBar;
 	[self setNeedsDisplay:YES];
 }
 
-//*****//
+
 - (void)drawRect:(NSRect)aDirtyRect {
 	if (!self.showsNavigationBar) return;
 
 	//Draw the header
-	NSRect headerRect = self.p_headerRect;
+	NSRect headerRect = self.headerRect;
 	NSGradient *headerGradient = [[NSGradient alloc] initWithStartingColor:[NSColor colorWithCalibratedRed:0.956 green:0.961 blue:0.955 alpha:1.000] 
 															   endingColor:[NSColor colorWithCalibratedWhite:0.826 alpha:1.000]];
 	[headerGradient drawInRect:headerRect angle:-90];
@@ -101,24 +78,24 @@ typedef enum {
 #pragma mark -
 #pragma mark Rects
 
-//*****//
-- (NSRect)p_headerRect {
+
+- (NSRect)headerRect {
 	return NSMakeRect(0, (self.bounds.size.height - M3HeaderHeight), self.bounds.size.width, M3HeaderHeight);
 }
 
-//*****//
-- (NSRect)p_backButtonRect {
-	return NSMakeRect(5, NSMidY(self.p_headerRect) - 11, 36, 21);
+
+- (NSRect)backButtonRect {
+	return NSMakeRect(5, NSMidY(self.headerRect) - 11, 36, 21);
 }
 
-//*****//
-- (NSRect)p_titleRectWithX:(CGFloat)aX {
-	CGFloat width = self.p_headerRect.size.width - aX - 15;
-	return NSMakeRect(aX, NSMidY(self.p_headerRect) - 11, width, 20);
+
+- (NSRect)titleRectWithX:(CGFloat)aX {
+	CGFloat width = self.headerRect.size.width - aX - 15;
+	return NSMakeRect(aX, NSMidY(self.headerRect) - 11, width, 20);
 }
 
-//*****//
-- (NSRect)p_contentRect {
+
+- (NSRect)contentRect {
 	if (self.showsNavigationBar) {
 		return NSMakeRect(0, 0, self.bounds.size.width, (self.bounds.size.height - M3HeaderHeight - 1));
 	}
@@ -132,14 +109,14 @@ typedef enum {
 #pragma mark -
 #pragma mark Header Views
 
-//*****//
-- (NSButton *)p_createBackButton {
-	NSButton *button = [[NSButton alloc] initWithFrame:self.p_backButtonRect];
+
+- (NSButton *)createBackButton {
+	NSButton *button = [[NSButton alloc] initWithFrame:self.backButtonRect];
 	[button setFrameOrigin:NSZeroPoint];
 	[button setButtonType:NSMomentaryChangeButton];
 	[button setBordered:NO];
 	[button setTarget:self];
-	[button setAction:@selector(p_back:)];
+	[button setAction:@selector(back:)];
 	[button setAutoresizingMask:NSViewMaxXMargin|NSViewMinYMargin];
 	
 	NSBundle *bundle = [NSBundle bundleWithIdentifier:@"com.mcubedsw.M3AppKit"];
@@ -149,9 +126,9 @@ typedef enum {
 	return button;
 }
 
-//*****//
-- (NSTextField *)p_createTextFieldWithTitle:(NSString *)aTitle {
-	NSTextField *titleField = [[NSTextField alloc] initWithFrame:[self p_titleRectWithX:0]];
+
+- (NSTextField *)createTextFieldWithTitle:(NSString *)aTitle {
+	NSTextField *titleField = [[NSTextField alloc] initWithFrame:[self titleRectWithX:0]];
 	[titleField setFrameOrigin:NSZeroPoint];
 	[titleField setStringValue:aTitle?:@""];
 	[titleField setEditable:NO];
@@ -166,8 +143,8 @@ typedef enum {
 	return titleField;
 }
 
-//*****//
-- (void)p_back:(id)sender {
+
+- (void)back:(id)sender {
 	[self popViewControllerAnimated:YES];
 }
 
@@ -178,20 +155,20 @@ typedef enum {
 #pragma mark -
 #pragma mark Manage View Controllers
 
-//*****//
+
 - (NSViewController *)currentViewController {
 	return controllerStack.lastObject[M3NavigationController];
 }
 
-//*****//
+
 - (void)pushView:(NSView *)aView animated:(BOOL)aAnimated {
 	NSViewController *viewController = [NSViewController new];
 	[viewController setView:aView];
 	[self pushViewController:viewController animated:aAnimated];
 }
 
-//*****//
-- (void)pushViewController:(NSViewController<M3NavigationSubview> *)aController animated:(BOOL)aAnimated {
+#warning Need to add willStartAnimating and didFinishAnimating
+- (void)pushViewController:(NSViewController<M3NavigationViewController> *)aController animated:(BOOL)aAnimated {
 	[aController.view setAutoresizingMask:NSViewWidthSizable|NSViewHeightSizable];
 	if ([aController respondsToSelector:@selector(setNavigationView:)]) {
 		[aController setNavigationView:self];
@@ -200,13 +177,13 @@ typedef enum {
 	NSDictionary *previousControllerDict = controllerStack.lastObject;
 	NSDictionary *currentController = @{
 		M3NavigationController:aController,
-		M3NavigationBackButton:[self p_createBackButton],
-		M3NavigationTitleField:[self p_createTextFieldWithTitle:aController.title]
+		M3NavigationBackButton:[self createBackButton],
+		M3NavigationTitleField:[self createTextFieldWithTitle:aController.title]
 	};
 	[controllerStack addObject:currentController];
 	
 	//Check if we're the first
-	CGFloat titleX = NSMaxX(self.p_backButtonRect);
+	CGFloat titleX = NSMaxX(self.backButtonRect);
 	if (controllerStack.count == 1) {
 		[currentController[M3NavigationBackButton] setHidden:YES];
 		titleX = 15;
@@ -214,22 +191,22 @@ typedef enum {
 	}
 	
 	//Swap views
-	[self p_swapView:[previousControllerDict[M3NavigationController] view]
+	[self swapView:[previousControllerDict[M3NavigationController] view]
 			withView:[currentController[M3NavigationController] view]
-		 desiredRect:self.p_contentRect
+		 desiredRect:self.contentRect
 		   direction:aAnimated ? M3NavigationAnimationDirectionLeft : M3NavigationAnimationDirectionNone
 				fade:NO];
 	
 	if (self.showsNavigationBar) {
-		[self p_swapView:previousControllerDict[M3NavigationBackButton]
+		[self swapView:previousControllerDict[M3NavigationBackButton]
 				withView:currentController[M3NavigationBackButton]
-			 desiredRect:self.p_backButtonRect
+			 desiredRect:self.backButtonRect
 			   direction:aAnimated ? M3NavigationAnimationDirectionLeft : M3NavigationAnimationDirectionNone
 					fade:YES];
 		
-		[self p_swapView:previousControllerDict[M3NavigationTitleField]
+		[self swapView:previousControllerDict[M3NavigationTitleField]
 				withView:currentController[M3NavigationTitleField]
-			 desiredRect:[self p_titleRectWithX:titleX]
+			 desiredRect:[self titleRectWithX:titleX]
 			   direction:aAnimated ? M3NavigationAnimationDirectionLeft : M3NavigationAnimationDirectionNone
 					fade:YES];
 	}
@@ -245,7 +222,7 @@ typedef enum {
 	}
 }
 
-//*****//
+
 - (NSViewController *)popViewControllerAnimated:(BOOL)aAnimated {
 	if (controllerStack.count == 1) {
 		return nil;
@@ -257,28 +234,28 @@ typedef enum {
 	NSDictionary *currentController = controllerStack.lastObject;
 	
 	//Get title X
-	CGFloat titleX = NSMaxX(self.p_backButtonRect);
+	CGFloat titleX = NSMaxX(self.backButtonRect);
 	if (controllerStack.count == 1) {
 		titleX = 15;
 	}
 	
 	//Swap views
-	[self p_swapView:[previousControllerDict[M3NavigationController] view]
+	[self swapView:[previousControllerDict[M3NavigationController] view]
 			withView:[currentController[M3NavigationController] view]
-		 desiredRect:self.p_contentRect
+		 desiredRect:self.contentRect
 		   direction:aAnimated ? M3NavigationAnimationDirectionRight : M3NavigationAnimationDirectionNone
 				fade:NO];
 	
 	if (self.showsNavigationBar) {
-		[self p_swapView:previousControllerDict[M3NavigationBackButton]
+		[self swapView:previousControllerDict[M3NavigationBackButton]
 				withView:currentController[M3NavigationBackButton]
-			 desiredRect:self.p_backButtonRect
+			 desiredRect:self.backButtonRect
 			   direction:aAnimated ? M3NavigationAnimationDirectionRight : M3NavigationAnimationDirectionNone
 					fade:YES];
 		
-		[self p_swapView:previousControllerDict[M3NavigationTitleField]
+		[self swapView:previousControllerDict[M3NavigationTitleField]
 				withView:currentController[M3NavigationTitleField]
-			 desiredRect:[self p_titleRectWithX:titleX]
+			 desiredRect:[self titleRectWithX:titleX]
 			   direction:aAnimated ? M3NavigationAnimationDirectionRight : M3NavigationAnimationDirectionNone
 					fade:YES];
 	}
@@ -302,8 +279,8 @@ typedef enum {
 #pragma mark -
 #pragma mark View Replacement
 
-//*****//
-- (void)p_swapView:(NSView *)aOldView withView:(NSView *)aNewView desiredRect:(NSRect)aDesiredRect direction:(M3NavigationAnimationDirection)aDirection fade:(BOOL)aFade {
+
+- (void)swapView:(NSView *)aOldView withView:(NSView *)aNewView desiredRect:(NSRect)aDesiredRect direction:(M3NavigationAnimationDirection)aDirection fade:(BOOL)aFade {
 	//Get rects
 	NSRect inRect = aDesiredRect;
 	NSRect outRect = aDesiredRect;
@@ -326,10 +303,10 @@ typedef enum {
 	}
 	
 	//Set up animations
-	CAAnimationGroup *outAnim = [self p_animationFromPoint:aOldView.frame.origin toPoint:outRect.origin fromOpacity:1 toOpacity:(aFade ? 0 : 1)];
+	CAAnimationGroup *outAnim = [self animationFromPoint:aOldView.frame.origin toPoint:outRect.origin fromOpacity:1 toOpacity:(aFade ? 0 : 1)];
 	[aOldView setAnimations:@{ @"frameOrigin":outAnim }];
 	
-	CAAnimationGroup *inAnim = [self p_animationFromPoint:inRect.origin toPoint:aDesiredRect.origin fromOpacity:(aFade ? 0 : 1) toOpacity:1];
+	CAAnimationGroup *inAnim = [self animationFromPoint:inRect.origin toPoint:aDesiredRect.origin fromOpacity:(aFade ? 0 : 1) toOpacity:1];
 	[aNewView setAnimations:@{ @"frameOrigin":inAnim }];
 	
 	//Perform animation
@@ -348,8 +325,8 @@ typedef enum {
 	}];
 }
 
-//*****//
-- (CAAnimationGroup *)p_animationFromPoint:(NSPoint)aFromPoint toPoint:(NSPoint)aToPoint fromOpacity:(CGFloat)aFromOpacity toOpacity:(CGFloat)aToOpacity {
+
+- (CAAnimationGroup *)animationFromPoint:(NSPoint)aFromPoint toPoint:(NSPoint)aToPoint fromOpacity:(CGFloat)aFromOpacity toOpacity:(CGFloat)aToOpacity {
 	CAKeyframeAnimation *moveAnim = [CAKeyframeAnimation animationWithKeyPath:@"frameOrigin"];
 	[moveAnim setValues:@[ [NSValue valueWithPoint:aFromPoint], [NSValue valueWithPoint:aToPoint] ]];
 	[moveAnim setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];

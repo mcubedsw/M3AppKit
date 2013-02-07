@@ -25,13 +25,13 @@
 
 /**
  Returns the hexidecimal string equivalent for the colour
- @result Returns a 6 character hexadecimal string WITHOUT a hash prefixed
+ @result Returns a 6 character hexadecimal string (without a hash prefixed)
  @since M3AppKit 1.0 and later
  */
 - (NSString *)m3_hexadecimalString;
 
 /**
- Converts the colour to a string for saving to a plist
+ Converts the colour to a string, ideal for saving to a plist
  Pass the result of this string to colorWithString to get the original colour back
  @result Returns a string for the current colour in the format: red/green/blue/alpha
  @since M3AppKit 1.0 and later

@@ -12,23 +12,23 @@
 
 @interface M3SplitView () 
 
-- (void)p_setup;
+- (void)setup;
 
-- (NSUInteger)p_numberOfDividers;
-- (NSRect)p_rectOfDividerAtIndex:(NSInteger)aIndex;
-- (NSInteger)p_indexOfDividerAtPoint:(NSPoint)aPoint;
+- (NSUInteger)numberOfDividers;
+- (NSRect)rectOfDividerAtIndex:(NSInteger)aIndex;
+- (NSInteger)indexOfDividerAtPoint:(NSPoint)aPoint;
 
-- (NSArray *)p_orderedSubviews;
+- (NSArray *)orderedSubviews;
 
-- (NSLayoutConstraint *)p_constraintForView:(NSView *)aView;
-- (void)p_clearSplitConstraints;
+- (NSLayoutConstraint *)constraintForView:(NSView *)aView;
+- (void)clearSplitConstraints;
 
-- (NSString *)p_splitViewConstantsKey;
+- (NSString *)splitViewConstantsKey;
 
-- (NSRect)p_rectForKnobImageOfSize:(NSSize)aImageSize inDividerRect:(NSRect)aDividerRect;
+- (NSRect)rectForKnobImageOfSize:(NSSize)aImageSize inDividerRect:(NSRect)aDividerRect;
 
-- (NSArray *)p_constraintsForNonResizingViews:(NSArray *)aViews;
-- (NSArray *)p_constraintsForResizingViews:(NSArray *)aViews;
+- (NSArray *)constraintsForNonResizingViews:(NSArray *)aViews;
+- (NSArray *)constraintsForResizingViews:(NSArray *)aViews;
 
 @end
 
@@ -54,24 +54,24 @@
 #pragma mark -
 #pragma mark Setup
 
-//*****//
+
 - (id)initWithFrame:(CGRect)aFrame {
 	if (self = [super initWithFrame:aFrame]) {
-		[self p_setup];
+		[self setup];
 	}
 	return self;
 }
 
-//*****//
+
 - (id)initWithCoder:(NSCoder *)aDecoder {
 	if (self = [super initWithCoder:aDecoder]) {
-		[self p_setup];
+		[self setup];
 	}
 	return self;
 }
 
-//*****//
-- (void)p_setup {
+
+- (void)setup {
 	splitConstraints = [NSMutableSet set];
 	resizeConstraints = [NSMutableSet set];
 	_verticalDivider = YES;
@@ -79,7 +79,7 @@
 	[self m3_addObserver:self forKeyPathsInArray:@[ @"autosaveName", @"backgroundColour" ] options:0 context:NULL];
 }
 
-//*****//
+
 - (void)awakeFromNib {
 	for (NSLayoutConstraint *constraint in self.constraints) {
 		if (constraint.firstAttribute == NSLayoutAttributeBottom && !self.hasVerticalDivider) {
@@ -90,13 +90,13 @@
 			[self removeConstraint:constraint];
 		}
 	}
-	[self p_clearSplitConstraints];
+	[self clearSplitConstraints];
 	nibLoadingFinished = YES;
 }
 
 
 
-//*****//
+
 - (void)viewWillStartLiveResize {
 	[super viewWillStartLiveResize];
 	
@@ -104,7 +104,7 @@
 	NSMutableArray *resizingViews = [NSMutableArray array];
 	
 	//Get the views to resize and those not to
-	[self.p_orderedSubviews enumerateObjectsUsingBlock:^(NSView *view, NSUInteger index, BOOL *stop) {
+	[self.orderedSubviews enumerateObjectsUsingBlock:^(NSView *view, NSUInteger index, BOOL *stop) {
 		BOOL resizeView = NO;
 		if ([self.delegate respondsToSelector:@selector(splitView:shouldFrameChangeResizeSubviewAtIndex:)]) {
 			resizeView = [self.delegate splitView:self shouldFrameChangeResizeSubviewAtIndex:index];
@@ -113,14 +113,14 @@
 	}];
 	
 	//If we only have non-resizing views, break the last one
-	if (nonResizingViews.count == self.p_orderedSubviews.count) {
+	if (nonResizingViews.count == self.orderedSubviews.count) {
 		[resizingViews addObject:nonResizingViews.lastObject];
 		[nonResizingViews removeLastObject];
 	}
 		
 	//Generate our constraints and add
-	[resizeConstraints addObjectsFromArray:[self p_constraintsForNonResizingViews:nonResizingViews]];
-	[resizeConstraints addObjectsFromArray:[self p_constraintsForResizingViews:resizingViews]];
+	[resizeConstraints addObjectsFromArray:[self constraintsForNonResizingViews:nonResizingViews]];
+	[resizeConstraints addObjectsFromArray:[self constraintsForResizingViews:resizingViews]];
 	[self addConstraints:resizeConstraints.allObjects];
 	for (NSLayoutConstraint *constraint in splitConstraints) {
 		if (constraint.constant) {
@@ -131,8 +131,8 @@
 	}
 }
 
-//*****//
-- (NSArray *)p_constraintsForNonResizingViews:(NSArray *)aViews {
+
+- (NSArray *)constraintsForNonResizingViews:(NSArray *)aViews {
 	NSMutableArray *returnConstraints = [NSMutableArray array];
 	for (NSView *view in aViews) {
 		NSLayoutConstraint *constraint = nil;
@@ -150,8 +150,8 @@
 	return returnConstraints;
 }
 
-//*****//
-- (NSArray *)p_constraintsForResizingViews:(NSArray *)aViews {
+
+- (NSArray *)constraintsForResizingViews:(NSArray *)aViews {
 	NSMutableArray *returnConstraints = [NSMutableArray array];
 	NSMutableArray *resizingViews = [aViews mutableCopy];
 	NSView *initialView = resizingViews[0];
@@ -182,36 +182,36 @@
 	return returnConstraints;
 }
 
-//*****//
+
 - (void)viewDidEndLiveResize {
 	[super viewDidEndLiveResize];
-	[self p_clearSplitConstraints];
+	[self clearSplitConstraints];
 	[self removeConstraints:resizeConstraints.allObjects];
 	[resizeConstraints removeAllObjects];
 }
 
-//*****//
+
 - (void)observeValueForKeyPath:(NSString *)aKeyPath ofObject:(id)aObject change:(NSDictionary *)aChange context:(void *)aContext {
 	if ([aKeyPath isEqualToString:@"autosaveName"]) {
 		storedConstants = [NSMutableDictionary dictionary];
-		if ([self p_splitViewConstantsKey]) {
-			storedConstants = [[[NSUserDefaults standardUserDefaults] objectForKey:self.p_splitViewConstantsKey] mutableCopy];
+		if ([self splitViewConstantsKey]) {
+			storedConstants = [[[NSUserDefaults standardUserDefaults] objectForKey:self.splitViewConstantsKey] mutableCopy];
 		}
-		[self p_clearSplitConstraints];
+		[self clearSplitConstraints];
 	} else if ([aKeyPath isEqualToString:@"backgroundColour"]) {
 		[self setNeedsDisplay:YES];
 	}
 }
 
 
-//*****//
+
 - (NSView *)subviewAtIndex:(NSInteger)aIndex {
-	return self.p_orderedSubviews[aIndex];
+	return self.orderedSubviews[aIndex];
 }
 
-//*****//
+
 - (NSInteger)indexOfSubview:(NSView *)aView {
-	return [self.p_orderedSubviews indexOfObject:aView];
+	return [self.orderedSubviews indexOfObject:aView];
 }
 
 
@@ -221,32 +221,32 @@
 
 
 
-//*****//
-- (NSString *)p_splitViewConstantsKey {
+
+- (NSString *)splitViewConstantsKey {
 	if (self.autosaveName) {
 		return [NSString stringWithFormat:@"M3SplitView %@ Constants", self.autosaveName];
 	}
 	return nil;
 }
 
-//*****//
+
 - (void)setVerticalDivider:(BOOL)aVertical {
 	_verticalDivider = aVertical;
 	orderedSubviews = nil;
-	[self p_clearSplitConstraints];
+	[self clearSplitConstraints];
 }
 
-//*****//
+
 - (void)drawRect:(NSRect)dirtyRect {
 	[self.backgroundColour set];
 	NSRectFill(dirtyRect);
 	
-	for (NSUInteger i = 0; i < self.p_numberOfDividers; i++) {
-		[self drawDividerInRect:[self p_rectOfDividerAtIndex:i] vertical:self.hasVerticalDivider];
+	for (NSUInteger i = 0; i < self.numberOfDividers; i++) {
+		[self drawDividerInRect:[self rectOfDividerAtIndex:i] vertical:self.hasVerticalDivider];
 	}
 }
 
-//*****//
+
 - (void)drawDividerInRect:(NSRect)aRect vertical:(BOOL)aVertical {
 	//Only draw the divider if it's bigger than 10 pt (12pt after we modify)
 	if ((aVertical && NSWidth(aRect) < 12) || (!aVertical && NSHeight(aRect) < 12))
@@ -272,14 +272,14 @@
 
 	//Lol, knob…
 	NSImage *knobImage = [[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"M3SplitViewKnob" ofType:@"png"]];
-	[knobImage drawInRect:[self p_rectForKnobImageOfSize:knobImage.size inDividerRect:aRect]
+	[knobImage drawInRect:[self rectForKnobImageOfSize:knobImage.size inDividerRect:aRect]
 				 fromRect:NSZeroRect 
 				operation:NSCompositeSourceOver 
 				 fraction:1];
 }
 
-//*****//
- - (NSRect)p_rectForKnobImageOfSize:(NSSize)aImageSize inDividerRect:(NSRect)aDividerRect {
+
+ - (NSRect)rectForKnobImageOfSize:(NSSize)aImageSize inDividerRect:(NSRect)aDividerRect {
 	CGFloat x = ceil(NSMidX(aDividerRect));
 	CGFloat y = ceil(NSMidY(aDividerRect));
 	
@@ -291,20 +291,20 @@
 #pragma mark -
 #pragma mark Dividers
 
-//*****//
-- (NSUInteger)p_numberOfDividers {
+
+- (NSUInteger)numberOfDividers {
 	return self.subviews.count - 1;
 }
 
-//*****//
-- (NSRect)p_rectOfDividerAtIndex:(NSInteger)aIndex {
-	if (aIndex >= self.p_numberOfDividers) {
+
+- (NSRect)rectOfDividerAtIndex:(NSInteger)aIndex {
+	if (aIndex >= self.numberOfDividers) {
 		@throw [NSException exceptionWithName:NSRangeException 
 									   reason:@"Supplied index is higher than the number of dividers" 
 									 userInfo:nil];
 	}
 	
-	NSArray *orderedViews = self.p_orderedSubviews;
+	NSArray *orderedViews = self.orderedSubviews;
 	NSView *view1 = [orderedViews m3_safeObjectAtIndex:aIndex];
 	NSView *view2 = [orderedViews m3_safeObjectAtIndex:aIndex + 1];
 	
@@ -319,10 +319,10 @@
 	return returnRect;
 }
 
-//*****//
-- (NSInteger)p_indexOfDividerAtPoint:(NSPoint)aPoint {
-	for (NSUInteger i = 0; i < self.p_numberOfDividers; i++) {
-		if (NSPointInRect(aPoint, [self p_rectOfDividerAtIndex:i])) {
+
+- (NSInteger)indexOfDividerAtPoint:(NSPoint)aPoint {
+	for (NSUInteger i = 0; i < self.numberOfDividers; i++) {
+		if (NSPointInRect(aPoint, [self rectOfDividerAtIndex:i])) {
 			return i;
 		}
 	}
@@ -336,8 +336,8 @@
 #pragma mark -
 #pragma mark Subviews
 
-//*****//
-- (NSArray *)p_orderedSubviews {
+
+- (NSArray *)orderedSubviews {
 	if (!orderedSubviews) {
 		orderedSubviews = [self.subviews sortedArrayUsingComparator:^NSComparisonResult(NSView *obj1, NSView *obj2) {
 			CGFloat view1Value = obj1.frame.origin.y;
@@ -360,13 +360,13 @@
 	return orderedSubviews;
 }
 
-//*****//
+
 - (void)addSubview:(NSView *)aView {
 	[super addSubview:aView];
 	orderedSubviews = nil;
 	
 	if (nibLoadingFinished) {
-		[self p_clearSplitConstraints];
+		[self clearSplitConstraints];
 	}
 }
 
@@ -377,8 +377,8 @@
 #pragma mark -
 #pragma mark Constraints
 
-//*****//
-- (NSLayoutConstraint *)p_constraintForView:(NSView *)aView {
+
+- (NSLayoutConstraint *)constraintForView:(NSView *)aView {
 	for (NSLayoutConstraint *constraint in splitConstraints) {
 		if ([constraint.firstItem isEqual:aView]) {
 			return constraint;
@@ -415,12 +415,12 @@
 	return returnConstraint;
 }
 
-//*****//
-- (void)p_clearSplitConstraints {
+
+- (void)clearSplitConstraints {
 	[self removeConstraints:splitConstraints.allObjects];
 	splitConstraints = [NSMutableSet set];
 	for (NSView *subview in self.subviews) {
-		[self addConstraint:[self p_constraintForView:subview]];
+		[self addConstraint:[self constraintForView:subview]];
 	}
 }
 
@@ -431,15 +431,15 @@
 #pragma mark -
 #pragma mark Mouse handling
 
-//*****//
+
 - (void)mouseDown:(NSEvent *)aEvent {
 	NSPoint mousePoint = [self convertPoint:aEvent.locationInWindow fromView:nil];
-	NSInteger index = [self p_indexOfDividerAtPoint:mousePoint];
+	NSInteger index = [self indexOfDividerAtPoint:mousePoint];
 	
 	if (index == -1) return;
 	
-	NSView *view = self.p_orderedSubviews[index + 1];
-	currentConstraint = [self p_constraintForView:view];
+	NSView *view = self.orderedSubviews[index + 1];
+	currentConstraint = [self constraintForView:view];
 	[currentConstraint setPriority:NSLayoutPriorityDragThatCannotResizeWindow - 1];
 	if (self.hasVerticalDivider) {
 		currentOffsetToViewEdge = NSMinX(view.frame) - mousePoint.x;
@@ -449,7 +449,7 @@
 	[self.window disableCursorRects];
 }
 
-//*****//
+
 - (void)mouseDragged:(NSEvent *)aEvent {
 	NSPoint mousePoint = [self convertPoint:aEvent.locationInWindow fromView:nil];
 	if (self.hasVerticalDivider) {
@@ -460,12 +460,12 @@
 	[self setNeedsDisplay:YES];
 }
 
-//*****//
+
 - (void)mouseUp:(NSEvent *)aEvent {
-	NSInteger index = [self.p_orderedSubviews indexOfObject:currentConstraint.firstItem];
+	NSInteger index = [self.orderedSubviews indexOfObject:currentConstraint.firstItem];
 	storedConstants[[NSString stringWithFormat:@"%ld",index]] = [NSNumber numberWithFloat:currentConstraint.constant];
-	if (self.p_splitViewConstantsKey) {
-		[[NSUserDefaults standardUserDefaults] setObject:storedConstants forKey:self.p_splitViewConstantsKey];
+	if (self.splitViewConstantsKey) {
+		[[NSUserDefaults standardUserDefaults] setObject:storedConstants forKey:self.splitViewConstantsKey];
 	}
 	[currentConstraint setPriority:NSLayoutPriorityDragThatCannotResizeWindow];
 	currentConstraint = nil;
@@ -474,10 +474,10 @@
 	[self.window enableCursorRects];
 }
 
-//*****//
+
 - (void)resetCursorRects {
-	for (NSUInteger i = 0; i < self.p_numberOfDividers; i++) {
-		NSRect dividerRect = [self p_rectOfDividerAtIndex:i];
+	for (NSUInteger i = 0; i < self.numberOfDividers; i++) {
+		NSRect dividerRect = [self rectOfDividerAtIndex:i];
 		if (self.hasVerticalDivider) {
 			[self addCursorRect:dividerRect cursor:[NSCursor resizeLeftRightCursor]];
 		} else {
@@ -486,9 +486,9 @@
 	}
 }
 
-//*****//
+
 - (NSView *)hitTest:(NSPoint)aPoint {
-	if ([self p_indexOfDividerAtPoint:aPoint] != -1) {
+	if ([self indexOfDividerAtPoint:aPoint] != -1) {
 		return self;
 	}
 	return [super hitTest:aPoint];

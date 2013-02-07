@@ -11,15 +11,15 @@
 
 @interface NSColor (M3ExtensionsPrivate)
 
-+ (NSInteger)p_hexToInt:(NSString *)hex;
-- (NSString *)p_hexForInt:(NSInteger)integer;
++ (NSInteger)hexToInt:(NSString *)hex;
+- (NSString *)hexForInt:(NSInteger)integer;
 
 @end
 
 
 @implementation NSColor (M3Extensions)
 
-//*****//
+
 + (NSColor *)m3_colorWithHexadecimalString:(NSString *)hexCode {
 	if ([hexCode rangeOfString:@"#"].location == 0) {
 		hexCode = [hexCode substringFromIndex:1];
@@ -28,9 +28,9 @@
 		hexCode = [NSString stringWithFormat:@"%c%c%c%c%c%c", [hexCode characterAtIndex:0], [hexCode characterAtIndex:0], [hexCode characterAtIndex:1], [hexCode characterAtIndex:1], [hexCode characterAtIndex:2], [hexCode characterAtIndex:2]];
 	}
 	if (hexCode.length == 6) {
-		NSInteger red = [NSColor p_hexToInt:[hexCode substringWithRange:NSMakeRange(0, 2)]];
-		NSInteger green = [NSColor p_hexToInt:[hexCode substringWithRange:NSMakeRange(2, 2)]];
-		NSInteger blue = [NSColor p_hexToInt:[hexCode substringWithRange:NSMakeRange(4, 2)]];
+		NSInteger red = [NSColor hexToInt:[hexCode substringWithRange:NSMakeRange(0, 2)]];
+		NSInteger green = [NSColor hexToInt:[hexCode substringWithRange:NSMakeRange(2, 2)]];
+		NSInteger blue = [NSColor hexToInt:[hexCode substringWithRange:NSMakeRange(4, 2)]];
 		if (red == -1 || blue == -1 || green == -1) {
 			return nil;
 		}
@@ -39,8 +39,8 @@
 	return nil;
 }
 
-//*****//
-+ (NSInteger)p_hexToInt:(NSString *)hex {
+
++ (NSInteger)hexToInt:(NSString *)hex {
 	NSInteger returnValue = 0;
 	NSInteger i;
 	for (i = 0; i < hex.length; i++) {
@@ -70,7 +70,7 @@
 	return returnValue;
 }
 
-//*****//
+
 - (NSString *)m3_hexadecimalString {
 	NSInteger red = 0;
 	NSInteger green = 0;
@@ -90,27 +90,27 @@
 		count++;
 		red -= 16;
 	}
-	NSString *redstr = [NSString stringWithFormat:@"%@%@", [self p_hexForInt:count], [self p_hexForInt:red]];
+	NSString *redstr = [NSString stringWithFormat:@"%@%@", [self hexForInt:count], [self hexForInt:red]];
 	
 	count = 0;
 	while (green >= 16) {
 		count++;
 		green -= 16;
 	}
-	NSString *greenstr = [NSString stringWithFormat:@"%@%@", [self p_hexForInt:count], [self p_hexForInt:green]];
+	NSString *greenstr = [NSString stringWithFormat:@"%@%@", [self hexForInt:count], [self hexForInt:green]];
 	
 	count = 0;
 	while (blue >= 16) {
 		count++;
 		blue -= 16;
 	}
-	NSString *bluestr = [NSString stringWithFormat:@"%@%@", [self p_hexForInt:count], [self p_hexForInt:blue]];
+	NSString *bluestr = [NSString stringWithFormat:@"%@%@", [self hexForInt:count], [self hexForInt:blue]];
 	
 	return [NSString stringWithFormat:@"%@%@%@", redstr, greenstr, bluestr];;
 }
 
-//*****//
-- (NSString *)p_hexForInt:(NSInteger)integer {
+
+- (NSString *)hexForInt:(NSInteger)integer {
 	if (integer < 10) {
 		return [NSString stringWithFormat:@"%ld", (long)integer];
 	}
@@ -137,7 +137,7 @@
 	return nil;
 }
 
-//*****//
+
 - (NSString *)m3_colorToString {
 	if ([self.colorSpace isEqual:[NSColorSpace genericGrayColorSpace]]) {
 		return [NSString stringWithFormat:@"%f/%f/%f/%f", self.whiteComponent, self.whiteComponent, self.whiteComponent, self.alphaComponent];
@@ -146,7 +146,7 @@
 	}
 }
 
-//*****//
+
 + (NSColor *)m3_colorWithString:(NSString *)string {
 	NSArray *components = [string componentsSeparatedByString:@"/"];
 	if (components.count != 4) {
@@ -159,8 +159,9 @@
 									 alpha:[components[3] doubleValue]];
 }
 
-//*****//
+
 - (NSColor *)m3_lighterColourBy:(CGFloat)lighten {
+#warning use HSL to modify
 	if (lighten < 0)
 		return 0;
 	
@@ -192,7 +193,7 @@
 	return [NSColor colorWithCalibratedRed:red green:green blue:blue alpha:self.alphaComponent];
 }
 
-//*****//
+
 - (NSColor *)m3_darkerColourBy:(CGFloat)darken {
 	if (darken < 0) {
 		return 0;

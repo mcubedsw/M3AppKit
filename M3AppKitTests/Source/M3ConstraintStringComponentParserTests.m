@@ -26,14 +26,14 @@
 #pragma mark -
 #pragma mark Keypath
 
-//*****//
+
 - (void)testFindsSimpleKeyPathInString {
 	M3ConstraintStringComponent *component = [parser componentFromString:@"$self.attribute"];
 	
 	assertThat(component.keyPath, is(equalTo(@"self")));
 }
 
-//*****//
+
 - (void)testFindsComplexKeyPathInString {
 	M3ConstraintStringComponent *component = [parser componentFromString:@"$self.foobar.baz.attribute"];
 	
@@ -47,28 +47,28 @@
 #pragma mark -
 #pragma mark Attribute
 
-//*****//
+
 - (void)testFindsSimpleAttributeInString {
 	M3ConstraintStringComponent *component = [parser componentFromString:@"$self.attribute"];
 	
 	assertThat(component.attributeList, is(equalTo(@[ @"attribute" ])));
 }
 
-//*****//
+
 - (void)testFindsAttributeListInString {
 	M3ConstraintStringComponent *component = [parser componentFromString:@"$self.(attr1, attr2)"];
 	
 	assertThat(component.attributeList, is(equalTo(@[ @"attr1", @"attr2"])));
 }
 
-//*****//
+
 - (void)testFindsSuperAttributeInString {
 	M3ConstraintStringComponent *component = [parser componentFromString:@"$self.super"];
 	
 	assertThat(component.attributeList, is(equalTo(@[ @"top", @"leading", @"bottom", @"trailing"])));
 }
 
-//*****//
+
 - (void)testFindsSizeAttributeInString {
 	M3ConstraintStringComponent *component = [parser componentFromString:@"$self.size"];
 	
@@ -82,7 +82,7 @@
 #pragma mark -
 #pragma mark Multiplier
 
-//*****//
+
 - (void)testFindsMultiplierInString {
 	M3ConstraintStringComponent *component = [parser componentFromString:@"$self.attr * 5.2"];
 	
@@ -98,7 +98,7 @@
 #pragma mark -
 #pragma mark Constant
 
-//*****//
+
 - (void)testFindsConstantInStringWithKeyPath {
 	M3ConstraintStringComponent *component = [parser componentFromString:@"$self.attr + 42"];
 	
@@ -107,7 +107,7 @@
 	assertThat(component.constantList, is(equalTo(@[ @42 ])));
 }
 
-//*****//
+
 - (void)testFindsNegativeConstantInStringWithKeyPath {
 	M3ConstraintStringComponent *component = [parser componentFromString:@"$self.attr - 42"];
 	assertThat(component.keyPath, is(equalTo(@"self")));
@@ -115,7 +115,7 @@
 	assertThat(component.constantList, is(equalTo(@[ @-42 ])));
 }
 
-//*****//
+
 - (void)testFindsMultiplierAndConstantInString {
 	M3ConstraintStringComponent *component = [parser componentFromString:@"$self.attr * 5.2 + 42"];
 	
@@ -125,14 +125,14 @@
 	assertThat(component.constantList, is(equalTo(@[ @42 ])));
 }
 
-//*****//
+
 - (void)testFindsConstantInString {
 	M3ConstraintStringComponent *component = [parser componentFromString:@"-42"];
 	
 	assertThat(component.constantList, is(equalTo(@[ @-42 ])));
 }
 
-//*****//
+
 - (void)testFindsMultipleConstantsInString {
 	M3ConstraintStringComponent *component = [parser componentFromString:@"(42, 5, 17)"];
 	

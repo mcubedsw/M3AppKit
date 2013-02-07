@@ -14,34 +14,47 @@
 
 @synthesize menu = _menu;
 
-//*****//
+
+
+
+
+#pragma mark -
+#pragma mark Initialisers
+
 - (id)init {
 	if ((self = [super init])) {
-		[self addObserver:self forKeyPath:@"ignoredColumnIdentifiers" options:0 context:NULL];
+		[self reloadMenu];
 	}
 	return self;
 }
 
-//*****//
+
 - (id)initWithCoder:(NSCoder *)aDecoder {
 	if ((self = [super init])) {
 		[self setTableView:[aDecoder decodeObjectForKey:@"tableView"]];
+		[self reloadMenu];
 	}
 	return self;
 }
 
-//*****//
+
 - (void)encodeWithCoder:(NSCoder *)aCoder {
 	[aCoder encodeConditionalObject:self.tableView forKey:@"tableView"];
 }
 
-//*****//
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
-	_menu = nil;
-	[self.tableView.headerView setMenu:self.menu];
+
+
+
+
+#pragma mark -
+#pragma mark Properties
+
+- (void)setIgnoredColumnIdentifiers:(NSArray *)aIgnoredColumnIdentifiers {
+	_ignoredColumnIdentifiers = [aIgnoredColumnIdentifiers copy];
+	[self reloadMenu];
 }
 
-//*****//
+
 - (void)setTableView:(NSTableView *)view {
 	if (_tableView != view) {
 		_tableView = view;
@@ -50,7 +63,7 @@
 	}
 }
 
-//*****//
+
 - (NSMenu *)menu {
 	if (!_menu) {
 		_menu = [NSMenu new];
@@ -69,7 +82,19 @@
 	return _menu;
 }
 
-//*****//
+
+
+
+
+#pragma mark -
+#pragma mark Misc
+
+- (void)reloadMenu {
+	_menu = nil;
+	[self.tableView.headerView setMenu:self.menu];
+}
+
+
 - (void)toggleColumn:(NSMenuItem *)sender {
 	NSTableColumn *column = sender.representedObject;
 	[sender.representedObject setHidden:!column.isHidden];

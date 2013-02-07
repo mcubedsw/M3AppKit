@@ -12,12 +12,12 @@
 
 @implementation NSTextField (M3Extensions)
 
-//*****//
+
 - (BOOL)m3_isLabel {
 	return self.isSelectable && self.drawsBackground && self.isBordered;
 }
 
-//*****//
+
 - (void)m3_setLabel:(BOOL)aIsLabel {
 	[self setSelectable:NO];
 	[self setDrawsBackground:NO];

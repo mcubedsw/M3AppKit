@@ -33,21 +33,20 @@
 - (NSString *)m3_viewName;
 
 /**
- BRIEF_HERE
+ Brings the receiver to the front of its parent's subview list
  @since PROJECT_NAME VERSION_NAME or later
 */
 - (void)m3_bringViewToFront;
 
 /**
- BRIEF_HERE
+ Sends the receiver to the back of its parent's subview list
  @since PROJECT_NAME VERSION_NAME or later
 */
 - (void)m3_sendViewToBack;
 
 /**
- BRIEF_HERE
- @param PARAM_NAME PARAM_DESCRIPTION
- @return RETURN_DESCRIPTION
+ Sorts the receiver's subviews using the supplied block
+ @param aComparator A comparator block for determining the sort order of views
  @since PROJECT_NAME VERSION_NAME or later
 */
 - (void)m3_sortSubviewsUsingBlock:(NSComparator)aComparator;
@@ -59,21 +58,23 @@
 - (void)m3_removeAllSubviews;
 
 /**
- BRIEF_HERE
- @param PARAM_NAME PARAM_DESCRIPTION
- @return RETURN_DESCRIPTION
+ Adds a subview to the receiver, with the initial superview constraints defined by the inset
+ @param aSubview The subview to add
+ @param aInsets The margin the subview should have from each edge of the receiver
  @since PROJECT_NAME VERSION_NAME or later
 */
 - (void)m3_addSubview:(NSView *)aSubview andFillConstraintsWithInset:(NSEdgeInsets)aInsets;
-
-/**
- BRIEF_HERE
- @param PARAM_NAME PARAM_DESCRIPTION
- @return RETURN_DESCRIPTION
- @since PROJECT_NAME VERSION_NAME or later
-*/
+#warning Remove
 - (void)m3_addSubview:(NSView *)aSubview andFillConstraintsWithInset:(NSEdgeInsets)aInsets animated:(BOOL)aAnimated;
 
+/**
+ Adds the supplied constraints to the subview
+ 
+ For a detailed discussion of this method se
+ @param aConstraints An array of constraint strings
+ @param aSubstitutionViews A collection of substitution views to use in the constraint strings
+ @since PROJECT_NAME VERSION_NAME or later
+ */
 - (void)m3_addConstraints:(NSArray *)aConstraints forViews:(id)aSubstitutionViews;
 
 @end

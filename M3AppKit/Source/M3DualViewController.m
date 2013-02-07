@@ -11,19 +11,19 @@
 
 @interface M3DualViewController () 
 
-- (CGFloat)p_hiddenConstantFromFrame:(NSRect)aFrame constraintType:(NSLayoutAttribute)aType;
+- (CGFloat)hiddenConstantFromFrame:(NSRect)aFrame constraintType:(NSLayoutAttribute)aType;
 
 @end
 
 
 @implementation M3DualViewController
 
-//*****//
+
 - (BOOL)isSecondaryViewVisible {
 	return self.secondaryViewConstraint.constant == 0;
 }
 
-//*****//
+
 - (void)showSecondaryViewAnimated:(BOOL)aAnimated {
 	[self.secondaryView setHidden:NO];
 	[NSAnimationContext runAnimationGroup:^(NSAnimationContext *context) {
@@ -33,13 +33,13 @@
 	} completionHandler:nil];
 }
 
-//*****//
+
 - (void)hideSecondaryViewAnimated:(BOOL)aAnimated {
 	[NSAnimationContext runAnimationGroup:^(NSAnimationContext *context) {
 		[context setDuration:aAnimated ? 0.4 : 0];
 		[context setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
 		
-		CGFloat constant = [self p_hiddenConstantFromFrame:self.secondaryView.frame
+		CGFloat constant = [self hiddenConstantFromFrame:self.secondaryView.frame
 										   constraintType:self.secondaryViewConstraint.firstAttribute];
 		[[self.secondaryViewConstraint animator] setConstant:constant];
 	} completionHandler:^{
@@ -47,8 +47,8 @@
 	}];
 }
 
-//*****//
-- (CGFloat)p_hiddenConstantFromFrame:(NSRect)aFrame constraintType:(NSLayoutAttribute)aType {
+
+- (CGFloat)hiddenConstantFromFrame:(NSRect)aFrame constraintType:(NSLayoutAttribute)aType {
 	if (aType == NSLayoutAttributeLeft || aType == NSLayoutAttributeLeading) {
 		return -aFrame.size.width;
 	} else if (aType == NSLayoutAttributeRight || aType == NSLayoutAttributeTrailing) {
