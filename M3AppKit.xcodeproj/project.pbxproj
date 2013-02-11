@@ -21,6 +21,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		990D559516C9345F00A6B35B /* NSLayoutConstraint+M3ExtensionsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 990D559416C9345F00A6B35B /* NSLayoutConstraint+M3ExtensionsTests.m */; };
 		991C4E2015755D9C00CC43F3 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 991C4E1F15755D9C00CC43F3 /* Cocoa.framework */; };
 		991C4E2A15755D9C00CC43F3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 991C4E2815755D9C00CC43F3 /* InfoPlist.strings */; };
 		991C4E601575626A00CC43F3 /* M3Alert.h in Headers */ = {isa = PBXBuildFile; fileRef = 991C4E5E1575626A00CC43F3 /* M3Alert.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -125,6 +126,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		990D559316C9345F00A6B35B /* NSLayoutConstraint+M3ExtensionsTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSLayoutConstraint+M3ExtensionsTests.h"; sourceTree = "<group>"; };
+		990D559416C9345F00A6B35B /* NSLayoutConstraint+M3ExtensionsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSLayoutConstraint+M3ExtensionsTests.m"; sourceTree = "<group>"; };
 		991C4E1C15755D9C00CC43F3 /* M3AppKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = M3AppKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		991C4E1F15755D9C00CC43F3 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		991C4E2215755D9C00CC43F3 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -385,6 +388,8 @@
 				9990A57B16C27B78000F8FDB /* NSBezierPath+M3ExtensionsTests.m */,
 				9990A57D16C3DB53000F8FDB /* NSColor+M3ExtensionsTests.h */,
 				9990A57E16C3DB53000F8FDB /* NSColor+M3ExtensionsTests.m */,
+				990D559316C9345F00A6B35B /* NSLayoutConstraint+M3ExtensionsTests.h */,
+				990D559416C9345F00A6B35B /* NSLayoutConstraint+M3ExtensionsTests.m */,
 			);
 			name = Misc;
 			sourceTree = "<group>";
@@ -613,6 +618,7 @@
 				99D878AD15F4F9ED00BE70F6 /* M3TestContentView.m in Sources */,
 				9990A57C16C27B78000F8FDB /* NSBezierPath+M3ExtensionsTests.m in Sources */,
 				9990A57F16C3DB53000F8FDB /* NSColor+M3ExtensionsTests.m in Sources */,
+				990D559516C9345F00A6B35B /* NSLayoutConstraint+M3ExtensionsTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
