@@ -9,18 +9,18 @@
 
 
 /**
- DISCUSSION_HERE
+ Convenience methods on NSShadow
  */
 @interface NSShadow (M3Extensions) 
 
 /**
- ABSTRACT_HERE
- DISCUSSION_HERE
- @param PARAM_HERE
- @param PARAM_HERE
- @result RESULT_HERE
+ A class method for creating a new NSShadow object
+ @param aColor The color of the shadow
+ @param aOffset The shadow offset
+ @param aBlur The blur radius of the shadow
+ @result A newly initialised NSShadow object
  @since M3AppKit 1.0 and later
  */
-+ (NSShadow *)m3_shadowWithColor:(NSColor *)color offset:(NSSize)offset blurRadius:(CGFloat)blur;
++ (instancetype)m3_shadowWithColor:(NSColor *)aColor offset:(NSSize)aOffset blurRadius:(CGFloat)aBlur;
 
 @end

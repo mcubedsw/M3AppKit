@@ -8,6 +8,6 @@
 
 #import <SenTestingKit/SenTestingKit.h>
 
-@interface NSPopUpButton_M3Extensions : SenTestCase
+@interface NSPopUpButton_M3ExtensionsTests : SenTestCase
 
 @end

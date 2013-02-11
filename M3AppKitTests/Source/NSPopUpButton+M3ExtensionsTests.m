@@ -6,10 +6,10 @@
 //  Copyright (c) 2013 M Cubed Software. All rights reserved.
 //
 
-#import "NSPopUpButton+M3Extensions.h"
+#import "NSPopUpButton+M3ExtensionsTests.h"
 #import <M3AppKit/M3AppKit.h>
 
-@implementation NSPopUpButton_M3Extensions {
+@implementation NSPopUpButton_M3ExtensionsTests {
 	NSPopUpButton *popUpButton;
 }
 
