@@ -8,31 +8,29 @@
 *****************************************************************/
 
 /**
- BRIEF_HERE
+ Convenience Methods on NSPopUpButton
  @since PROJECT_NAME VERSION_NAME or later
 */
 @interface NSPopUpButton (M3Extensions)
 
 /**
- BRIEF_HERE
- @param PARAM_NAME PARAM_DESCRIPTION
- @return RETURN_DESCRIPTION
+ Adds the supplied menu item to the receiver
+ @param aItem The menu item to add to the receiver
  @since PROJECT_NAME VERSION_NAME or later
 */
 - (void)m3_addMenuItem:(NSMenuItem *)aItem;
 
 /**
- BRIEF_HERE
- @param PARAM_NAME PARAM_DESCRIPTION
- @return RETURN_DESCRIPTION
+ Convenience method for adding a new item and retrieving it.
+ @param aTitle The title of the new menu item
+ @return The newly created menu item
  @since PROJECT_NAME VERSION_NAME or later
 */
 - (NSMenuItem *)m3_addItemWithTitle:(NSString *)aTitle;
 
 /**
- BRIEF_HERE
- @param PARAM_NAME PARAM_DESCRIPTION
- @return RETURN_DESCRIPTION
+ Selects the first item in the popup whos represented object matches the supplied object
+ @param aRepresentedObject The represented object to match against
  @since PROJECT_NAME VERSION_NAME or later
 */
 - (void)m3_selectItemWithRepresentedObject:(id)aRepresentedObject;
