@@ -34,7 +34,11 @@
 		if (red == -1 || blue == -1 || green == -1) {
 			return nil;
 		}
-		return [NSColor colorWithCalibratedRed:red/255.0 green:green/255.0 blue:blue/255.0 alpha:1.0];
+		//Convert to floats between 0 and 1 with 2 d.p.
+		CGFloat roundedRed = roundf((red * 100)/255.0) / 100.0;
+		CGFloat roundedGreen = roundf((green * 100)/255.0) / 100.0;
+		CGFloat roundedBlue = roundf((blue * 100)/255.0) / 100.0;
+		return [NSColor colorWithDeviceRed:roundedRed green:roundedGreen blue:roundedBlue alpha:1.0];
 	} 
 	return nil;
 }
@@ -75,15 +79,15 @@
 	NSInteger red = 0;
 	NSInteger green = 0;
 	NSInteger blue =  0;
-	if ([self.colorSpace isEqual:[NSColorSpace genericGrayColorSpace]]) {
-		red = (NSInteger)(255 * self.whiteComponent);
-		green = (NSInteger)(255 * self.whiteComponent);
-		blue = (NSInteger)(255 * self.whiteComponent);
-	} else {
-		red = (NSInteger)(255 * self.redComponent);
-		green = (NSInteger)(255 * self.greenComponent);
-		blue = (NSInteger)(255 * self.blueComponent);
+	
+	NSColor *color = self;
+	if (![self.colorSpace isEqual:[NSColorSpace deviceRGBColorSpace]]) {
+		color = [color colorUsingColorSpace:[NSColorSpace deviceRGBColorSpace]];
 	}
+	
+	red = (NSInteger)(255 * color.redComponent);
+	green = (NSInteger)(255 * color.greenComponent);
+	blue = (NSInteger)(255 * color.blueComponent);
 	
 	int count = 0;
 	while (red >= 16) {
@@ -138,93 +142,53 @@
 }
 
 
-- (NSString *)m3_colorToString {
-	if ([self.colorSpace isEqual:[NSColorSpace genericGrayColorSpace]]) {
-		return [NSString stringWithFormat:@"%f/%f/%f/%f", self.whiteComponent, self.whiteComponent, self.whiteComponent, self.alphaComponent];
-	} else {
-		return [NSString stringWithFormat:@"%f/%f/%f/%f", self.redComponent, self.greenComponent, self.blueComponent, self.alphaComponent];
+- (NSString *)m3_colorString {
+	NSColor *color = self;
+	if (![self.colorSpace isEqual:[NSColorSpace deviceRGBColorSpace]]) {
+		color = [color colorUsingColorSpace:[NSColorSpace deviceRGBColorSpace]];
 	}
+	return [NSString stringWithFormat:@"%g/%g/%g/%g", color.redComponent, color.greenComponent, color.blueComponent, color.alphaComponent];
 }
 
 
 + (NSColor *)m3_colorWithString:(NSString *)string {
-	NSArray *components = [string componentsSeparatedByString:@"/"];
+	NSPredicate *numberOnlyPredicate = [NSPredicate predicateWithFormat:@"self matches '[0-9\\.]*'"];
+	NSArray *components = [[string componentsSeparatedByString:@"/"] filteredArrayUsingPredicate:numberOnlyPredicate];
 	if (components.count != 4) {
-		return [NSColor clearColor];
+		return nil;
 	}
 	
-	return [NSColor colorWithCalibratedRed:[components[0] doubleValue]
-									 green:[components[1] doubleValue]
-									  blue:[components[2] doubleValue]
-									 alpha:[components[3] doubleValue]];
+	return [NSColor colorWithDeviceRed:[components[0] doubleValue]
+								 green:[components[1] doubleValue]
+								  blue:[components[2] doubleValue]
+								 alpha:[components[3] doubleValue]];
 }
 
-
-- (NSColor *)m3_lighterColourBy:(CGFloat)lighten {
-#warning use HSL to modify
-	if (lighten < 0)
-		return 0;
+- (NSColor *)m3_colourByAdjustingBrightness:(CGFloat)aBrightness {
+	if (aBrightness == 0) return self;
 	
-	CGFloat red = 0;
-	CGFloat green = 0;
-	CGFloat blue = 0;
-
-	if ([self.colorSpace isEqual:[NSColorSpace genericGrayColorSpace]]) {
-		red = self.whiteComponent + lighten;
-		green = self.whiteComponent + lighten;
-		blue = self.whiteComponent + lighten;
-	} else {
-		red = self.redComponent + lighten;
-		green = self.greenComponent + lighten;
-		blue = self.blueComponent + lighten;
-	}
-	if (red > 1) {
-		green += (red-1)/2;
-		blue += (red-1)/2;
-	}
-	if (green > 1) {
-		red += (green-1)/2;
-		blue += (green-1)/2;
-	}
-	if (blue > 1) {
-		green += (blue-1)/2;
-		red += (blue-1)/2;
-	}
-	return [NSColor colorWithCalibratedRed:red green:green blue:blue alpha:self.alphaComponent];
+	return [NSColor colorWithDeviceHue:self.hueComponent
+							saturation:self.saturationComponent
+							brightness:(self.brightnessComponent + aBrightness)
+								 alpha:self.alphaComponent];
 }
 
+- (NSColor *)m3_colourByAdjustingHue:(CGFloat)aHue {
+	if (aHue == 0) return self;
+	
+	return [NSColor colorWithDeviceHue:(self.hueComponent + aHue)
+							saturation:self.saturationComponent
+							brightness:self.brightnessComponent
+								 alpha:self.alphaComponent];
+}
 
-- (NSColor *)m3_darkerColourBy:(CGFloat)darken {
-	if (darken < 0) {
-		return 0;
-	}
+- (NSColor *)m3_colourByAdjustingSaturation:(CGFloat)aSaturation {
+	if (aSaturation == 0) return self;
 	
-	CGFloat red = 0;
-	CGFloat green = 0;
-	CGFloat blue = 0;
-	
-	if ([self.colorSpace isEqual:[NSColorSpace genericGrayColorSpace]]) {
-		red = self.whiteComponent - darken;
-		green = self.whiteComponent - darken;
-		blue = self.whiteComponent - darken;
-	} else {
-		red = self.redComponent - darken;
-		green = self.greenComponent - darken;
-		blue = self.blueComponent - darken;
-	}
-	if (red < 0) {
-		green += red/2;
-		blue += red/2;
-	}
-	if (green < 0) {
-		red += green/2;
-		blue += green/2;
-	}
-	if (blue < 0) {
-		green += blue/2;
-		red += blue/2;
-	}
-	return [NSColor colorWithCalibratedRed:red green:green blue:blue alpha:self.alphaComponent];
+	return [NSColor colorWithDeviceHue:self.hueComponent
+							saturation:(self.saturationComponent + aSaturation)
+							brightness:self.brightnessComponent
+								 alpha:self.alphaComponent];
 }
 
 @end

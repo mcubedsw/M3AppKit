@@ -9,7 +9,7 @@
 
 
 /**
- This category adds methods for dealing with hex strings, converting to strings for saving and lightening/darkening the colour
+ This category adds methods for dealing with hex strings, converting to strings for saving and adjusting the colour
  @since M3AppKit 1.0 and later
  */
 @interface NSColor (M3Extensions) 
@@ -21,7 +21,7 @@
  @result A newly initialised NSColor object
  @since M3AppKit 1.0 and later
  */
-+ (NSColor *)m3_colorWithHexadecimalString:(NSString *)hexCode;
++ (instancetype)m3_colorWithHexadecimalString:(NSString *)hexCode;
 
 /**
  Returns the hexidecimal string equivalent for the colour
@@ -36,7 +36,7 @@
  @result Returns a string for the current colour in the format: red/green/blue/alpha
  @since M3AppKit 1.0 and later
  */
-- (NSString *)m3_colorToString;
+- (NSString *)m3_colorString;
 
 /**
  Creates and returns a colour from the supplied string
@@ -45,22 +45,36 @@
  @result A newly initialised NSColor object
  @since M3AppKit 1.0 and later
  */
-+ (NSColor *)m3_colorWithString:(NSString *)string;
++ (instancetype)m3_colorWithString:(NSString *)string;
 
 /**
- Creates and returns a colour that is lighten units lighter than the receiver
- @param lighten A value between 0 and 1 for how much lighter you want the colour to be
- @result A newly initialised NSColor object that is lighter than the receiver
+ Creates and returns a colour that is lighter or darker than the receiver
+ This is effectively a convenience method modifying a colour's brightness attribute. If the brightness after adjustment is below 0.0 it will be 
+ interpreted as 0.0, and if above 1.0 will be interpreted as 1.0
+ @param aBrightness The amount to adjust the brightness by.
+ @result An NSColor object that is lighter or darker than the receiver. If the supplied value is 0, this merely returns the receiver.
  @since M3AppKit 1.0 and later
  */
-- (NSColor *)m3_lighterColourBy:(CGFloat)lighten;
+- (NSColor *)m3_colourByAdjustingBrightness:(CGFloat)aBrightness;
 
 /**
- Creates and returns a colour that is darken units darker than the receiver
- @param darken A value between 0 and 1 for how much lighter you want the colour to be
- @result A newly initialised NSColor object that is darker than the receiver
+ Creates and returns a colour with a higher or lower hue than the receiver
+ This is effectively a convenience method modifying a colour's hue attribute. If the hue after adjustment is below 0.0 it will be
+ interpreted as 0.0, and if above 1.0 will be interpreted as 1.0
+ @param aHue The amount to adjust the hue by.
+ @result An NSColor object that is lighter or darker than the receiver. If the supplied value is 0, this merely returns the receiver.
  @since M3AppKit 1.0 and later
  */
-- (NSColor *)m3_darkerColourBy:(CGFloat)darken;
+- (NSColor *)m3_colourByAdjustingHue:(CGFloat)aHue;
+
+/**
+ Creates and returns a colour that is more or less saturated than the receiver
+ This is effectively a convenience method modifying a colour's saturation attribute. If the saturation after adjustment is below 0.0 it will be 
+ interpreted as 0.0, and if above 1.0 will be interpreted as 1.0
+ @param aSaturation The amount to adjust the saturation by.
+ @result An NSColor object that is more of less saturated than the receiver. If the supplied value is 0, this merely returns the receiver.
+ @since M3AppKit 1.0 and later
+ */
+- (NSColor *)m3_colourByAdjustingSaturation:(CGFloat)aSaturation;
 
 @end
