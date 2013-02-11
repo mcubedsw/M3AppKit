@@ -8,15 +8,16 @@
 *****************************************************************/
 
 /**
- BRIEF_HERE
+ Convenience methods on NSMenuItem
  @since PROJECT_NAME VERSION_NAME or later
 */
 @interface NSMenuItem (M3Extensions)
 
 /**
- BRIEF_HERE
+ An item identifier property for menu items, similar to identifiers on views.
+ This property provides a better option for uniquely identifying constraints than tags.
  @since PROJECT_NAME VERSION_NAME or later
 */
-@property (copy, setter=m3_setItemIdentifier:) NSString *m3_itemIdentifier;
+@property (copy) NSString *m3_itemIdentifier;
 
 @end

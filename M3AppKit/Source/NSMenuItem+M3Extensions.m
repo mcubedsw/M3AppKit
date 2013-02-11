@@ -19,7 +19,7 @@ char M3MenuItemExtensionsItemIdentifierKey;
 }
 
 
-- (void)m3_setItemIdentifier:(NSString *)itemIdentifier {
+- (void)setM3_itemIdentifier:(NSString *)itemIdentifier {
 	objc_setAssociatedObject(self, &M3MenuItemExtensionsItemIdentifierKey, itemIdentifier, OBJC_ASSOCIATION_COPY_NONATOMIC);
 }
 
