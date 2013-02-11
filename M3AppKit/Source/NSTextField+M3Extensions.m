@@ -14,14 +14,14 @@
 
 
 - (BOOL)m3_isLabel {
-	return self.isSelectable && self.drawsBackground && self.isBordered;
+	return !self.isSelectable && !self.drawsBackground && !self.isBordered;
 }
 
 
-- (void)m3_setLabel:(BOOL)aIsLabel {
-	[self setSelectable:NO];
-	[self setDrawsBackground:NO];
-	[self setBordered:NO];
+- (void)setM3_label:(BOOL)aIsLabel {
+	[self setSelectable:!aIsLabel];
+	[self setDrawsBackground:!aIsLabel];
+	[self setBordered:!aIsLabel];
 }
 
 @end

@@ -10,15 +10,16 @@
 #import <Foundation/Foundation.h>
 
 /**
- BRIEF_HERE
+ Convenience methods on NSTextField
  @since PROJECT_NAME VERSION_NAME or later
 */
 @interface NSTextField (M3Extensions)
 
 /**
- BRIEF_HERE
+ Property for converting a text field between a label and standard text field
+ The definition used for a label is a text field with no border, background and not selectable
  @since PROJECT_NAME VERSION_NAME or later
 */
-@property (assign, getter=m3_isLabel, setter=m3_setLabel:) BOOL m3_label;
+@property (assign, getter=m3_isLabel) BOOL m3_label;
 
 @end
