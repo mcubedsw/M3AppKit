@@ -11,6 +11,7 @@
 
 #import "M3PreferencesSection.h"
 #import "NSView+M3Extensions.h"
+#import "NSView+M3AutolayoutExtensions.h"
 
 #define ESCAPE_KEY_CODE 53
 
@@ -152,7 +153,7 @@
 #warning Fix transition
 	if (currentSection) {
 		[currentSection.view removeFromSuperview];
-		[self.contentView m3_addSubview:newSection.view andFillConstraintsWithInset:NSEdgeInsetsMake(0, 0, 0, 0) animated:YES];
+		[self.contentView m3_addSubview:newSection.view andFillConstraintsWithInset:NSEdgeInsetsMake(0, 0, 0, 0)];
 	} else {
 		[[self.contentView animator] m3_addSubview:newSection.view andFillConstraintsWithInset:NSEdgeInsetsMake(0, 0, 0, 0)];
 	}

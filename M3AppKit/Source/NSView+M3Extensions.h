@@ -57,24 +57,4 @@
  */
 - (void)m3_removeAllSubviews;
 
-/**
- Adds a subview to the receiver, with the initial superview constraints defined by the inset
- @param aSubview The subview to add
- @param aInsets The margin the subview should have from each edge of the receiver
- @since PROJECT_NAME VERSION_NAME or later
-*/
-- (void)m3_addSubview:(NSView *)aSubview andFillConstraintsWithInset:(NSEdgeInsets)aInsets;
-#warning Remove
-- (void)m3_addSubview:(NSView *)aSubview andFillConstraintsWithInset:(NSEdgeInsets)aInsets animated:(BOOL)aAnimated;
-
-/**
- Adds the supplied constraints to the subview
- 
- For a detailed discussion of this method se
- @param aConstraints An array of constraint strings
- @param aSubstitutionViews A collection of substitution views to use in the constraint strings
- @since PROJECT_NAME VERSION_NAME or later
- */
-- (void)m3_addConstraints:(NSArray *)aConstraints forViews:(id)aSubstitutionViews;
-
 @end
