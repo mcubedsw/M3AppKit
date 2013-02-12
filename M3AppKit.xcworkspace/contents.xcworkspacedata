@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "container:M3AppKit.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:M3AppKit Examples/M3AppKit Examples.xcodeproj">
+   </FileRef>
+</Workspace>

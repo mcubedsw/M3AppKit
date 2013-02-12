@@ -1,0 +1,465 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		990D55B916CAA22900A6B35B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 990D55B816CAA22900A6B35B /* Cocoa.framework */; };
+		990D55C316CAA22900A6B35B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 990D55C116CAA22900A6B35B /* InfoPlist.strings */; };
+		990D55C516CAA22900A6B35B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 990D55C416CAA22900A6B35B /* main.m */; };
+		990D55C916CAA22900A6B35B /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 990D55C716CAA22900A6B35B /* Credits.rtf */; };
+		990D55CC16CAA22900A6B35B /* M3AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 990D55CB16CAA22900A6B35B /* M3AppDelegate.m */; };
+		990D55CF16CAA22A00A6B35B /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 990D55CD16CAA22A00A6B35B /* MainMenu.xib */; };
+		990D55D716CAA24600A6B35B /* M3AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 990D55D516CAA24000A6B35B /* M3AppKit.framework */; };
+		990D55DB16CAA93100A6B35B /* M3AlertExampleWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 990D55DA16CAA93100A6B35B /* M3AlertExampleWindowController.m */; };
+		990D55DE16CAA95800A6B35B /* M3ColumnVisibilityControllerExampleWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 990D55DD16CAA95800A6B35B /* M3ColumnVisibilityControllerExampleWindowController.m */; };
+		990D55E116CAA96E00A6B35B /* M3PreferencesWindowExampleWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 990D55E016CAA96E00A6B35B /* M3PreferencesWindowExampleWindowController.m */; };
+		990D55E416CAA97D00A6B35B /* M3NavigationViewExampleWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 990D55E316CAA97D00A6B35B /* M3NavigationViewExampleWindowController.m */; };
+		990D55E716CAA98B00A6B35B /* M3DualViewControllerExampleWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 990D55E616CAA98B00A6B35B /* M3DualViewControllerExampleWindowController.m */; };
+		990D55EA16CAA99600A6B35B /* M3SplitViewExampleWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 990D55E916CAA99600A6B35B /* M3SplitViewExampleWindowController.m */; };
+		990D55ED16CAADB100A6B35B /* M3AlertExampleWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 990D55EB16CAADB100A6B35B /* M3AlertExampleWindow.xib */; };
+		990D55F016CAADC600A6B35B /* M3ColumnVisibilityControllerExampleWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 990D55EE16CAADC600A6B35B /* M3ColumnVisibilityControllerExampleWindow.xib */; };
+		990D55F316CAADD700A6B35B /* M3PreferencesWindowExampleWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 990D55F116CAADD700A6B35B /* M3PreferencesWindowExampleWindow.xib */; };
+		990D55F616CAADEB00A6B35B /* M3NavigationViewExampleWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 990D55F416CAADEB00A6B35B /* M3NavigationViewExampleWindow.xib */; };
+		990D55F916CAAE0600A6B35B /* M3DualViewControllerExampleWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 990D55F716CAAE0600A6B35B /* M3DualViewControllerExampleWindow.xib */; };
+		990D55FC16CAAE1400A6B35B /* M3SplitViewExampleWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 990D55FA16CAAE1400A6B35B /* M3SplitViewExampleWindow.xib */; };
+		990D55FE16CAAFC600A6B35B /* M3Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 990D55FD16CAAFC600A6B35B /* M3Foundation.framework */; };
+		990D560016CAAFD400A6B35B /* M3Foundation.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 990D55FD16CAAFC600A6B35B /* M3Foundation.framework */; };
+		990D560116CAAFD600A6B35B /* M3AppKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 990D55D516CAA24000A6B35B /* M3AppKit.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		990D55FF16CAAFCC00A6B35B /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				990D560016CAAFD400A6B35B /* M3Foundation.framework in CopyFiles */,
+				990D560116CAAFD600A6B35B /* M3AppKit.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		990D55B516CAA22900A6B35B /* M3AppKit Examples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "M3AppKit Examples.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		990D55B816CAA22900A6B35B /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		990D55BB16CAA22900A6B35B /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		990D55BC16CAA22900A6B35B /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		990D55BD16CAA22900A6B35B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		990D55C016CAA22900A6B35B /* M3AppKit Examples-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "M3AppKit Examples-Info.plist"; sourceTree = "<group>"; };
+		990D55C216CAA22900A6B35B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		990D55C416CAA22900A6B35B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		990D55C616CAA22900A6B35B /* M3AppKit Examples-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "M3AppKit Examples-Prefix.pch"; sourceTree = "<group>"; };
+		990D55C816CAA22900A6B35B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		990D55CA16CAA22900A6B35B /* M3AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = M3AppDelegate.h; sourceTree = "<group>"; };
+		990D55CB16CAA22900A6B35B /* M3AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = M3AppDelegate.m; sourceTree = "<group>"; };
+		990D55CE16CAA22A00A6B35B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		990D55D516CAA24000A6B35B /* M3AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = M3AppKit.framework; path = "../../../../../../../../Library/Developer/Xcode/DerivedData/M3AppKit-affdsprogvgscxgweewmcustyqud/Build/Products/Release/M3AppKit.framework"; sourceTree = "<group>"; };
+		990D55D916CAA93100A6B35B /* M3AlertExampleWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3AlertExampleWindowController.h; sourceTree = "<group>"; };
+		990D55DA16CAA93100A6B35B /* M3AlertExampleWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M3AlertExampleWindowController.m; sourceTree = "<group>"; };
+		990D55DC16CAA95800A6B35B /* M3ColumnVisibilityControllerExampleWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3ColumnVisibilityControllerExampleWindowController.h; sourceTree = "<group>"; };
+		990D55DD16CAA95800A6B35B /* M3ColumnVisibilityControllerExampleWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M3ColumnVisibilityControllerExampleWindowController.m; sourceTree = "<group>"; };
+		990D55DF16CAA96E00A6B35B /* M3PreferencesWindowExampleWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3PreferencesWindowExampleWindowController.h; sourceTree = "<group>"; };
+		990D55E016CAA96E00A6B35B /* M3PreferencesWindowExampleWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M3PreferencesWindowExampleWindowController.m; sourceTree = "<group>"; };
+		990D55E216CAA97D00A6B35B /* M3NavigationViewExampleWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3NavigationViewExampleWindowController.h; sourceTree = "<group>"; };
+		990D55E316CAA97D00A6B35B /* M3NavigationViewExampleWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M3NavigationViewExampleWindowController.m; sourceTree = "<group>"; };
+		990D55E516CAA98B00A6B35B /* M3DualViewControllerExampleWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3DualViewControllerExampleWindowController.h; sourceTree = "<group>"; };
+		990D55E616CAA98B00A6B35B /* M3DualViewControllerExampleWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M3DualViewControllerExampleWindowController.m; sourceTree = "<group>"; };
+		990D55E816CAA99600A6B35B /* M3SplitViewExampleWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3SplitViewExampleWindowController.h; sourceTree = "<group>"; };
+		990D55E916CAA99600A6B35B /* M3SplitViewExampleWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M3SplitViewExampleWindowController.m; sourceTree = "<group>"; };
+		990D55EC16CAADB100A6B35B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/M3AlertExampleWindow.xib; sourceTree = "<group>"; };
+		990D55EF16CAADC600A6B35B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/M3ColumnVisibilityControllerExampleWindow.xib; sourceTree = "<group>"; };
+		990D55F216CAADD700A6B35B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/M3PreferencesWindowExampleWindow.xib; sourceTree = "<group>"; };
+		990D55F516CAADEB00A6B35B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/M3NavigationViewExampleWindow.xib; sourceTree = "<group>"; };
+		990D55F816CAAE0600A6B35B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/M3DualViewControllerExampleWindow.xib; sourceTree = "<group>"; };
+		990D55FB16CAAE1400A6B35B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/M3SplitViewExampleWindow.xib; sourceTree = "<group>"; };
+		990D55FD16CAAFC600A6B35B /* M3Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = M3Foundation.framework; path = ../Dependencies/M3Foundation.framework; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		990D55B216CAA22900A6B35B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				990D55B916CAA22900A6B35B /* Cocoa.framework in Frameworks */,
+				990D55D716CAA24600A6B35B /* M3AppKit.framework in Frameworks */,
+				990D55FE16CAAFC600A6B35B /* M3Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		990D55AC16CAA22900A6B35B = {
+			isa = PBXGroup;
+			children = (
+				990D55BE16CAA22900A6B35B /* M3AppKit Examples */,
+				990D55B716CAA22900A6B35B /* Frameworks */,
+				990D55B616CAA22900A6B35B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		990D55B616CAA22900A6B35B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				990D55B516CAA22900A6B35B /* M3AppKit Examples.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		990D55B716CAA22900A6B35B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				990D55FD16CAAFC600A6B35B /* M3Foundation.framework */,
+				990D55D516CAA24000A6B35B /* M3AppKit.framework */,
+				990D55B816CAA22900A6B35B /* Cocoa.framework */,
+				990D55BA16CAA22900A6B35B /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		990D55BA16CAA22900A6B35B /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				990D55BB16CAA22900A6B35B /* AppKit.framework */,
+				990D55BC16CAA22900A6B35B /* CoreData.framework */,
+				990D55BD16CAA22900A6B35B /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		990D55BE16CAA22900A6B35B /* M3AppKit Examples */ = {
+			isa = PBXGroup;
+			children = (
+				990D55D816CAA5AE00A6B35B /* Source */,
+				990D55C016CAA22900A6B35B /* M3AppKit Examples-Info.plist */,
+				990D55BF16CAA22900A6B35B /* Resources */,
+			);
+			path = "M3AppKit Examples";
+			sourceTree = "<group>";
+		};
+		990D55BF16CAA22900A6B35B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				990D55CD16CAA22A00A6B35B /* MainMenu.xib */,
+				990D55EB16CAADB100A6B35B /* M3AlertExampleWindow.xib */,
+				990D55EE16CAADC600A6B35B /* M3ColumnVisibilityControllerExampleWindow.xib */,
+				990D55F116CAADD700A6B35B /* M3PreferencesWindowExampleWindow.xib */,
+				990D55F416CAADEB00A6B35B /* M3NavigationViewExampleWindow.xib */,
+				990D55F716CAAE0600A6B35B /* M3DualViewControllerExampleWindow.xib */,
+				990D55FA16CAAE1400A6B35B /* M3SplitViewExampleWindow.xib */,
+				990D55C116CAA22900A6B35B /* InfoPlist.strings */,
+				990D55C716CAA22900A6B35B /* Credits.rtf */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		990D55D816CAA5AE00A6B35B /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				990D55CA16CAA22900A6B35B /* M3AppDelegate.h */,
+				990D55CB16CAA22900A6B35B /* M3AppDelegate.m */,
+				990D55D916CAA93100A6B35B /* M3AlertExampleWindowController.h */,
+				990D55DA16CAA93100A6B35B /* M3AlertExampleWindowController.m */,
+				990D55DC16CAA95800A6B35B /* M3ColumnVisibilityControllerExampleWindowController.h */,
+				990D55DD16CAA95800A6B35B /* M3ColumnVisibilityControllerExampleWindowController.m */,
+				990D55DF16CAA96E00A6B35B /* M3PreferencesWindowExampleWindowController.h */,
+				990D55E016CAA96E00A6B35B /* M3PreferencesWindowExampleWindowController.m */,
+				990D55E216CAA97D00A6B35B /* M3NavigationViewExampleWindowController.h */,
+				990D55E316CAA97D00A6B35B /* M3NavigationViewExampleWindowController.m */,
+				990D55E516CAA98B00A6B35B /* M3DualViewControllerExampleWindowController.h */,
+				990D55E616CAA98B00A6B35B /* M3DualViewControllerExampleWindowController.m */,
+				990D55E816CAA99600A6B35B /* M3SplitViewExampleWindowController.h */,
+				990D55E916CAA99600A6B35B /* M3SplitViewExampleWindowController.m */,
+				990D55C416CAA22900A6B35B /* main.m */,
+				990D55C616CAA22900A6B35B /* M3AppKit Examples-Prefix.pch */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		990D55B416CAA22900A6B35B /* M3AppKit Examples */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 990D55D216CAA22A00A6B35B /* Build configuration list for PBXNativeTarget "M3AppKit Examples" */;
+			buildPhases = (
+				990D55B116CAA22900A6B35B /* Sources */,
+				990D55B216CAA22900A6B35B /* Frameworks */,
+				990D55FF16CAAFCC00A6B35B /* CopyFiles */,
+				990D55B316CAA22900A6B35B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "M3AppKit Examples";
+			productName = "M3AppKit Examples";
+			productReference = 990D55B516CAA22900A6B35B /* M3AppKit Examples.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		990D55AD16CAA22900A6B35B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = M3;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "M Cubed Software Ltd";
+			};
+			buildConfigurationList = 990D55B016CAA22900A6B35B /* Build configuration list for PBXProject "M3AppKit Examples" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 990D55AC16CAA22900A6B35B;
+			productRefGroup = 990D55B616CAA22900A6B35B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				990D55B416CAA22900A6B35B /* M3AppKit Examples */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		990D55B316CAA22900A6B35B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				990D55C316CAA22900A6B35B /* InfoPlist.strings in Resources */,
+				990D55C916CAA22900A6B35B /* Credits.rtf in Resources */,
+				990D55CF16CAA22A00A6B35B /* MainMenu.xib in Resources */,
+				990D55ED16CAADB100A6B35B /* M3AlertExampleWindow.xib in Resources */,
+				990D55F016CAADC600A6B35B /* M3ColumnVisibilityControllerExampleWindow.xib in Resources */,
+				990D55F316CAADD700A6B35B /* M3PreferencesWindowExampleWindow.xib in Resources */,
+				990D55F616CAADEB00A6B35B /* M3NavigationViewExampleWindow.xib in Resources */,
+				990D55F916CAAE0600A6B35B /* M3DualViewControllerExampleWindow.xib in Resources */,
+				990D55FC16CAAE1400A6B35B /* M3SplitViewExampleWindow.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		990D55B116CAA22900A6B35B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				990D55C516CAA22900A6B35B /* main.m in Sources */,
+				990D55CC16CAA22900A6B35B /* M3AppDelegate.m in Sources */,
+				990D55DB16CAA93100A6B35B /* M3AlertExampleWindowController.m in Sources */,
+				990D55DE16CAA95800A6B35B /* M3ColumnVisibilityControllerExampleWindowController.m in Sources */,
+				990D55E116CAA96E00A6B35B /* M3PreferencesWindowExampleWindowController.m in Sources */,
+				990D55E416CAA97D00A6B35B /* M3NavigationViewExampleWindowController.m in Sources */,
+				990D55E716CAA98B00A6B35B /* M3DualViewControllerExampleWindowController.m in Sources */,
+				990D55EA16CAA99600A6B35B /* M3SplitViewExampleWindowController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		990D55C116CAA22900A6B35B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				990D55C216CAA22900A6B35B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		990D55C716CAA22900A6B35B /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				990D55C816CAA22900A6B35B /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		990D55CD16CAA22A00A6B35B /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				990D55CE16CAA22A00A6B35B /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		990D55EB16CAADB100A6B35B /* M3AlertExampleWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				990D55EC16CAADB100A6B35B /* en */,
+			);
+			name = M3AlertExampleWindow.xib;
+			sourceTree = "<group>";
+		};
+		990D55EE16CAADC600A6B35B /* M3ColumnVisibilityControllerExampleWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				990D55EF16CAADC600A6B35B /* en */,
+			);
+			name = M3ColumnVisibilityControllerExampleWindow.xib;
+			sourceTree = "<group>";
+		};
+		990D55F116CAADD700A6B35B /* M3PreferencesWindowExampleWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				990D55F216CAADD700A6B35B /* en */,
+			);
+			name = M3PreferencesWindowExampleWindow.xib;
+			sourceTree = "<group>";
+		};
+		990D55F416CAADEB00A6B35B /* M3NavigationViewExampleWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				990D55F516CAADEB00A6B35B /* en */,
+			);
+			name = M3NavigationViewExampleWindow.xib;
+			sourceTree = "<group>";
+		};
+		990D55F716CAAE0600A6B35B /* M3DualViewControllerExampleWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				990D55F816CAAE0600A6B35B /* en */,
+			);
+			name = M3DualViewControllerExampleWindow.xib;
+			sourceTree = "<group>";
+		};
+		990D55FA16CAAE1400A6B35B /* M3SplitViewExampleWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				990D55FB16CAAE1400A6B35B /* en */,
+			);
+			name = M3SplitViewExampleWindow.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		990D55D016CAA22A00A6B35B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		990D55D116CAA22A00A6B35B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		990D55D316CAA22A00A6B35B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../../../../../../Library/Developer/Xcode/DerivedData/M3AppKit-affdsprogvgscxgweewmcustyqud/Build/Products/Release\"",
+					"\"$(SRCROOT)/../Dependencies\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "M3AppKit Examples/Source/M3AppKit Examples-Prefix.pch";
+				INFOPLIST_FILE = "M3AppKit Examples/M3AppKit Examples-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		990D55D416CAA22A00A6B35B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../../../../../../Library/Developer/Xcode/DerivedData/M3AppKit-affdsprogvgscxgweewmcustyqud/Build/Products/Release\"",
+					"\"$(SRCROOT)/../Dependencies\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "M3AppKit Examples/Source/M3AppKit Examples-Prefix.pch";
+				INFOPLIST_FILE = "M3AppKit Examples/M3AppKit Examples-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		990D55B016CAA22900A6B35B /* Build configuration list for PBXProject "M3AppKit Examples" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				990D55D016CAA22A00A6B35B /* Debug */,
+				990D55D116CAA22A00A6B35B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		990D55D216CAA22A00A6B35B /* Build configuration list for PBXNativeTarget "M3AppKit Examples" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				990D55D316CAA22A00A6B35B /* Debug */,
+				990D55D416CAA22A00A6B35B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 990D55AD16CAA22900A6B35B /* Project object */;
+}
