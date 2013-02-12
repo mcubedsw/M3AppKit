@@ -28,6 +28,7 @@
 		990D55A216C949A300A6B35B /* NSTabView+M3ExtensionsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 990D55A116C949A300A6B35B /* NSTabView+M3ExtensionsTests.m */; };
 		990D55A516C94A9000A6B35B /* NSTextField+M3ExtensionsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 990D55A416C94A9000A6B35B /* NSTextField+M3ExtensionsTests.m */; };
 		990D55A816CA6EBA00A6B35B /* NSView+M3ExtensionsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 990D55A716CA6EBA00A6B35B /* NSView+M3ExtensionsTests.m */; };
+		990D55AB16CA880A00A6B35B /* NSView+M3AutolayoutExtensionsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 990D55AA16CA880A00A6B35B /* NSView+M3AutolayoutExtensionsTests.m */; };
 		991C4E2015755D9C00CC43F3 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 991C4E1F15755D9C00CC43F3 /* Cocoa.framework */; };
 		991C4E2A15755D9C00CC43F3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 991C4E2815755D9C00CC43F3 /* InfoPlist.strings */; };
 		991C4E601575626A00CC43F3 /* M3Alert.h in Headers */ = {isa = PBXBuildFile; fileRef = 991C4E5E1575626A00CC43F3 /* M3Alert.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -146,6 +147,8 @@
 		990D55A416C94A9000A6B35B /* NSTextField+M3ExtensionsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTextField+M3ExtensionsTests.m"; sourceTree = "<group>"; };
 		990D55A616CA6EBA00A6B35B /* NSView+M3ExtensionsTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSView+M3ExtensionsTests.h"; sourceTree = "<group>"; };
 		990D55A716CA6EBA00A6B35B /* NSView+M3ExtensionsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSView+M3ExtensionsTests.m"; sourceTree = "<group>"; };
+		990D55A916CA880A00A6B35B /* NSView+M3AutolayoutExtensionsTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSView+M3AutolayoutExtensionsTests.h"; sourceTree = "<group>"; };
+		990D55AA16CA880A00A6B35B /* NSView+M3AutolayoutExtensionsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSView+M3AutolayoutExtensionsTests.m"; sourceTree = "<group>"; };
 		991C4E1C15755D9C00CC43F3 /* M3AppKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = M3AppKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		991C4E1F15755D9C00CC43F3 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		991C4E2215755D9C00CC43F3 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -428,6 +431,8 @@
 				990D55A416C94A9000A6B35B /* NSTextField+M3ExtensionsTests.m */,
 				990D55A616CA6EBA00A6B35B /* NSView+M3ExtensionsTests.h */,
 				990D55A716CA6EBA00A6B35B /* NSView+M3ExtensionsTests.m */,
+				990D55A916CA880A00A6B35B /* NSView+M3AutolayoutExtensionsTests.h */,
+				990D55AA16CA880A00A6B35B /* NSView+M3AutolayoutExtensionsTests.m */,
 			);
 			name = Misc;
 			sourceTree = "<group>";
@@ -663,6 +668,7 @@
 				990D55A216C949A300A6B35B /* NSTabView+M3ExtensionsTests.m in Sources */,
 				990D55A516C94A9000A6B35B /* NSTextField+M3ExtensionsTests.m in Sources */,
 				990D55A816CA6EBA00A6B35B /* NSView+M3ExtensionsTests.m in Sources */,
+				990D55AB16CA880A00A6B35B /* NSView+M3AutolayoutExtensionsTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
