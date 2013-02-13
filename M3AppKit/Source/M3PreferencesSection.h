@@ -33,7 +33,7 @@
  @return RETURN_DESCRIPTION
  @since PROJECT_NAME VERSION_NAME or later
 */
-@property (readonly) NSView *view;
+- (NSView *)view;
 
 @optional
 /**

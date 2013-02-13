@@ -17,4 +17,17 @@
 	return self;
 }
 
+- (IBAction)showAlert:(id)sender {
+	//Sadly we need to cast to id as NSAlert doesn't use instancetype
+	M3Alert *alert = (id)[M3Alert alertWithMessageText:@"This is an example alert"
+										 defaultButton:@"OK"
+									   alternateButton:@"Apathy"
+										   otherButton:@"Cancel"
+							 informativeTextWithFormat:@"This is an example of an M3Alert"];
+	
+	[alert beginSheetModalForWindow:self.window completionHandler:^(NSInteger result) {
+		NSLog(@"Result of alert is:%ld", (long)result);
+	}];
+}
+
 @end

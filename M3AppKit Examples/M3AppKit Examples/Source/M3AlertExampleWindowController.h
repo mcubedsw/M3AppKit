@@ -10,4 +10,6 @@
 
 @interface M3AlertExampleWindowController : NSWindowController
 
+- (IBAction)showAlert:(id)sender;
+
 @end

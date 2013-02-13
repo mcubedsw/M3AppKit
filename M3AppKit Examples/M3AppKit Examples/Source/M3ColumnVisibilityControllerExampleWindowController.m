@@ -17,4 +17,14 @@
 	return self;
 }
 
+- (IBAction)updateIgnored:(NSSegmentedControl *)sender {
+	NSMutableArray *ignoredColumns = [NSMutableArray array];
+	for (NSUInteger segment = 0; segment < sender.segmentCount; segment++) {
+		if ([sender isSelectedForSegment:segment]) {
+			[ignoredColumns addObject:[sender labelForSegment:segment]];
+		}
+	}
+	[self.columnVisibilityController setIgnoredColumnIdentifiers:ignoredColumns];
+}
+
 @end

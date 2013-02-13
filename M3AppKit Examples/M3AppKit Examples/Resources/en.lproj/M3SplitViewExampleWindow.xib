@@ -44,6 +44,7 @@
 				<object class="NSView" key="NSWindowView" id="1006">
 					<reference key="NSNextResponder"/>
 					<int key="NSvFlags">256</int>
+					<array class="NSMutableArray" key="NSSubviews"/>
 					<string key="NSFrameSize">{480, 270}</string>
 					<reference key="NSSuperview"/>
 					<reference key="NSWindow"/>
@@ -102,6 +103,7 @@
 					<object class="IBObjectRecord">
 						<int key="objectID">2</int>
 						<reference key="object" ref="1006"/>
+						<array class="NSMutableArray" key="children"/>
 						<reference key="parent" ref="1005"/>
 					</object>
 				</array>
@@ -121,7 +123,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">3</int>
+			<int key="maxID">38</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">

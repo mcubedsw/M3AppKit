@@ -69,7 +69,7 @@
 		991C4EB8157569DC00CC43F3 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 991C4EB7157569DC00CC43F3 /* IOKit.framework */; };
 		991C4EBA157569EF00CC43F3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 991C4EB9157569EF00CC43F3 /* QuartzCore.framework */; };
 		991C4EBB157578F200CC43F3 /* M3AppKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 991C4E2C15755D9C00CC43F3 /* M3AppKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9990A57016BC0E52000F8FDB /* NSView+M3AutolayoutExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 9990A56E16BC0E52000F8FDB /* NSView+M3AutolayoutExtensions.h */; };
+		9990A57016BC0E52000F8FDB /* NSView+M3AutolayoutExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 9990A56E16BC0E52000F8FDB /* NSView+M3AutolayoutExtensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9990A57116BC0E52000F8FDB /* NSView+M3AutolayoutExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9990A56F16BC0E52000F8FDB /* NSView+M3AutolayoutExtensions.m */; };
 		9990A57C16C27B78000F8FDB /* NSBezierPath+M3ExtensionsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9990A57B16C27B78000F8FDB /* NSBezierPath+M3ExtensionsTests.m */; };
 		9990A57F16C3DB53000F8FDB /* NSColor+M3ExtensionsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9990A57E16C3DB53000F8FDB /* NSColor+M3ExtensionsTests.m */; };

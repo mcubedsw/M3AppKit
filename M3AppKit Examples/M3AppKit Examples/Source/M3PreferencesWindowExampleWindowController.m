@@ -8,6 +8,9 @@
 
 #import "M3PreferencesWindowExampleWindowController.h"
 
+#import "M3PreferenceGeneralViewController.h"
+#import "M3PreferenceAdvancedViewController.h"
+
 @implementation M3PreferencesWindowExampleWindowController
 
 - (id)init {
@@ -15,6 +18,14 @@
 		
 	}
 	return self;
+}
+
+- (void)windowDidLoad {
+	M3PreferencesWindow *window = (id)self.window;
+	[window setSections:@[
+		[M3PreferenceGeneralViewController new],
+		[M3PreferenceAdvancedViewController new]
+	]];
 }
 
 @end

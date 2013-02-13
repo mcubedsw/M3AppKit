@@ -12,6 +12,7 @@
 #import "M3PreferencesSection.h"
 #import "NSView+M3Extensions.h"
 #import "NSView+M3AutolayoutExtensions.h"
+#import "NSLayoutConstraint+M3Extensions.h"
 
 #define ESCAPE_KEY_CODE 53
 
@@ -144,20 +145,30 @@
 	id<M3PreferencesSection> newSection = self.sections[aIndex];
 	[self setTitle:newSection.title];
 	
-	[newSection view];
+	[newSection.view setTranslatesAutoresizingMaskIntoConstraints:NO];
 	
 	if ([newSection respondsToSelector:@selector(sectionWillDisplay)]) {
 		[newSection sectionWillDisplay];
 	}
 	
-#warning Fix transition
-	if (currentSection) {
-		[currentSection.view removeFromSuperview];
-		[self.contentView m3_addSubview:newSection.view andFillConstraintsWithInset:NSEdgeInsetsMake(0, 0, 0, 0)];
-	} else {
-		[[self.contentView animator] m3_addSubview:newSection.view andFillConstraintsWithInset:NSEdgeInsetsMake(0, 0, 0, 0)];
-	}
+	CGFloat currentHeight = currentSection.view.frame.size.height;
+	CGFloat newHeight = newSection.view.frame.size.height;
+	CGFloat bottomHeight = newHeight - currentHeight;
+	if (currentHeight == 0 || !aAnimated) bottomHeight = 0;
 	
+	if (currentSection) [currentSection.view removeFromSuperview];
+	
+	[self.contentView addSubview:newSection.view];
+	[self.contentView m3_addConstraintsFromStrings:@[
+		@"$0.super = (0,0,-,0)"
+	] forViews:@[newSection.view]];
+	
+	NSLayoutConstraint *bottomConstraint = [NSLayoutConstraint m3_superviewConstraintWithView:newSection.view attribute:NSLayoutAttributeBottom constant:bottomHeight];
+	[self.contentView addConstraint:bottomConstraint];
+	
+	if (aAnimated) {
+		[[bottomConstraint animator] setConstant:0];
+	}
 	
 	currentSection = newSection;
 }
