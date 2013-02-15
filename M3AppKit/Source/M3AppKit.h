@@ -15,8 +15,7 @@
 
 #import "M3NavigationView.h"
 #import "M3NavigationViewControllerProtocol.h"
-#import "M3DualViewController.h"
-#import "M3SplitView.h"
+#import "M3AccessoryViewManager.h"
 
 #import "NSBezierPath+M3Extensions.h"
 #import "NSColor+M3Extensions.h"

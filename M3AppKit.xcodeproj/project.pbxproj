@@ -35,16 +35,14 @@
 		991C4E611575626A00CC43F3 /* M3Alert.m in Sources */ = {isa = PBXBuildFile; fileRef = 991C4E5F1575626A00CC43F3 /* M3Alert.m */; };
 		991C4E68157562AC00CC43F3 /* M3ColumnVisibilityController.h in Headers */ = {isa = PBXBuildFile; fileRef = 991C4E66157562AC00CC43F3 /* M3ColumnVisibilityController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		991C4E69157562AC00CC43F3 /* M3ColumnVisibilityController.m in Sources */ = {isa = PBXBuildFile; fileRef = 991C4E67157562AC00CC43F3 /* M3ColumnVisibilityController.m */; };
-		991C4E6C157562B500CC43F3 /* M3DualViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 991C4E6A157562B500CC43F3 /* M3DualViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		991C4E6D157562B500CC43F3 /* M3DualViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 991C4E6B157562B500CC43F3 /* M3DualViewController.m */; };
+		991C4E6C157562B500CC43F3 /* M3AccessoryViewManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 991C4E6A157562B500CC43F3 /* M3AccessoryViewManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		991C4E6D157562B500CC43F3 /* M3AccessoryViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 991C4E6B157562B500CC43F3 /* M3AccessoryViewManager.m */; };
 		991C4E751575634100CC43F3 /* M3NavigationView.h in Headers */ = {isa = PBXBuildFile; fileRef = 991C4E721575634100CC43F3 /* M3NavigationView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		991C4E761575634100CC43F3 /* M3NavigationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 991C4E731575634100CC43F3 /* M3NavigationView.m */; };
 		991C4E771575634100CC43F3 /* M3NavigationViewControllerProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 991C4E741575634100CC43F3 /* M3NavigationViewControllerProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		991C4E7B1575635F00CC43F3 /* M3PreferencesSection.h in Headers */ = {isa = PBXBuildFile; fileRef = 991C4E781575635F00CC43F3 /* M3PreferencesSection.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		991C4E7C1575635F00CC43F3 /* M3PreferencesWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 991C4E791575635F00CC43F3 /* M3PreferencesWindow.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		991C4E7D1575635F00CC43F3 /* M3PreferencesWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 991C4E7A1575635F00CC43F3 /* M3PreferencesWindow.m */; };
-		991C4E801575636900CC43F3 /* M3SplitView.h in Headers */ = {isa = PBXBuildFile; fileRef = 991C4E7E1575636900CC43F3 /* M3SplitView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		991C4E811575636900CC43F3 /* M3SplitView.m in Sources */ = {isa = PBXBuildFile; fileRef = 991C4E7F1575636900CC43F3 /* M3SplitView.m */; };
 		991C4E841575642600CC43F3 /* NSBezierPath+M3Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 991C4E821575642600CC43F3 /* NSBezierPath+M3Extensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		991C4E851575642600CC43F3 /* NSBezierPath+M3Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 991C4E831575642600CC43F3 /* NSBezierPath+M3Extensions.m */; };
 		991C4E881575643300CC43F3 /* NSColor+M3Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 991C4E861575643300CC43F3 /* NSColor+M3Extensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -69,6 +67,8 @@
 		991C4EB8157569DC00CC43F3 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 991C4EB7157569DC00CC43F3 /* IOKit.framework */; };
 		991C4EBA157569EF00CC43F3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 991C4EB9157569EF00CC43F3 /* QuartzCore.framework */; };
 		991C4EBB157578F200CC43F3 /* M3AppKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 991C4E2C15755D9C00CC43F3 /* M3AppKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		99510F7816CD4E5C00B66098 /* NavigationViewBackButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 99510F7516CD4E5C00B66098 /* NavigationViewBackButton.png */; };
+		99510F7916CD4E5C00B66098 /* NavigationViewBackButtonAlternate.png in Resources */ = {isa = PBXBuildFile; fileRef = 99510F7616CD4E5C00B66098 /* NavigationViewBackButtonAlternate.png */; };
 		9990A57016BC0E52000F8FDB /* NSView+M3AutolayoutExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 9990A56E16BC0E52000F8FDB /* NSView+M3AutolayoutExtensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9990A57116BC0E52000F8FDB /* NSView+M3AutolayoutExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9990A56F16BC0E52000F8FDB /* NSView+M3AutolayoutExtensions.m */; };
 		9990A57C16C27B78000F8FDB /* NSBezierPath+M3ExtensionsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9990A57B16C27B78000F8FDB /* NSBezierPath+M3ExtensionsTests.m */; };
@@ -164,16 +164,14 @@
 		991C4E5F1575626A00CC43F3 /* M3Alert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M3Alert.m; sourceTree = "<group>"; };
 		991C4E66157562AC00CC43F3 /* M3ColumnVisibilityController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3ColumnVisibilityController.h; sourceTree = "<group>"; };
 		991C4E67157562AC00CC43F3 /* M3ColumnVisibilityController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M3ColumnVisibilityController.m; sourceTree = "<group>"; };
-		991C4E6A157562B500CC43F3 /* M3DualViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3DualViewController.h; sourceTree = "<group>"; };
-		991C4E6B157562B500CC43F3 /* M3DualViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M3DualViewController.m; sourceTree = "<group>"; };
+		991C4E6A157562B500CC43F3 /* M3AccessoryViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3AccessoryViewManager.h; sourceTree = "<group>"; };
+		991C4E6B157562B500CC43F3 /* M3AccessoryViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M3AccessoryViewManager.m; sourceTree = "<group>"; };
 		991C4E721575634100CC43F3 /* M3NavigationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3NavigationView.h; sourceTree = "<group>"; };
 		991C4E731575634100CC43F3 /* M3NavigationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M3NavigationView.m; sourceTree = "<group>"; };
 		991C4E741575634100CC43F3 /* M3NavigationViewControllerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3NavigationViewControllerProtocol.h; sourceTree = "<group>"; };
 		991C4E781575635F00CC43F3 /* M3PreferencesSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3PreferencesSection.h; sourceTree = "<group>"; };
 		991C4E791575635F00CC43F3 /* M3PreferencesWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3PreferencesWindow.h; sourceTree = "<group>"; };
 		991C4E7A1575635F00CC43F3 /* M3PreferencesWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M3PreferencesWindow.m; sourceTree = "<group>"; };
-		991C4E7E1575636900CC43F3 /* M3SplitView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3SplitView.h; sourceTree = "<group>"; };
-		991C4E7F1575636900CC43F3 /* M3SplitView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M3SplitView.m; sourceTree = "<group>"; };
 		991C4E821575642600CC43F3 /* NSBezierPath+M3Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBezierPath+M3Extensions.h"; sourceTree = "<group>"; };
 		991C4E831575642600CC43F3 /* NSBezierPath+M3Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBezierPath+M3Extensions.m"; sourceTree = "<group>"; };
 		991C4E861575643300CC43F3 /* NSColor+M3Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSColor+M3Extensions.h"; sourceTree = "<group>"; };
@@ -197,6 +195,8 @@
 		991C4EB41575697600CC43F3 /* M3Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = M3Foundation.framework; path = Dependencies/M3Foundation.framework; sourceTree = "<group>"; };
 		991C4EB7157569DC00CC43F3 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		991C4EB9157569EF00CC43F3 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		99510F7516CD4E5C00B66098 /* NavigationViewBackButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NavigationViewBackButton.png; sourceTree = "<group>"; };
+		99510F7616CD4E5C00B66098 /* NavigationViewBackButtonAlternate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NavigationViewBackButtonAlternate.png; sourceTree = "<group>"; };
 		9990A56E16BC0E52000F8FDB /* NSView+M3AutolayoutExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSView+M3AutolayoutExtensions.h"; sourceTree = "<group>"; };
 		9990A56F16BC0E52000F8FDB /* NSView+M3AutolayoutExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSView+M3AutolayoutExtensions.m"; sourceTree = "<group>"; };
 		9990A57A16C27B78000F8FDB /* NSBezierPath+M3ExtensionsTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBezierPath+M3ExtensionsTests.h"; sourceTree = "<group>"; };
@@ -320,6 +320,8 @@
 		991C4E2615755D9C00CC43F3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				99510F7516CD4E5C00B66098 /* NavigationViewBackButton.png */,
+				99510F7616CD4E5C00B66098 /* NavigationViewBackButtonAlternate.png */,
 				991C4E2815755D9C00CC43F3 /* InfoPlist.strings */,
 			);
 			path = Resources;
@@ -392,10 +394,8 @@
 				991C4E721575634100CC43F3 /* M3NavigationView.h */,
 				991C4E731575634100CC43F3 /* M3NavigationView.m */,
 				991C4E741575634100CC43F3 /* M3NavigationViewControllerProtocol.h */,
-				991C4E6A157562B500CC43F3 /* M3DualViewController.h */,
-				991C4E6B157562B500CC43F3 /* M3DualViewController.m */,
-				991C4E7E1575636900CC43F3 /* M3SplitView.h */,
-				991C4E7F1575636900CC43F3 /* M3SplitView.m */,
+				991C4E6A157562B500CC43F3 /* M3AccessoryViewManager.h */,
+				991C4E6B157562B500CC43F3 /* M3AccessoryViewManager.m */,
 			);
 			name = "Managing Views";
 			sourceTree = "<group>";
@@ -480,12 +480,11 @@
 				991C4EBB157578F200CC43F3 /* M3AppKit.h in Headers */,
 				991C4E601575626A00CC43F3 /* M3Alert.h in Headers */,
 				991C4E68157562AC00CC43F3 /* M3ColumnVisibilityController.h in Headers */,
-				991C4E6C157562B500CC43F3 /* M3DualViewController.h in Headers */,
+				991C4E6C157562B500CC43F3 /* M3AccessoryViewManager.h in Headers */,
 				991C4E751575634100CC43F3 /* M3NavigationView.h in Headers */,
 				991C4E771575634100CC43F3 /* M3NavigationViewControllerProtocol.h in Headers */,
 				991C4E7B1575635F00CC43F3 /* M3PreferencesSection.h in Headers */,
 				991C4E7C1575635F00CC43F3 /* M3PreferencesWindow.h in Headers */,
-				991C4E801575636900CC43F3 /* M3SplitView.h in Headers */,
 				991C4E841575642600CC43F3 /* NSBezierPath+M3Extensions.h in Headers */,
 				991C4E881575643300CC43F3 /* NSColor+M3Extensions.h in Headers */,
 				991C4E8C1575643F00CC43F3 /* NSLayoutConstraint+M3Extensions.h in Headers */,
@@ -580,6 +579,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				991C4E2A15755D9C00CC43F3 /* InfoPlist.strings in Resources */,
+				99510F7816CD4E5C00B66098 /* NavigationViewBackButton.png in Resources */,
+				99510F7916CD4E5C00B66098 /* NavigationViewBackButtonAlternate.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -631,10 +632,9 @@
 			files = (
 				991C4E611575626A00CC43F3 /* M3Alert.m in Sources */,
 				991C4E69157562AC00CC43F3 /* M3ColumnVisibilityController.m in Sources */,
-				991C4E6D157562B500CC43F3 /* M3DualViewController.m in Sources */,
+				991C4E6D157562B500CC43F3 /* M3AccessoryViewManager.m in Sources */,
 				991C4E761575634100CC43F3 /* M3NavigationView.m in Sources */,
 				991C4E7D1575635F00CC43F3 /* M3PreferencesWindow.m in Sources */,
-				991C4E811575636900CC43F3 /* M3SplitView.m in Sources */,
 				991C4E851575642600CC43F3 /* NSBezierPath+M3Extensions.m in Sources */,
 				991C4E891575643300CC43F3 /* NSColor+M3Extensions.m in Sources */,
 				991C4E8D1575643F00CC43F3 /* NSLayoutConstraint+M3Extensions.m in Sources */,

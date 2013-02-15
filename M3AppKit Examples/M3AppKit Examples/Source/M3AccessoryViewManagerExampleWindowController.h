@@ -8,6 +8,6 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface M3DualViewControllerExampleWindowController : NSWindowController
+@interface M3AccessoryViewManagerExampleWindowController : NSWindowController
 
 @end

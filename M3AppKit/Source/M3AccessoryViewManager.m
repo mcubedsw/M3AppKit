@@ -1,5 +1,5 @@
 /*****************************************************************
- M3DualViewController.m
+ M3AccessoryViewManager.m
  M3AppKit
  
  Created by Martin Pilkington on 05/07/2011.
@@ -7,43 +7,37 @@
  Please read the LICENCE.txt for licensing information
 *****************************************************************/
 
-#import "M3DualViewController.h"
-
-@interface M3DualViewController () 
-
-- (CGFloat)hiddenConstantFromFrame:(NSRect)aFrame constraintType:(NSLayoutAttribute)aType;
-
-@end
+#import "M3AccessoryViewManager.h"
 
 
-@implementation M3DualViewController
+@implementation M3AccessoryViewManager
 
 
-- (BOOL)isSecondaryViewVisible {
-	return self.secondaryViewConstraint.constant == 0;
+- (BOOL)isAccessoryViewVisible {
+	return self.accessoryViewConstraint.constant == 0;
 }
 
 
-- (void)showSecondaryViewAnimated:(BOOL)aAnimated {
-	[self.secondaryView setHidden:NO];
+- (void)showAccessoryViewAnimated:(BOOL)aAnimated {
+	[self.accessoryView setHidden:NO];
 	[NSAnimationContext runAnimationGroup:^(NSAnimationContext *context) {
 		[context setDuration:aAnimated ? 0.4 : 0];
 		[context setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
-		[[self.secondaryViewConstraint animator] setConstant:0];
+		[[self.accessoryViewConstraint animator] setConstant:0];
 	} completionHandler:nil];
 }
 
 
-- (void)hideSecondaryViewAnimated:(BOOL)aAnimated {
+- (void)hideAccessoryViewAnimated:(BOOL)aAnimated {
 	[NSAnimationContext runAnimationGroup:^(NSAnimationContext *context) {
 		[context setDuration:aAnimated ? 0.4 : 0];
 		[context setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
 		
-		CGFloat constant = [self hiddenConstantFromFrame:self.secondaryView.frame
-										   constraintType:self.secondaryViewConstraint.firstAttribute];
-		[[self.secondaryViewConstraint animator] setConstant:constant];
+		CGFloat constant = [self hiddenConstantFromFrame:self.accessoryView.frame
+										  constraintType:self.accessoryViewConstraint.firstAttribute];
+		[[self.accessoryViewConstraint animator] setConstant:constant];
 	} completionHandler:^{
-		[self.secondaryView setHidden:YES];
+		[self.accessoryView setHidden:YES];
 	}];
 }
 
@@ -60,6 +54,14 @@
 	}
 	NSAssert(YES, @"You must use a Left, Right, Top, Bottom, Leading or Trailing attribute");
 	return 0;
+}
+
+- (IBAction)showAccessoryView:(id)aSender {
+	[self showAccessoryViewAnimated:YES];
+}
+
+- (IBAction)hideAccessoryView:(id)aSender {
+	[self hideAccessoryViewAnimated:YES];
 }
 
 @end

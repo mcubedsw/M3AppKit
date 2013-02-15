@@ -18,14 +18,12 @@
 		990D55DE16CAA95800A6B35B /* M3ColumnVisibilityControllerExampleWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 990D55DD16CAA95800A6B35B /* M3ColumnVisibilityControllerExampleWindowController.m */; };
 		990D55E116CAA96E00A6B35B /* M3PreferencesWindowExampleWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 990D55E016CAA96E00A6B35B /* M3PreferencesWindowExampleWindowController.m */; };
 		990D55E416CAA97D00A6B35B /* M3NavigationViewExampleWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 990D55E316CAA97D00A6B35B /* M3NavigationViewExampleWindowController.m */; };
-		990D55E716CAA98B00A6B35B /* M3DualViewControllerExampleWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 990D55E616CAA98B00A6B35B /* M3DualViewControllerExampleWindowController.m */; };
-		990D55EA16CAA99600A6B35B /* M3SplitViewExampleWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 990D55E916CAA99600A6B35B /* M3SplitViewExampleWindowController.m */; };
+		990D55E716CAA98B00A6B35B /* M3AccessoryViewManagerExampleWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 990D55E616CAA98B00A6B35B /* M3AccessoryViewManagerExampleWindowController.m */; };
 		990D55ED16CAADB100A6B35B /* M3AlertExampleWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 990D55EB16CAADB100A6B35B /* M3AlertExampleWindow.xib */; };
 		990D55F016CAADC600A6B35B /* M3ColumnVisibilityControllerExampleWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 990D55EE16CAADC600A6B35B /* M3ColumnVisibilityControllerExampleWindow.xib */; };
 		990D55F316CAADD700A6B35B /* M3PreferencesWindowExampleWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 990D55F116CAADD700A6B35B /* M3PreferencesWindowExampleWindow.xib */; };
 		990D55F616CAADEB00A6B35B /* M3NavigationViewExampleWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 990D55F416CAADEB00A6B35B /* M3NavigationViewExampleWindow.xib */; };
-		990D55F916CAAE0600A6B35B /* M3DualViewControllerExampleWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 990D55F716CAAE0600A6B35B /* M3DualViewControllerExampleWindow.xib */; };
-		990D55FC16CAAE1400A6B35B /* M3SplitViewExampleWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 990D55FA16CAAE1400A6B35B /* M3SplitViewExampleWindow.xib */; };
+		990D55F916CAAE0600A6B35B /* M3AccessoryViewManagerExampleWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 990D55F716CAAE0600A6B35B /* M3AccessoryViewManagerExampleWindow.xib */; };
 		990D55FE16CAAFC600A6B35B /* M3Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 990D55FD16CAAFC600A6B35B /* M3Foundation.framework */; };
 		990D560016CAAFD400A6B35B /* M3Foundation.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 990D55FD16CAAFC600A6B35B /* M3Foundation.framework */; };
 		990D560116CAAFD600A6B35B /* M3AppKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 990D55D516CAA24000A6B35B /* M3AppKit.framework */; };
@@ -33,6 +31,8 @@
 		990D560816CBEDE000A6B35B /* M3PreferenceAdvancedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 990D560716CBEDE000A6B35B /* M3PreferenceAdvancedViewController.m */; };
 		990D560B16CBEF4100A6B35B /* M3PreferenceGeneralView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 990D560916CBEF4100A6B35B /* M3PreferenceGeneralView.xib */; };
 		990D560E16CBEF5700A6B35B /* M3PreferenceAdvancedView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 990D560C16CBEF5700A6B35B /* M3PreferenceAdvancedView.xib */; };
+		99510F6F16CD4BCD00B66098 /* M3NavigationContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99510F6E16CD4BCD00B66098 /* M3NavigationContentViewController.m */; };
+		99510F7316CD4CCF00B66098 /* M3NavigationContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99510F7116CD4CCF00B66098 /* M3NavigationContentView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -72,16 +72,13 @@
 		990D55E016CAA96E00A6B35B /* M3PreferencesWindowExampleWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M3PreferencesWindowExampleWindowController.m; sourceTree = "<group>"; };
 		990D55E216CAA97D00A6B35B /* M3NavigationViewExampleWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3NavigationViewExampleWindowController.h; sourceTree = "<group>"; };
 		990D55E316CAA97D00A6B35B /* M3NavigationViewExampleWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M3NavigationViewExampleWindowController.m; sourceTree = "<group>"; };
-		990D55E516CAA98B00A6B35B /* M3DualViewControllerExampleWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3DualViewControllerExampleWindowController.h; sourceTree = "<group>"; };
-		990D55E616CAA98B00A6B35B /* M3DualViewControllerExampleWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M3DualViewControllerExampleWindowController.m; sourceTree = "<group>"; };
-		990D55E816CAA99600A6B35B /* M3SplitViewExampleWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3SplitViewExampleWindowController.h; sourceTree = "<group>"; };
-		990D55E916CAA99600A6B35B /* M3SplitViewExampleWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M3SplitViewExampleWindowController.m; sourceTree = "<group>"; };
+		990D55E516CAA98B00A6B35B /* M3AccessoryViewManagerExampleWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3AccessoryViewManagerExampleWindowController.h; sourceTree = "<group>"; };
+		990D55E616CAA98B00A6B35B /* M3AccessoryViewManagerExampleWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M3AccessoryViewManagerExampleWindowController.m; sourceTree = "<group>"; };
 		990D55EC16CAADB100A6B35B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/M3AlertExampleWindow.xib; sourceTree = "<group>"; };
 		990D55EF16CAADC600A6B35B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/M3ColumnVisibilityControllerExampleWindow.xib; sourceTree = "<group>"; };
 		990D55F216CAADD700A6B35B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/M3PreferencesWindowExampleWindow.xib; sourceTree = "<group>"; };
 		990D55F516CAADEB00A6B35B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/M3NavigationViewExampleWindow.xib; sourceTree = "<group>"; };
-		990D55F816CAAE0600A6B35B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/M3DualViewControllerExampleWindow.xib; sourceTree = "<group>"; };
-		990D55FB16CAAE1400A6B35B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/M3SplitViewExampleWindow.xib; sourceTree = "<group>"; };
+		990D55F816CAAE0600A6B35B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/M3AccessoryViewManagerExampleWindow.xib; sourceTree = "<group>"; };
 		990D55FD16CAAFC600A6B35B /* M3Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = M3Foundation.framework; path = ../Dependencies/M3Foundation.framework; sourceTree = "<group>"; };
 		990D560316CBEDD100A6B35B /* M3PreferenceGeneralViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3PreferenceGeneralViewController.h; sourceTree = "<group>"; };
 		990D560416CBEDD100A6B35B /* M3PreferenceGeneralViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M3PreferenceGeneralViewController.m; sourceTree = "<group>"; };
@@ -89,6 +86,9 @@
 		990D560716CBEDE000A6B35B /* M3PreferenceAdvancedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M3PreferenceAdvancedViewController.m; sourceTree = "<group>"; };
 		990D560A16CBEF4100A6B35B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/M3PreferenceGeneralView.xib; sourceTree = "<group>"; };
 		990D560D16CBEF5700A6B35B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/M3PreferenceAdvancedView.xib; sourceTree = "<group>"; };
+		99510F6D16CD4BCD00B66098 /* M3NavigationContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3NavigationContentViewController.h; sourceTree = "<group>"; };
+		99510F6E16CD4BCD00B66098 /* M3NavigationContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M3NavigationContentViewController.m; sourceTree = "<group>"; };
+		99510F7216CD4CCF00B66098 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/M3NavigationContentView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,9 +160,8 @@
 				990D55EB16CAADB100A6B35B /* M3AlertExampleWindow.xib */,
 				990D55EE16CAADC600A6B35B /* M3ColumnVisibilityControllerExampleWindow.xib */,
 				990D560F16CBEF5B00A6B35B /* Preferences Window */,
-				990D55F416CAADEB00A6B35B /* M3NavigationViewExampleWindow.xib */,
-				990D55F716CAAE0600A6B35B /* M3DualViewControllerExampleWindow.xib */,
-				990D55FA16CAAE1400A6B35B /* M3SplitViewExampleWindow.xib */,
+				99510F7016CD4CBB00B66098 /* Navigation Window */,
+				990D55F716CAAE0600A6B35B /* M3AccessoryViewManagerExampleWindow.xib */,
 				990D55C116CAA22900A6B35B /* InfoPlist.strings */,
 				990D55C716CAA22900A6B35B /* Credits.rtf */,
 			);
@@ -179,12 +178,9 @@
 				990D55DC16CAA95800A6B35B /* M3ColumnVisibilityControllerExampleWindowController.h */,
 				990D55DD16CAA95800A6B35B /* M3ColumnVisibilityControllerExampleWindowController.m */,
 				990D560216CBEDAD00A6B35B /* Preferences Window */,
-				990D55E216CAA97D00A6B35B /* M3NavigationViewExampleWindowController.h */,
-				990D55E316CAA97D00A6B35B /* M3NavigationViewExampleWindowController.m */,
-				990D55E516CAA98B00A6B35B /* M3DualViewControllerExampleWindowController.h */,
-				990D55E616CAA98B00A6B35B /* M3DualViewControllerExampleWindowController.m */,
-				990D55E816CAA99600A6B35B /* M3SplitViewExampleWindowController.h */,
-				990D55E916CAA99600A6B35B /* M3SplitViewExampleWindowController.m */,
+				99510F6C16CD4BB600B66098 /* Navigation Window */,
+				990D55E516CAA98B00A6B35B /* M3AccessoryViewManagerExampleWindowController.h */,
+				990D55E616CAA98B00A6B35B /* M3AccessoryViewManagerExampleWindowController.m */,
 				990D55C416CAA22900A6B35B /* main.m */,
 				990D55C616CAA22900A6B35B /* M3AppKit Examples-Prefix.pch */,
 			);
@@ -212,6 +208,26 @@
 				990D560C16CBEF5700A6B35B /* M3PreferenceAdvancedView.xib */,
 			);
 			name = "Preferences Window";
+			sourceTree = "<group>";
+		};
+		99510F6C16CD4BB600B66098 /* Navigation Window */ = {
+			isa = PBXGroup;
+			children = (
+				990D55E216CAA97D00A6B35B /* M3NavigationViewExampleWindowController.h */,
+				990D55E316CAA97D00A6B35B /* M3NavigationViewExampleWindowController.m */,
+				99510F6D16CD4BCD00B66098 /* M3NavigationContentViewController.h */,
+				99510F6E16CD4BCD00B66098 /* M3NavigationContentViewController.m */,
+			);
+			name = "Navigation Window";
+			sourceTree = "<group>";
+		};
+		99510F7016CD4CBB00B66098 /* Navigation Window */ = {
+			isa = PBXGroup;
+			children = (
+				990D55F416CAADEB00A6B35B /* M3NavigationViewExampleWindow.xib */,
+				99510F7116CD4CCF00B66098 /* M3NavigationContentView.xib */,
+			);
+			name = "Navigation Window";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,10 +290,10 @@
 				990D55F016CAADC600A6B35B /* M3ColumnVisibilityControllerExampleWindow.xib in Resources */,
 				990D55F316CAADD700A6B35B /* M3PreferencesWindowExampleWindow.xib in Resources */,
 				990D55F616CAADEB00A6B35B /* M3NavigationViewExampleWindow.xib in Resources */,
-				990D55F916CAAE0600A6B35B /* M3DualViewControllerExampleWindow.xib in Resources */,
-				990D55FC16CAAE1400A6B35B /* M3SplitViewExampleWindow.xib in Resources */,
+				990D55F916CAAE0600A6B35B /* M3AccessoryViewManagerExampleWindow.xib in Resources */,
 				990D560B16CBEF4100A6B35B /* M3PreferenceGeneralView.xib in Resources */,
 				990D560E16CBEF5700A6B35B /* M3PreferenceAdvancedView.xib in Resources */,
+				99510F7316CD4CCF00B66098 /* M3NavigationContentView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,10 +310,10 @@
 				990D55DE16CAA95800A6B35B /* M3ColumnVisibilityControllerExampleWindowController.m in Sources */,
 				990D55E116CAA96E00A6B35B /* M3PreferencesWindowExampleWindowController.m in Sources */,
 				990D55E416CAA97D00A6B35B /* M3NavigationViewExampleWindowController.m in Sources */,
-				990D55E716CAA98B00A6B35B /* M3DualViewControllerExampleWindowController.m in Sources */,
-				990D55EA16CAA99600A6B35B /* M3SplitViewExampleWindowController.m in Sources */,
+				990D55E716CAA98B00A6B35B /* M3AccessoryViewManagerExampleWindowController.m in Sources */,
 				990D560516CBEDD100A6B35B /* M3PreferenceGeneralViewController.m in Sources */,
 				990D560816CBEDE000A6B35B /* M3PreferenceAdvancedViewController.m in Sources */,
+				99510F6F16CD4BCD00B66098 /* M3NavigationContentViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,20 +376,12 @@
 			name = M3NavigationViewExampleWindow.xib;
 			sourceTree = "<group>";
 		};
-		990D55F716CAAE0600A6B35B /* M3DualViewControllerExampleWindow.xib */ = {
+		990D55F716CAAE0600A6B35B /* M3AccessoryViewManagerExampleWindow.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				990D55F816CAAE0600A6B35B /* en */,
 			);
-			name = M3DualViewControllerExampleWindow.xib;
-			sourceTree = "<group>";
-		};
-		990D55FA16CAAE1400A6B35B /* M3SplitViewExampleWindow.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				990D55FB16CAAE1400A6B35B /* en */,
-			);
-			name = M3SplitViewExampleWindow.xib;
+			name = M3AccessoryViewManagerExampleWindow.xib;
 			sourceTree = "<group>";
 		};
 		990D560916CBEF4100A6B35B /* M3PreferenceGeneralView.xib */ = {
@@ -390,6 +398,14 @@
 				990D560D16CBEF5700A6B35B /* en */,
 			);
 			name = M3PreferenceAdvancedView.xib;
+			sourceTree = "<group>";
+		};
+		99510F7116CD4CCF00B66098 /* M3NavigationContentView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				99510F7216CD4CCF00B66098 /* en */,
+			);
+			name = M3NavigationContentView.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

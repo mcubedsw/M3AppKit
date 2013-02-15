@@ -7,6 +7,7 @@
 //
 
 #import "M3NavigationViewExampleWindowController.h"
+#import "M3NavigationContentViewController.h"
 
 @implementation M3NavigationViewExampleWindowController
 
@@ -16,5 +17,10 @@
 	}
 	return self;
 }
+
+- (void)awakeFromNib {
+	[self.navigationView pushViewController:[[M3NavigationContentViewController alloc] initWithTitle:@"First View"] animated:NO];
+}
+
 
 @end

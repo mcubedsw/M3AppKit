@@ -9,5 +9,6 @@
 #import <Cocoa/Cocoa.h>
 
 @interface M3NavigationViewExampleWindowController : NSWindowController
+@property (weak) IBOutlet M3NavigationView *navigationView;
 
 @end
