@@ -28,4 +28,12 @@
 	[self.navigationView pushViewController:controller animated:YES];
 }
 
+- (void)viewWillStartAnimating {
+	NSLog(@"start animating");
+}
+
+- (void)viewDidFinishAnimating {
+	NSLog(@"did finish animating");
+}
+
 @end

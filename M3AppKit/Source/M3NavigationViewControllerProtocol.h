@@ -28,7 +28,7 @@
  Informs the receiver that the navigation view will start animating its view
  @since M3AppKit 1.0 and later
  */
-- (void)willStartAnimating;
+- (void)viewWillStartAnimating;
 
 /**
  Informs the receiver it is about to become the current view controller
@@ -40,6 +40,6 @@
  Informs the receiver that the navigation view finished animating its view
  @since M3AppKit 1.0 and later
  */
-- (void)didFinishAnimating;
+- (void)viewDidFinishAnimating;
 
 @end

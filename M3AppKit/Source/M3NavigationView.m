@@ -175,39 +175,55 @@ typedef enum {
 	}
 	
 	NSDictionary *previousControllerDict = controllerStack.lastObject;
-	NSDictionary *currentController = @{
+	NSDictionary *currentControllerDict = @{
 		M3NavigationController:aController,
 		M3NavigationBackButton:[self createBackButton],
 		M3NavigationTitleField:[self createTextFieldWithTitle:aController.title]
 	};
-	[controllerStack addObject:currentController];
+	[controllerStack addObject:currentControllerDict];
 	
 	//Check if we're the first
 	CGFloat titleX = NSMaxX(self.backButtonRect);
 	if (controllerStack.count == 1) {
-		[currentController[M3NavigationBackButton] setHidden:YES];
+		[currentControllerDict[M3NavigationBackButton] setHidden:YES];
 		titleX = 15;
 		aAnimated = NO;
 	}
 	
 	//Swap views
-	[self swapView:[previousControllerDict[M3NavigationController] view]
-			withView:[currentController[M3NavigationController] view]
-		 desiredRect:self.contentRect
-		   direction:aAnimated ? M3NavigationAnimationDirectionLeft : M3NavigationAnimationDirectionNone
-				fade:NO];
+	NSViewController<M3NavigationViewController> *previousViewController = previousControllerDict[M3NavigationController];
+	NSViewController<M3NavigationViewController> *currentViewController = currentControllerDict[M3NavigationController];
+	
+	if ([previousViewController respondsToSelector:@selector(viewWillStartAnimating)] && aAnimated) {
+		[previousViewController viewWillStartAnimating];
+	}
+	if ([currentViewController respondsToSelector:@selector(viewWillStartAnimating)] && aAnimated) {
+		[currentViewController viewWillStartAnimating];
+	}
+	
+	M3NavigationAnimationDirection direction = aAnimated ? M3NavigationAnimationDirectionLeft : M3NavigationAnimationDirectionNone;
+	
+	//Swap views
+	[self swapView:previousViewController.view withView:currentViewController.view desiredRect:self.contentRect direction:direction fade:NO completionBlock:^{
+		if ([previousViewController respondsToSelector:@selector(viewDidFinishAnimating)] && aAnimated) {
+			[previousViewController viewDidFinishAnimating];
+		}
+		if ([currentViewController respondsToSelector:@selector(viewDidFinishAnimating)] && aAnimated) {
+			[currentViewController viewDidFinishAnimating];
+		}
+	}];
 	
 	if (self.showsNavigationBar) {
 		[self swapView:previousControllerDict[M3NavigationBackButton]
-				withView:currentController[M3NavigationBackButton]
+				withView:currentControllerDict[M3NavigationBackButton]
 			 desiredRect:self.backButtonRect
-			   direction:aAnimated ? M3NavigationAnimationDirectionLeft : M3NavigationAnimationDirectionNone
+			   direction:direction
 					fade:YES];
 		
 		[self swapView:previousControllerDict[M3NavigationTitleField]
-				withView:currentController[M3NavigationTitleField]
+				withView:currentControllerDict[M3NavigationTitleField]
 			 desiredRect:[self titleRectWithX:titleX]
-			   direction:aAnimated ? M3NavigationAnimationDirectionLeft : M3NavigationAnimationDirectionNone
+			   direction:direction
 					fade:YES];
 	}
 	
@@ -218,7 +234,7 @@ typedef enum {
 	if ([self.delegate respondsToSelector:@selector(navigationView:didReplaceViewController:withViewController:)]) {
 		[self.delegate navigationView:self
 			 didReplaceViewController:previousControllerDict[M3NavigationController]
-				   withViewController:currentController[M3NavigationController]];
+				   withViewController:currentControllerDict[M3NavigationController]];
 	}
 }
 
@@ -231,7 +247,7 @@ typedef enum {
 	//Get dictionaries
 	NSDictionary *previousControllerDict = controllerStack.lastObject;
 	[controllerStack removeLastObject];
-	NSDictionary *currentController = controllerStack.lastObject;
+	NSDictionary *currentControllerDict = controllerStack.lastObject;
 	
 	//Get title X
 	CGFloat titleX = NSMaxX(self.backButtonRect);
@@ -240,34 +256,49 @@ typedef enum {
 	}
 	
 	//Swap views
-	[self swapView:[previousControllerDict[M3NavigationController] view]
-			withView:[currentController[M3NavigationController] view]
-		 desiredRect:self.contentRect
-		   direction:aAnimated ? M3NavigationAnimationDirectionRight : M3NavigationAnimationDirectionNone
-				fade:NO];
+	NSViewController<M3NavigationViewController> *previousViewController = previousControllerDict[M3NavigationController];
+	NSViewController<M3NavigationViewController> *currentViewController = currentControllerDict[M3NavigationController];
+	
+	if ([previousViewController respondsToSelector:@selector(viewWillStartAnimating)] && aAnimated) {
+		[previousViewController viewWillStartAnimating];
+	}
+	if ([currentViewController respondsToSelector:@selector(viewWillStartAnimating)] && aAnimated) {
+		[currentViewController viewWillStartAnimating];
+	}
+	
+	M3NavigationAnimationDirection direction = aAnimated ? M3NavigationAnimationDirectionRight : M3NavigationAnimationDirectionNone;
+	
+	[self swapView:previousViewController.view withView:currentViewController.view desiredRect:self.contentRect direction:direction fade:NO completionBlock:^{
+		if ([previousViewController respondsToSelector:@selector(viewDidFinishAnimating)] && aAnimated) {
+			[previousViewController viewDidFinishAnimating];
+		}
+		if ([currentViewController respondsToSelector:@selector(viewDidFinishAnimating)] && aAnimated) {
+			[currentViewController viewDidFinishAnimating];
+		}
+	}];
 	
 	if (self.showsNavigationBar) {
 		[self swapView:previousControllerDict[M3NavigationBackButton]
-				withView:currentController[M3NavigationBackButton]
+				withView:currentControllerDict[M3NavigationBackButton]
 			 desiredRect:self.backButtonRect
-			   direction:aAnimated ? M3NavigationAnimationDirectionRight : M3NavigationAnimationDirectionNone
+			   direction:direction
 					fade:YES];
 		
 		[self swapView:previousControllerDict[M3NavigationTitleField]
-				withView:currentController[M3NavigationTitleField]
+				withView:currentControllerDict[M3NavigationTitleField]
 			 desiredRect:[self titleRectWithX:titleX]
-			   direction:aAnimated ? M3NavigationAnimationDirectionRight : M3NavigationAnimationDirectionNone
+			   direction:direction
 					fade:YES];
 	}
 	
-	if ([currentController[M3NavigationController] respondsToSelector:@selector(activateView)]) {
-		[currentController[M3NavigationController] activateView];
+	if ([currentControllerDict[M3NavigationController] respondsToSelector:@selector(activateView)]) {
+		[currentControllerDict[M3NavigationController] activateView];
 	}
 	
 	if ([self.delegate respondsToSelector:@selector(navigationView:didReplaceViewController:withViewController:)]) {
 		[self.delegate navigationView:self
 			 didReplaceViewController:previousControllerDict[M3NavigationController]
-				   withViewController:currentController[M3NavigationController]];
+				   withViewController:currentControllerDict[M3NavigationController]];
 	}
 	return previousControllerDict[M3NavigationController];
 }
@@ -281,6 +312,10 @@ typedef enum {
 
 
 - (void)swapView:(NSView *)aOldView withView:(NSView *)aNewView desiredRect:(NSRect)aDesiredRect direction:(M3NavigationAnimationDirection)aDirection fade:(BOOL)aFade {
+	[self swapView:aOldView withView:aNewView desiredRect:aDesiredRect direction:aDirection fade:aFade completionBlock:nil];
+}
+
+- (void)swapView:(NSView *)aOldView withView:(NSView *)aNewView desiredRect:(NSRect)aDesiredRect direction:(M3NavigationAnimationDirection)aDirection fade:(BOOL)aFade completionBlock:(void (^)(void))aBlock{
 	//Get rects
 	NSRect inRect = aDesiredRect;
 	NSRect outRect = aDesiredRect;
@@ -322,6 +357,7 @@ typedef enum {
 		[aNewView setWantsLayer:NO];
 		[aOldView setWantsLayer:NO];
 		[aOldView removeFromSuperview];
+		if (aBlock) aBlock();
 	}];
 }
 
