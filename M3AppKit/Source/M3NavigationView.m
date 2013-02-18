@@ -167,7 +167,6 @@ typedef enum {
 	[self pushViewController:viewController animated:aAnimated];
 }
 
-#warning Need to add willStartAnimating and didFinishAnimating
 - (void)pushViewController:(NSViewController<M3NavigationViewController> *)aController animated:(BOOL)aAnimated {
 	[aController.view setAutoresizingMask:NSViewWidthSizable|NSViewHeightSizable];
 	if ([aController respondsToSelector:@selector(setNavigationView:)]) {

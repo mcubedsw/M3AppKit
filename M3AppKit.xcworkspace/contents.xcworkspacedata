@@ -7,4 +7,10 @@
    <FileRef
       location = "group:M3AppKit Examples/M3AppKit Examples.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:LICENCE.txt">
+   </FileRef>
+   <FileRef
+      location = "group:README.md">
+   </FileRef>
 </Workspace>

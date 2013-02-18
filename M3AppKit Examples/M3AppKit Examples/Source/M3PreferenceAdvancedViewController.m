@@ -18,7 +18,7 @@
 	return self;
 }
 
-- (NSImage *)image {
+- (NSImage *)toolbarIcon {
 	return [NSImage imageNamed:NSImageNameAdvanced];
 }
 
