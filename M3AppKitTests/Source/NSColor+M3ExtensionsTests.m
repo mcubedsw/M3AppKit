@@ -1,10 +1,11 @@
-//
-//  NSColor+M3ExtensionsTests.m
-//  M3AppKit
-//
-//  Created by Martin Pilkington on 07/02/2013.
-//  Copyright (c) 2013 M Cubed Software. All rights reserved.
-//
+/*****************************************************************
+ NSColor+M3ExtensionsTests.m
+ M3AppKit
+ 
+ Created by Martin Pilkington on 07/02/2013.
+ 
+ Please read the LICENCE.txt for licensing information
+*****************************************************************/
 
 #import "NSColor+M3ExtensionsTests.h"
 #import <M3AppKit/M3AppKit.h>

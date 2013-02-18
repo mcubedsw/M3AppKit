@@ -1,10 +1,11 @@
-//
-//  M3ColumnVisibilityControllerExampleWindowController.h
-//  M3AppKit Examples
-//
-//  Created by Martin Pilkington on 12/02/2013.
-//  Copyright (c) 2013 M Cubed Software Ltd. All rights reserved.
-//
+/*****************************************************************
+ M3ColumnVisibilityControllerExampleWindowController.h
+ M3AppKit
+ 
+ Created by Martin Pilkington on 12/02/2013.
+ 
+ Please read the LICENCE.txt for licensing information
+*****************************************************************/
 
 #import <Cocoa/Cocoa.h>
 #import <M3AppKit/M3AppKit.h>

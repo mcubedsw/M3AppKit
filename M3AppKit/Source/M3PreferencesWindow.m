@@ -73,7 +73,7 @@
 		for (id<M3PreferencesSection> section in self.sections) {
 			NSToolbarItem *item = [[NSToolbarItem alloc] initWithItemIdentifier:[NSString stringWithFormat:@"com.mcubedsw.m3prefswindow.%@", section.title]];
 			[item setLabel:section.title];
-			[item setImage:section.image];
+			[item setImage:section.toolbarIcon];
 			[item setTarget:self];
 			[item setAction:@selector(toolbarItemClicked:)];
 			[items addObject:item];

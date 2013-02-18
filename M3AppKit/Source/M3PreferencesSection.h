@@ -8,37 +8,39 @@
 *****************************************************************/
 
 /**
- BRIEF_HERE
+ M3PreferencesSection is a protocol that should be implemented by all classes intending to be used as sections in an M3PreferencesWindow
  @since PROJECT_NAME VERSION_NAME or later
 */
 @protocol M3PreferencesSection <NSObject>
 
 /**
- BRIEF_HERE
- @param PARAM_NAME PARAM_DESCRIPTION
- @return RETURN_DESCRIPTION
+ The title of the section
  @since PROJECT_NAME VERSION_NAME or later
 */
-@property (readonly) NSString *title;
+- (NSString *)title;
 /**
- BRIEF_HERE
- @param PARAM_NAME PARAM_DESCRIPTION
- @return RETURN_DESCRIPTION
+ The toolbar icon for the section
  @since PROJECT_NAME VERSION_NAME or later
 */
-@property (readonly) NSImage *image;
+- (NSImage *)toolbarIcon;
+
 /**
- BRIEF_HERE
- @param PARAM_NAME PARAM_DESCRIPTION
- @return RETURN_DESCRIPTION
+ The view for the section
  @since PROJECT_NAME VERSION_NAME or later
 */
 - (NSView *)view;
 
 @optional
 /**
- BRIEF_HERE
+ Called by the preferences window on the section when it will be displayed
  @since PROJECT_NAME VERSION_NAME or later
 */
 - (void)sectionWillDisplay;
+
 @end
+
+
+/*
+ Author note: I know the above methods should really be read only properties, but Apple STILL has not updated AppKit to use properties so
+ these need to be methods to shut the compiler up when using this with NSViewControllers and the like.
+*/
