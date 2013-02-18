@@ -60,7 +60,7 @@
 }
 
 - (void)testSuperConstantConstraint {
-	NSArray *constraints = [parser constraintsFromString:@"$self.super = (1, 2, 3, 4)"];
+	NSArray *constraints = [parser constraintsFromString:@"$self.margin = (1, 2, 3, 4)"];
 	
 	NSArray *expectedConstraints = @[
 		[NSLayoutConstraint m3_superviewConstraintWithView:substitutionViews[@"self"] attribute:NSLayoutAttributeTop constant:1],
@@ -73,7 +73,7 @@
 }
 
 - (void)testSuperConstantConstraintWithGaps {
-	NSArray *constraints = [parser constraintsFromString:@"$self.super = (1, -, 3, -)"];
+	NSArray *constraints = [parser constraintsFromString:@"$self.margin = (1, -, 3, -)"];
 	
 	NSArray *expectedConstraints = @[
 		[NSLayoutConstraint m3_superviewConstraintWithView:substitutionViews[@"self"] attribute:NSLayoutAttributeTop constant:1],
@@ -203,11 +203,11 @@
 	NSView *barView = [NSView new];
 	NSView *bazView = [NSView new];
 	NSView *selfView = [NSView new];
-	NSDictionary *views = [M3ConstraintStringParser substitutionViewsWithCollection:@{
+	NSDictionary *views = M3SubstitutionViewsWithCollection(@{
 		@"foo" : fooView,
 		@"bar" : barView,
 		@"baz" : bazView,
-	} selfView:selfView];
+	}, selfView);
 	
 	NSDictionary *expected = @{
 		@"foo" : fooView,
@@ -222,7 +222,7 @@
 - (void)testSubstitutionViewsWithNilCollection {
 	NSView *selfView = [NSView new];
 	
-	NSDictionary *views = [M3ConstraintStringParser substitutionViewsWithCollection:nil selfView:selfView];
+	NSDictionary *views = M3SubstitutionViewsWithCollection(nil, selfView);
 	NSDictionary *expected = @{	@"self": selfView };
 	
 	assertThat(views, is(equalTo(expected)));
@@ -233,11 +233,11 @@
 	NSView *barView = [NSView new];
 	NSView *bazView = [NSView new];
 	NSView *selfView = [NSView new];
-	NSDictionary *views = [M3ConstraintStringParser substitutionViewsWithCollection:@[
+	NSDictionary *views = M3SubstitutionViewsWithCollection(@[
 		fooView,
 		barView,
 		bazView,
-	] selfView:selfView];
+	], selfView);
 	
 	NSDictionary *expected = @{
 		@"0" : fooView,

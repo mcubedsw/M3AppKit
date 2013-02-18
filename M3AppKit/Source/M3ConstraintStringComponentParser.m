@@ -69,20 +69,24 @@
 }
 
 - (NSArray *)attributeListFromString:(NSString *)aString {
+	//Returns an attribute list
 	NSString *normalisedAttributeString = [self normaliseAttributeString:aString];
 	return [normalisedAttributeString componentsSeparatedByString:@","];
 }
 
 - (NSString *)normaliseAttributeString:(NSString *)aString {
+	//Removes any extraneous characters and expands keywords
 	aString = [aString stringByReplacingOccurrencesOfString:@"(" withString:@""];
 	aString = [aString stringByReplacingOccurrencesOfString:@")" withString:@""];
 	aString = [aString stringByReplacingOccurrencesOfString:@" " withString:@""];
-	aString = [aString stringByReplacingOccurrencesOfString:@"super" withString:@"top,leading,bottom,trailing"];
+	aString = [aString stringByReplacingOccurrencesOfString:@"margin" withString:@"top,leading,bottom,trailing"];
 	aString = [aString stringByReplacingOccurrencesOfString:@"size" withString:@"width,height"];
+	aString = [aString stringByReplacingOccurrencesOfString:@"center" withString:@"centerX,centerY"];
 	return aString;
 }
 
 - (CGFloat)multiplierFromString:(NSString *)aString {
+	//Extracts the multiplier
 	if (!aString.length) {
 		return 1;
 	}
@@ -92,6 +96,7 @@
 }
 
 - (NSArray *)constantListFromString:(NSString *)aString {
+	//Extracts constant values from a constant list
 	aString = [aString stringByReplacingOccurrencesOfString:@"(" withString:@""];
 	aString = [aString stringByReplacingOccurrencesOfString:@")" withString:@""];
 	aString = [aString stringByReplacingOccurrencesOfString:@"+" withString:@""];

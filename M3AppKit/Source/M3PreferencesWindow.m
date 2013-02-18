@@ -159,9 +159,9 @@
 	if (currentSection) [currentSection.view removeFromSuperview];
 	
 	[self.contentView addSubview:newSection.view];
-	[self.contentView m3_addConstraintsFromStrings:@[
+	[self.contentView m3_addConstraintsFromEquations:@[
 		@"$0.super = (0,0,-,0)"
-	] forViews:@[newSection.view]];
+	] substitutionViews:@[newSection.view]];
 	
 	NSLayoutConstraint *bottomConstraint = [NSLayoutConstraint m3_superviewConstraintWithView:newSection.view attribute:NSLayoutAttributeBottom constant:bottomHeight];
 	[self.contentView addConstraint:bottomConstraint];

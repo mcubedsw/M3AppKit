@@ -11,8 +11,6 @@
 
 @interface M3ConstraintStringParser : NSObject
 
-+ (NSDictionary *)substitutionViewsWithCollection:(id)aCollection selfView:(NSView *)aSelfView;
-
 - (id)initWithSubstitutionViews:(NSDictionary *)aViews;
 
 @property (readonly) NSDictionary *substitutionViews;
@@ -20,3 +18,5 @@
 - (NSArray *)constraintsFromString:(NSString *)aString;
 
 @end
+
+NSDictionary *M3SubstitutionViewsWithCollection(id aCollection, NSView *aSelfView);

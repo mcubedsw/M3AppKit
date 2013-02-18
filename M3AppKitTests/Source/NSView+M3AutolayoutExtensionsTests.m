@@ -15,7 +15,7 @@
 - (void)test_addingSubviewAddsItToView {
 	NSView *superview = [NSView new];
 	NSView *subview = [NSView new];
-	[superview m3_addSubview:subview andFillConstraintsWithInset:NSEdgeInsetsMake(0, 0, 0, 0)];
+	[superview m3_addSubview:subview marginsToSuperview:NSEdgeInsetsMake(0, 0, 0, 0)];
 	assertThat(superview.subviews, hasItem(subview));
 }
 

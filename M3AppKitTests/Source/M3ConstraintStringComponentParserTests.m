@@ -41,6 +41,12 @@
 	assertThat(component.keyPath, is(equalTo(@"self.foobar.baz")));
 }
 
+- (void)testFindsKeyPathWrappedInBracketsInString {
+	M3ConstraintStringComponent *component = [parser componentFromString:@"($self.attribute)"];
+	
+	assertThat(component.keyPath, is(equalTo(@"self")));
+}
+
 
 
 
@@ -55,6 +61,12 @@
 	assertThat(component.attributeList, is(equalTo(@[ @"attribute" ])));
 }
 
+- (void)testFindsAttributeWrappedInBracketsInString {
+	M3ConstraintStringComponent *component = [parser componentFromString:@"($self.attribute)"];
+	
+	assertThat(component.attributeList, is(equalTo(@[ @"attribute" ])));
+}
+
 
 - (void)testFindsAttributeListInString {
 	M3ConstraintStringComponent *component = [parser componentFromString:@"$self.(attr1, attr2)"];
@@ -64,7 +76,7 @@
 
 
 - (void)testFindsSuperAttributeInString {
-	M3ConstraintStringComponent *component = [parser componentFromString:@"$self.super"];
+	M3ConstraintStringComponent *component = [parser componentFromString:@"$self.margin"];
 	
 	assertThat(component.attributeList, is(equalTo(@[ @"top", @"leading", @"bottom", @"trailing"])));
 }
@@ -76,6 +88,12 @@
 	assertThat(component.attributeList, is(equalTo(@[ @"width", @"height"])));
 }
 
+- (void)testFindsCenterAttributeInString {
+	M3ConstraintStringComponent *component = [parser componentFromString:@"$self.center"];
+	
+	assertThat(component.attributeList, is(equalTo(@[ @"centerX", @"centerY"])));
+}
+
 
 
 
@@ -84,12 +102,16 @@
 #pragma mark Multiplier
 
 
-- (void)testFindsMultiplierInString {
+- (void)test_findsMultiplierAfterKeypathInString {
 	M3ConstraintStringComponent *component = [parser componentFromString:@"$self.attr * 5.2"];
 	
 	assertThat(component.keyPath, is(equalTo(@"self")));
 	assertThat(component.attributeList, is(equalTo(@[ @"attr" ])));
 	assertThatFloat(component.multiplier, is(equalToFloat(5.2)));
+}
+
+- (void)test_findsMultiplierBeforeKeypathInString {
+	
 }
 
 

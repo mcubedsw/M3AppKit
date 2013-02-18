@@ -10,17 +10,9 @@
 #import "M3ConstraintStringParser.h"
 #import "M3ConstraintStringComponent.h"
 #import "M3ConstraintStringComponentParser.h"
+#import "M3ConstraintStringUtilities.h"
 
-NSException *M3ExceptionWithReason(NSString *aReason) {
-	return [NSException exceptionWithName:@"Constraint String Parsing Error" reason:aReason userInfo:nil];
-}
-
-@implementation M3ConstraintStringParser {
-	NSDictionary *attributeMap;
-	M3ConstraintStringComponentParser *componentParser;
-}
-
-+ (NSDictionary *)substitutionViewsWithCollection:(id)aCollection selfView:(NSView *)aSelfView {
+NSDictionary *M3SubstitutionViewsWithCollection(id aCollection, NSView *aSelfView) {
 	NSMutableDictionary *views = [NSMutableDictionary dictionaryWithObject:aSelfView forKey:@"self"];
 	
 	if ([aCollection isKindOfClass:[NSDictionary class]]) {
@@ -33,6 +25,11 @@ NSException *M3ExceptionWithReason(NSString *aReason) {
 	}
 	
 	return [views copy];
+}
+
+@implementation M3ConstraintStringParser {
+	NSDictionary *attributeMap;
+	M3ConstraintStringComponentParser *componentParser;
 }
 
 - (id)initWithSubstitutionViews:(NSDictionary *)aViews {
@@ -57,25 +54,37 @@ NSException *M3ExceptionWithReason(NSString *aReason) {
 }
 
 - (NSArray *)constraintsFromString:(NSString *)aString {
-	NSLayoutRelation relation = [self relationFromString:aString];
-	NSDictionary *relationStrings = @{ @(NSLayoutRelationEqual) : @"=", @(NSLayoutRelationGreaterThanOrEqual) : @">=", @(NSLayoutRelationLessThanOrEqual) : @"<=" };
-	NSArray *components = [aString componentsSeparatedByString:relationStrings[@(relation)]];
-	if (components.count != 2) {
-		return nil;
-	}
+	NSArray *components = [self componentsFromString:aString];
+	
+	NSLayoutRelation relation = [self relationFromString:components[1]];
 	
 	M3ConstraintStringComponent *firstComponent = [componentParser componentFromString:components[0]];
-	M3ConstraintStringComponent *secondComponent = [componentParser componentFromString:components[1]];
+	M3ConstraintStringComponent *secondComponent = [componentParser componentFromString:components[2]];
 	
 	
 	return [self constraintsWithFirstComponent:firstComponent relation:relation secondComponent:secondComponent];
 }
 
+- (NSArray *)componentsFromString:(NSString *)aString {
+	NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"(.*)((?:>|<){0,1}=(?:\\(@\\d*\\)){0,1})(.*)" options:0 error:NULL];
+	NSArray *matches = [regex matchesInString:aString options:0 range:NSMakeRange(0, aString.length)];
+	
+	if (matches.count != 1) M3ExceptionWithReason([NSString stringWithFormat:@"Invalid equation string '%@'", aString]);
+	
+	NSTextCheckingResult *match = matches[0];
+	
+	return @[
+		[aString substringWithRange:[match rangeAtIndex:1]],
+		[aString substringWithRange:[match rangeAtIndex:2]],
+		[aString substringWithRange:[match rangeAtIndex:3]]
+	];
+}
+
 - (NSLayoutRelation)relationFromString:(NSString *)aString {
-	if ([aString m3_containsString:@">="]) {
+	if ([aString hasPrefix:@">="]) {
 		return NSLayoutRelationGreaterThanOrEqual;
 	}
-	if ([aString m3_containsString:@"<="]) {
+	if ([aString hasPrefix:@"<="]) {
 		return NSLayoutRelationLessThanOrEqual;
 	}
 	return NSLayoutRelationEqual;

@@ -13,7 +13,7 @@
 
 @implementation NSView (M3AutolayoutExtensions)
 
-- (void)m3_addSubview:(NSView *)aSubview andFillConstraintsWithInset:(NSEdgeInsets)aInsets {
+- (void)m3_addSubview:(NSView *)aSubview marginsToSuperview:(NSEdgeInsets)aInsets {
 	[aSubview setTranslatesAutoresizingMaskIntoConstraints:NO];
 	[self addSubview:aSubview];
 	
@@ -23,8 +23,9 @@
 }
 
 
-- (void)m3_addConstraintsFromStrings:(NSArray *)aConstraints forViews:(id)aSubstitutionViews {
-	M3ConstraintStringParser *parser = [[M3ConstraintStringParser alloc] initWithSubstitutionViews:[M3ConstraintStringParser substitutionViewsWithCollection:aSubstitutionViews selfView:self]];
+- (void)m3_addConstraintsFromEquations:(NSArray *)aConstraints substitutionViews:(id)aSubstitutionViews {
+	NSDictionary *substitutionViews = M3SubstitutionViewsWithCollection(aSubstitutionViews, self);
+	M3ConstraintStringParser *parser = [[M3ConstraintStringParser alloc] initWithSubstitutionViews:substitutionViews];
 	for (NSString *constraint in aConstraints) {
 		[self addConstraints:[parser constraintsFromString:constraint]];
 	}
