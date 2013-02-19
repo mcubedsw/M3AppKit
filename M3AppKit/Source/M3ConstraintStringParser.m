@@ -57,16 +57,17 @@ NSDictionary *M3SubstitutionViewsWithCollection(id aCollection, NSView *aSelfVie
 	NSArray *components = [self componentsFromString:aString];
 	
 	NSLayoutRelation relation = [self relationFromString:components[1]];
+	CGFloat priority = [self priorityFromString:components[1]];
 	
 	M3ConstraintStringComponent *firstComponent = [componentParser componentFromString:components[0]];
 	M3ConstraintStringComponent *secondComponent = [componentParser componentFromString:components[2]];
 	
 	
-	return [self constraintsWithFirstComponent:firstComponent relation:relation secondComponent:secondComponent];
+	return [self constraintsWithFirstComponent:firstComponent relation:relation secondComponent:secondComponent priority:priority];
 }
 
 - (NSArray *)componentsFromString:(NSString *)aString {
-	NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"(.*)((?:>|<){0,1}=(?:\\(@\\d*\\)){0,1})(.*)" options:0 error:NULL];
+	NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"([a-zA-Z0-9\\s.$_(),]*)((?:>|<){0,1}=(?:\\(@\\d*\\)){0,1})(.*)" options:0 error:NULL];
 	NSArray *matches = [regex matchesInString:aString options:0 range:NSMakeRange(0, aString.length)];
 	
 	if (matches.count != 1) M3ExceptionWithReason([NSString stringWithFormat:@"Invalid equation string '%@'", aString]);
@@ -90,7 +91,18 @@ NSDictionary *M3SubstitutionViewsWithCollection(id aCollection, NSView *aSelfVie
 	return NSLayoutRelationEqual;
 }
 
-- (NSArray *)constraintsWithFirstComponent:(M3ConstraintStringComponent *)aFirstComponent relation:(NSLayoutRelation)aRelation secondComponent:(M3ConstraintStringComponent *)aSecondComponent {
+- (CGFloat)priorityFromString:(NSString *)aString {
+	NSUInteger index = [aString rangeOfString:@"@"].location;
+	if (index == NSNotFound) return 1000;
+	
+	NSString *priorityString = [aString substringFromIndex:index + 1];
+	
+	if ([priorityString hasSuffix:@")"]) priorityString = [priorityString m3_stringByRemovingCharactersFromEnd:1];
+	
+	return priorityString.floatValue;
+}
+
+- (NSArray *)constraintsWithFirstComponent:(M3ConstraintStringComponent *)aFirstComponent relation:(NSLayoutRelation)aRelation secondComponent:(M3ConstraintStringComponent *)aSecondComponent priority:(CGFloat)aPriority {
 	NSMutableArray *constraints = [NSMutableArray array];
 	
 	NSArray *firstItems = [self viewForKeyPath:aFirstComponent.keyPath];
@@ -150,7 +162,15 @@ NSDictionary *M3SubstitutionViewsWithCollection(id aCollection, NSView *aSelfVie
 			//If we require a second item then use it, otherwise use nil
 			id attributeSecondItem = (secondAttributeString.length ? secondView : nil);
 			
-			[constraints addObject:[NSLayoutConstraint constraintWithItem:firstView attribute:firstAttribute relatedBy:aRelation toItem:attributeSecondItem attribute:secondAttribute multiplier:aSecondComponent.multiplier constant:constant]];
+			NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:firstView
+																		  attribute:firstAttribute
+																		  relatedBy:aRelation
+																			 toItem:attributeSecondItem
+																		  attribute:secondAttribute
+																		 multiplier:aSecondComponent.multiplier
+																		   constant:constant];
+			[constraint setPriority:aPriority];
+			[constraints addObject:constraint];
 		}
 	}
 	

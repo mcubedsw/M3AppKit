@@ -10,16 +10,6 @@
 #import <Cocoa/Cocoa.h>
 
 
-/*
- Stuff to add
- --------------
- Change .super to .margins
- Add .center to expand to .(centerX, centerY)
- Imply $super.property for all attributes bar width/height
- Add priority support, after the relationship have (@xxx) for the priority, e.g. =(@700)
- Add support for multiplication before property, e.g. 2.5($view.property)
- */
-
 /**
  Methods to help working with constraints on an NSView
  

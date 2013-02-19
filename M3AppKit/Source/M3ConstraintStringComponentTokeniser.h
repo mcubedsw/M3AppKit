@@ -1,10 +1,11 @@
-//
-//  M3ConstraintStringComponentTokeniser.h
-//  M3AppKit
-//
-//  Created by Martin Pilkington on 18/02/2013.
-//  Copyright (c) 2013 M Cubed Software. All rights reserved.
-//
+/*****************************************************************
+ M3ConstraintStringComponentTokeniser.h
+ M3AppKit
+ 
+ Created by Martin Pilkington on 18/02/2013.
+ 
+ Please read the LICENCE.txt for licensing information
+*****************************************************************/
 
 #import <Foundation/Foundation.h>
 
@@ -17,7 +18,8 @@
 
 @property (readonly) NSString *string;
 
-@property (readonly) NSString *viewAttributeString;
+@property (readonly) NSString *keypathString;
+@property (readonly) NSString *attributeString;
 @property (readonly) NSString *multiplierString;
 @property (readonly) NSString *constantString;
 

@@ -1,10 +1,11 @@
-//
-//  M3ConstraintStringComponentTokeniser.m
-//  M3AppKit
-//
-//  Created by Martin Pilkington on 18/02/2013.
-//  Copyright (c) 2013 M Cubed Software. All rights reserved.
-//
+/*****************************************************************
+ M3ConstraintStringComponentTokeniser.m
+ M3AppKit
+ 
+ Created by Martin Pilkington on 18/02/2013.
+ 
+ Please read the LICENCE.txt for licensing information
+*****************************************************************/
 
 #import "M3ConstraintStringComponentTokeniser.h"
 #import "M3ConstraintStringUtilities.h"
@@ -44,7 +45,7 @@
 	[self findSuffixMultiplier];
 	
 	//Reset the search if we don't have a view attribute string, as it's just a constant
-	if (!self.viewAttributeString.length) [self reset];
+	if (!self.keypathString.length) [self reset];
 	
 	[self findConstant];
 
@@ -86,7 +87,15 @@
 		viewAttributeString = [[viewAttributeString substringWithRange:NSMakeRange(1, viewAttributeString.length - 2)] mutableCopy];
 	}
 	
-	if (foundDollar) _viewAttributeString = [viewAttributeString copy];
+	NSMutableArray *components = [[viewAttributeString componentsSeparatedByString:@"."] mutableCopy];
+	NSString *attributeString = components.lastObject;
+	[components removeLastObject];
+	NSString *keypathString = [components componentsJoinedByString:@"."];
+	
+	if (foundDollar) {
+		_keypathString = [keypathString copy];
+		_attributeString = [attributeString copy];
+	}
 }
 
 - (void)findSuffixMultiplier {
@@ -131,7 +140,7 @@
 	currentIndex = 0;
 	bracketLevel = 0;
 	_multiplierString = @"";
-	_viewAttributeString = @"";
+	_keypathString = @"";
 	_constantString = @"";
 }
 

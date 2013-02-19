@@ -125,6 +125,14 @@
 	[self assertThatConstraints:constraints areEqualToConstraints:expectedConstraints];
 }
 
+- (void)test_setsMultiplierIfSpecifiedBeforeAttribute {
+	NSArray *constraints = [parser constraintsFromString:@"$self.bottom = 2.5($x.top)"];
+	
+	NSLayoutConstraint *expectedConstraint = [NSLayoutConstraint constraintWithItem:substitutionViews[@"self"] attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:substitutionViews[@"x"] attribute:NSLayoutAttributeTop multiplier:2.5 constant:0];
+	
+	[self assertThatConstraints:constraints areEqualToConstraints:@[expectedConstraint]];
+}
+
 - (void)testMultipleAttributesAreEqualToSingleConstant {
 	NSArray *constraints = [parser constraintsFromString:@"$self.size = 42"];
 	
@@ -168,6 +176,15 @@
 	];
 	
 	[self assertThatConstraints:constraints areEqualToConstraints:expectedConstraints];
+}
+
+- (void)test_setsCorrectPriority {
+	NSArray *constraints = [parser constraintsFromString:@"$self.bottom =(@365) $x.top"];
+	
+	NSLayoutConstraint *expectedConstraint = [NSLayoutConstraint constraintWithItem:substitutionViews[@"self"] attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:substitutionViews[@"x"] attribute:NSLayoutAttributeTop multiplier:1 constant:0];
+	[expectedConstraint setPriority:365];
+	
+	[self assertThatConstraints:constraints areEqualToConstraints:@[expectedConstraint]];
 }
 
 

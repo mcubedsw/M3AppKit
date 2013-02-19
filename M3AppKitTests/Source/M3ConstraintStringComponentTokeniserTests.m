@@ -1,10 +1,11 @@
-//
-//  M3ConstraintStringComponentTokeniserTests.m
-//  M3AppKit
-//
-//  Created by Martin Pilkington on 18/02/2013.
-//  Copyright (c) 2013 M Cubed Software. All rights reserved.
-//
+/*****************************************************************
+ M3ConstraintStringComponentTokeniserTests.m
+ M3AppKit
+ 
+ Created by Martin Pilkington on 18/02/2013.
+ 
+ Please read the LICENCE.txt for licensing information
+*****************************************************************/
 
 #import "M3ConstraintStringComponentTokeniserTests.h"
 #import "M3ConstraintStringComponentTokeniser.h"
@@ -23,22 +24,46 @@
 	assertThat(tokeniser.string, is(equalTo(@"foobar+bazpossum")));
 }
 
-- (void)test_findsSimpleViewAttributeString {
-	M3ConstraintStringComponentTokeniser *tokeniser = [M3ConstraintStringComponentTokeniser tokeniseString:@"$view"];
+- (void)test_findsSimpleKeypathString {
+	M3ConstraintStringComponentTokeniser *tokeniser = [M3ConstraintStringComponentTokeniser tokeniseString:@"$view.attribute"];
 	
-	assertThat(tokeniser.viewAttributeString, is(equalTo(@"view")));
+	assertThat(tokeniser.keypathString, is(equalTo(@"view")));
 }
 
-- (void)test_findsComplexAttributeString {
+- (void)test_findsComplexKeypathString {
 	M3ConstraintStringComponentTokeniser *tokeniser = [M3ConstraintStringComponentTokeniser tokeniseString:@"$view.key.path.attribute"];
 	
-	assertThat(tokeniser.viewAttributeString, is(equalTo(@"view.key.path.attribute")));
+	assertThat(tokeniser.keypathString, is(equalTo(@"view.key.path")));
 }
 
-- (void)test_findsViewAttributeStringInBrackets {
+- (void)test_findsKeypathStringInBrackets {
 	M3ConstraintStringComponentTokeniser *tokeniser = [M3ConstraintStringComponentTokeniser tokeniseString:@"($view.key.path.attribute)"];
 	
-	assertThat(tokeniser.viewAttributeString, is(equalTo(@"view.key.path.attribute")));
+	assertThat(tokeniser.keypathString, is(equalTo(@"view.key.path")));
+}
+
+- (void)test_findsAttributeString {
+	M3ConstraintStringComponentTokeniser *tokeniser = [M3ConstraintStringComponentTokeniser tokeniseString:@"$view.attribute"];
+	
+	assertThat(tokeniser.attributeString, is(equalTo(@"attribute")));
+}
+
+- (void)test_findsAttributeListString {
+	M3ConstraintStringComponentTokeniser *tokeniser = [M3ConstraintStringComponentTokeniser tokeniseString:@"$view.(top, bottom)"];
+	
+	assertThat(tokeniser.attributeString, is(equalTo(@"(top,bottom)")));
+}
+
+- (void)test_findsAttributeStringInBrackets {
+	M3ConstraintStringComponentTokeniser *tokeniser = [M3ConstraintStringComponentTokeniser tokeniseString:@"($view.attribute)"];
+	
+	assertThat(tokeniser.attributeString, is(equalTo(@"attribute")));
+}
+
+- (void)test_findsAttributeListStringInBrackets {
+	M3ConstraintStringComponentTokeniser *tokeniser = [M3ConstraintStringComponentTokeniser tokeniseString:@"($view.(top,bottom))"];
+	
+	assertThat(tokeniser.attributeString, is(equalTo(@"(top,bottom)")));
 }
 
 - (void)test_throwsExceptionIfNoClosingBracketFound {
@@ -54,7 +79,7 @@
 }
 
 - (void)test_findsPrefixMultiplier {
-	M3ConstraintStringComponentTokeniser *tokeniser = [M3ConstraintStringComponentTokeniser tokeniseString:@"25($view)"];
+	M3ConstraintStringComponentTokeniser *tokeniser = [M3ConstraintStringComponentTokeniser tokeniseString:@"25($view.attribute)"];
 	
 	assertThat(tokeniser.multiplierString, is(equalTo(@"25")));
 }
@@ -63,11 +88,11 @@
 	M3ConstraintStringComponentTokeniser *tokeniser = [M3ConstraintStringComponentTokeniser tokeniseString:@"3.14($view.attribute)"];
 	
 	assertThat(tokeniser.multiplierString, is(equalTo(@"3.14")));
-	assertThat(tokeniser.viewAttributeString, is(equalTo(@"view.attribute")));
+	assertThat(tokeniser.keypathString, is(equalTo(@"view")));
 }
 
 - (void)test_findsSuffixMultiplier {
-	M3ConstraintStringComponentTokeniser *tokeniser = [M3ConstraintStringComponentTokeniser tokeniseString:@"$view * 1.23"];
+	M3ConstraintStringComponentTokeniser *tokeniser = [M3ConstraintStringComponentTokeniser tokeniseString:@"$view.attribute * 1.23"];
 	
 	assertThat(tokeniser.multiplierString, is(equalTo(@"1.23")));
 }
@@ -99,7 +124,7 @@
 	M3ConstraintStringComponentTokeniser *tokeniser = [M3ConstraintStringComponentTokeniser tokeniseString:@"(1, 2, -, 3)"];
 	
 	assertThat(tokeniser.constantString, is(equalTo(@"(1,2,-,3)")));
-	assertThat(tokeniser.viewAttributeString, is(equalTo(@"")));
+	assertThat(tokeniser.keypathString, is(equalTo(@"")));
 	assertThat(tokeniser.multiplierString, is(equalTo(@"")));
 }
 
@@ -107,7 +132,8 @@
 	M3ConstraintStringComponentTokeniser *tokeniser = [M3ConstraintStringComponentTokeniser tokeniseString:@"25.5($view.attribute) + 60.2"];
 	
 	assertThat(tokeniser.constantString, is(equalTo(@"60.2")));
-	assertThat(tokeniser.viewAttributeString, is(equalTo(@"view.attribute")));
+	assertThat(tokeniser.keypathString, is(equalTo(@"view")));
+	assertThat(tokeniser.attributeString, is(equalTo(@"attribute")));
 	assertThat(tokeniser.multiplierString, is(equalTo(@"25.5")));
 }
 
@@ -115,7 +141,8 @@
 	M3ConstraintStringComponentTokeniser *tokeniser = [M3ConstraintStringComponentTokeniser tokeniseString:@"1.23($view.(top, bottom)) + 5"];
 	
 	assertThat(tokeniser.constantString, is(equalTo(@"5")));
-	assertThat(tokeniser.viewAttributeString, is(equalTo(@"view.(top,bottom)")));
+	assertThat(tokeniser.keypathString, is(equalTo(@"view")));
+	assertThat(tokeniser.attributeString, is(equalTo(@"(top,bottom)")));
 	assertThat(tokeniser.multiplierString, is(equalTo(@"1.23")));
 }
 
