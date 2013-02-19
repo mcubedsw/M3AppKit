@@ -26,9 +26,25 @@
 }
 
 - (NSArray *)attributeListFromString:(NSString *)aString {
-	//Returns an attribute list
-	NSString *normalisedAttributeString = [self normaliseAttributeString:aString];
-	return [normalisedAttributeString componentsSeparatedByString:@","];
+	NSString *normalisedString = [self normaliseAttributeString:aString];
+	
+	NSMutableArray *attributes = [NSMutableArray array];
+				
+	for (NSString *attributeString in [normalisedString componentsSeparatedByString:@","]) {
+		if ([attributeString isEqualToString:@"margin"]) {
+			[attributes addObjectsFromArray:@[@"top", @"leading", @"bottom", @"trailing"]];
+		}
+		else if ([attributeString isEqualToString:@"size"]) {
+			[attributes addObjectsFromArray:@[@"width", @"height"]];
+		}
+		else if ([attributeString isEqualToString:@"center"]) {
+			[attributes addObjectsFromArray:@[@"centerX", @"centerY"]];
+		}
+		else {
+			[attributes addObject:attributeString];
+		}
+	}
+	return [attributes copy];
 }
 
 - (NSString *)normaliseAttributeString:(NSString *)aString {
@@ -36,9 +52,6 @@
 	aString = [aString stringByReplacingOccurrencesOfString:@"(" withString:@""];
 	aString = [aString stringByReplacingOccurrencesOfString:@")" withString:@""];
 	aString = [aString stringByReplacingOccurrencesOfString:@" " withString:@""];
-	aString = [aString stringByReplacingOccurrencesOfString:@"margin" withString:@"top,leading,bottom,trailing"];
-	aString = [aString stringByReplacingOccurrencesOfString:@"size" withString:@"width,height"];
-	aString = [aString stringByReplacingOccurrencesOfString:@"center" withString:@"centerX,centerY"];
 	return aString;
 }
 

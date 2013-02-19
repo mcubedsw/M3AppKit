@@ -1,6 +1,6 @@
 /*****************************************************************
  NSComparisonPredicate+M3Extensions.h
- M3AppKit
+ M3Foundation
  
  Created by Martin Pilkington on 01/04/2011.
  

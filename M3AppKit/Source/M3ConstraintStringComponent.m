@@ -23,4 +23,9 @@
 	return isEqual;
 }
 
+- (NSString *)description {
+	return [NSString stringWithFormat:@"<M3ConstraintStringComponent 0x%x> {\n\tkeyPath: %@\n\tattributeList: %@\n\tmultiplier: %f\n\tconstantList: %@\n}",
+			(int)self, self.keyPath, [self.attributeList componentsJoinedByString:@","], self.multiplier, [self.constantList componentsJoinedByString:@","]];
+}
+
 @end

@@ -178,6 +178,22 @@
 	[self assertThatConstraints:constraints areEqualToConstraints:expectedConstraints];
 }
 
+- (void)test_nonSecondItemRequiringAttributeWorksWithOtherView {
+	NSArray *constraints = [parser constraintsFromString:@"$x.width = $y.width"];
+	
+	NSLayoutConstraint *expectedConstraint = [NSLayoutConstraint constraintWithItem:substitutionViews[@"x"] attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:substitutionViews[@"y"] attribute:NSLayoutAttributeWidth multiplier:1 constant:0];
+	
+	[self assertThatConstraints:constraints areEqualToConstraints:@[expectedConstraint]];
+}
+
+- (void)test_nonSecondItemRequiringAttributeWorksWithOtherViewAndConstant {
+	NSArray *constraints = [parser constraintsFromString:@"$x.width = $y.width + 20"];
+	
+	NSLayoutConstraint *expectedConstraint = [NSLayoutConstraint constraintWithItem:substitutionViews[@"x"] attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:substitutionViews[@"y"] attribute:NSLayoutAttributeWidth multiplier:1 constant:20];
+	
+	[self assertThatConstraints:constraints areEqualToConstraints:@[expectedConstraint]];
+}
+
 - (void)test_setsCorrectPriority {
 	NSArray *constraints = [parser constraintsFromString:@"$self.bottom =(@365) $x.top"];
 	

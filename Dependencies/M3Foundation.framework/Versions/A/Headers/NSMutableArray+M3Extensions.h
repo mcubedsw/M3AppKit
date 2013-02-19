@@ -1,6 +1,6 @@
 /*****************************************************************
  NSMutableArray+M3Extensions.h
- M3AppKit
+ M3Foundation
  
  Created by Martin Pilkington on 21/05/2010.
  
@@ -15,11 +15,11 @@
 
 /**
  Moves the supplied object to the new index
- If the object doesn't exist in the array, this acts just like addObject: or insertObject:atIndex: depending on whether the index is outside the bounds of the array
- @param aObject The object to move
- @param aIndex The index to move it to
+ If the supplied index is beyond the bounds of the array, the object is simply moved to the end of the array
+ @param aIndex The index of the object to move
+ @param aNewIndex The index to move the object to
  @since M3Foundation 1.0 and later
 */
-- (void)m3_moveObject:(id)aObject toIndex:(NSUInteger)aIndex;
+- (void)m3_moveObjectAtIndex:(NSUInteger)aIndex toIndex:(NSUInteger)aNewIndex;
 
 @end

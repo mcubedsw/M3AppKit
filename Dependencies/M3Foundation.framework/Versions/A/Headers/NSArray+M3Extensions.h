@@ -1,6 +1,6 @@
 /*****************************************************************
  NSArray+M3Extensions.h
- M3AppKit
+ M3Foundation
  
  Created by Martin Pilkington on 10/09/2006.
  
@@ -43,6 +43,6 @@
  @return The first object matching the test
  @since M3Foundation 1.0 or later
 */
-- (id)m3_objectPassingTest:(BOOL (^)(id aObject))aTest;
+- (id)m3_firstObjectPassingTest:(BOOL (^)(id aObject))aTest;
 
 @end

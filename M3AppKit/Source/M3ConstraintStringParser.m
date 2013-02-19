@@ -113,17 +113,16 @@ NSDictionary *M3SubstitutionViewsWithCollection(id aCollection, NSView *aSelfVie
 	}
 	
 	for (NSView *firstView in firstItems) {
-		if (!secondView) {
-			secondView = firstView.superview;
-		}
 		for (NSUInteger currentAttribute = 0; currentAttribute < aFirstComponent.attributeList.count; currentAttribute++) {
 			NSString *firstAttributeString = aFirstComponent.attributeList[currentAttribute];
 			NSString *secondAttributeString = @"";
 			CGFloat constant = 0.0;
 			
 			//Do we require a second attribute or are we fine with just a constant?
-			if ([attributeMap[firstAttributeString][@"requiresSecondItem"] boolValue]) {
-				//If we have no second attributes use the first item
+			if ([attributeMap[firstAttributeString][@"requiresSecondItem"] boolValue] && !secondView)  {
+				secondView = firstView.superview;
+			}
+//				//If we have no second attributes use the first item
 				if (aSecondComponent.attributeList.count == 0) {
 					secondAttributeString = firstAttributeString;
 				}
@@ -135,7 +134,7 @@ NSDictionary *M3SubstitutionViewsWithCollection(id aCollection, NSView *aSelfVie
 				else {
 					secondAttributeString = aSecondComponent.attributeList[currentAttribute];
 				}
-			}
+//			}
 			
 			//If we have no constants use 0
 			if (aSecondComponent.constantList.count == 0) {

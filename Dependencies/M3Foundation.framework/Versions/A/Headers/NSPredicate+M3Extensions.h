@@ -1,6 +1,6 @@
 /*****************************************************************
  NSPredicate+M3Extensions.h
- M3AppKit
+ M3Foundation
  
  Created by Martin Pilkington on 31/03/2011.
  
@@ -20,7 +20,7 @@
  @return The predicate generated from the XML or nil if it fails
  @since M3Foundation 1.0 or later
 */
-+ (NSPredicate *)m3_predicateFromXMLElement:(NSXMLElement *)aElement;
++ (NSPredicate *)m3_predicateWithXMLElement:(NSXMLElement *)aElement;
 
 /**
  The XML representation for the predicate
